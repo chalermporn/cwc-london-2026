@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>agent กฎหมายสืบทอดอะไรจาก coding agent: บทเรียนจาก Legora | CwC London #12</title>
+<meta name="description" content="Jakob จาก Legora เสนอกรอบสามถังสำหรับสร้าง agent ในสายงานอื่นจากบทเรียนของ coding agent คือ นำมาใช้ตรงๆ (planning, sub-agents, human in the loop)…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/12-what-legal-agents-inherit-from-coding-agents.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="agent กฎหมายสืบทอดอะไรจาก coding agent: บทเรียนจาก Legora | CwC London #12">
+<meta property="og:description" content="Jakob จาก Legora เสนอกรอบสามถังสำหรับสร้าง agent ในสายงานอื่นจากบทเรียนของ coding agent คือ นำมาใช้ตรงๆ (planning, sub-agents, human in the loop)…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/12-what-legal-agents-inherit-from-coding-agents.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="agent กฎหมายสืบทอดอะไรจาก coding agent: บทเรียนจาก Legora | CwC London #12">
+<meta name="twitter:description" content="Jakob จาก Legora เสนอกรอบสามถังสำหรับสร้าง agent ในสายงานอื่นจากบทเรียนของ coding agent คือ นำมาใช้ตรงๆ (planning, sub-agents, human in the loop)…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "agent กฎหมายสืบทอดอะไรจาก coding agent: บทเรียนจาก Legora — Code with Claude London 2026 #12", "description": "Jakob จาก Legora เสนอกรอบสามถังสำหรับสร้าง agent ในสายงานอื่นจากบทเรียนของ coding agent คือ นำมาใช้ตรงๆ (planning, sub-agents, human in the loop)…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/12-what-legal-agents-inherit-from-coding-agents.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/12-what-legal-agents-inherit-from-coding-agents.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "What legal agents inherit from coding agents: Lessons from Legora", "url": "https://www.youtube.com/watch?v=nho1YAEPuwA", "duration": "PT28M43S"}, "about": ["legal-ai", "agent-reliability", "claude-code", "managed-agents"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#12 agent กฎหมายสืบทอดอะไรจาก coding agent: บทเรียนจาก Legora", "item": "https://chalermporn.github.io/cwc-london-2026/talks/12-what-legal-agents-inherit-from-coding-agents.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#12 · เคสตามอุตสาหกรรม · 28:43</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">agent กฎหมายสืบทอดอะไรจาก coding agent: บทเรียนจาก Legora</h1>
+<p class="mono text-xs text-zinc-500 mt-1">What legal agents inherit from coding agents: Lessons from Legora</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Jakob Emmerling (Engineer ที่ Legora (คำอธิบายคลิประบุ Staff Software Engineer; transcript สะกด Jacob))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> คนที่สร้าง agent ในโดเมนนอกเหนือจากงานโค้ด (กฎหมาย บัญชี การแพทย์ ฯลฯ) และอยากหยิบ pattern ของ coding agent ไปใช้</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Jakob จาก Legora เสนอกรอบสามถังสำหรับสร้าง agent ในสายงานอื่นจากบทเรียนของ coding agent คือ นำมาใช้ตรงๆ (planning, sub-agents, human in the loop), แปลงให้เข้ากับโดเมน (แก้ docx ด้วย loop อ่าน-แก้-ตรวจ และ linting เอกสารกฎหมาย) และคิดใหม่เอง (citation, tabular review สำหรับ due diligence) ข้อสรุปคือให้โมเดลรู้สึกเหมือนอยู่ใน coding agent harness แล้วทำงานกฎหมาย</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Legora&#x27;s engineer shows a three-bucket framework for vertical agents: reuse coding-agent patterns, translate similar ones (docx editing loop, legal linting), and invent domain-specific pieces (citations, tabular review).</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>Legora สร้าง workspace AI ให้ทนายความ ผู้พูดบอกว่ามีลูกค้ากว่าพันราย รวมสำนักงานกฎหมายขนาดใหญ่ ก่อตั้งที่ Stockholm ราวหกเดือนก่อนพวกเขาตระหนักว่าโดเมนนอก coding ตามหลังอยู่ จึงเริ่มเรียนรู้จาก coding agent</li><li>งานกฎหมายกับงานโค้ดคล้ายกันหลายด้าน ได้แก่ พึ่งงานเดิมมาก ทำกับเอกสารข้อความ มีข้อกำหนดเข้มในองค์กร และมีวัฒนธรรมรีวิว (partner รีวิวร่างของ associate เหมือน review PR) ผู้พูดบอกว่า knowledge work อื่นก็เทียบแบบนี้ได้</li><li>สามถัง: (1) ใช้ซ้ำตรงๆ เช่น to-dos, planning, sub-agents, sandbox, human in the loop ซึ่งได้ฟรีเมื่อใช้ Anthropic agent SDK หรือ managed agents (2) แปลงให้เข้ากับโดเมน (3) สร้างใหม่ เช่น citation ที่อ้างอิงทุกคำตอบ และการทำงานกับเอกสารจำนวนมาก</li><li>ตัวอย่างใช้ซ้ำ: planning mode ให้ทนายวางแผนและสำรวจบริบทก่อนให้ agent ลงมือ และการขออนุมัติ tool call ที่อันตราย (ไม่อยากให้ลบเอกสารลูกค้าเอง) ใช้ UX ที่ coding agent พิสูจน์แล้วโดยไม่ต้องคิดใหม่</li><li>แปลงการแก้ docx: ระบบเดิมส่งเจตนาแก้ไปให้โมเดล reasoning อีกตัวแล้วแตกเป็นหลายคำสั่งย่อย ซึ่งมีปัญหา hand-off เมื่อ agent มี tool มากขึ้น ระบบใหม่ใช้ loop แบบ coding agent คือ read, edit, verify บน intermediate representation แบบข้อความเรียบของ docx</li><li>POC แรกให้ agent แปลเอกสาร 10 หน้าจากอังกฤษเป็นสวีเดนทีละย่อหน้า ซึ่งงานนี้เคยทำให้ครบยากมาก agent วนอ่านเจอย่อหน้าที่ตกหล่นแล้วกลับไปแก้ ราว 10 นาทีก็แปลครบ และผู้พูดบอกว่ารันบน Haiku ด้วยซ้ำ</li><li>ผู้พูดมอง mental model ว่าให้โมเดลรู้สึกเหมือนอยู่ใน coding agent harness แต่ทำงานกฎหมาย จะได้ประโยชน์จาก RL และ fine-tuning ที่ทำกับ harness แบบโค้ด และมี linting สำหรับเอกสารกฎหมาย (เช่นตรวจว่าการอ้างอิงข้ามข้อยังถูกต้องหลังลบย่อหน้า) พร้อมเพิ่มการ lint ด้วย LLM ได้</li><li>สิ่งที่ต้องคิดใหม่คือ due diligence: Tabular Review เป็นตารางที่แถวคือเอกสารและคอลัมน์คือข้อมูลที่ให้ LLM สกัด agent ใช้เครื่องมือนี้เหมือนคนได้ และทนายตรวจคำตอบโดยดูเหตุผล citation และ mark verified เดโมแสดงทั้งการแก้สัญญาจ้างหลายฉบับพร้อม redline และจัดหมวดเอกสาร ~100 ไฟล์</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>Legora มีลูกค้ากว่า 1,000 ราย ตามที่ผู้พูดบอก</li><li>มูลค่าบริษัทเกิน $5 billion และเติบโตจาก 1 ไปถึง 100 million ARR แบบ &#x27;record sprint&#x27; ตามที่ผู้พูดอ้าง</li><li>POC แปลเอกสาร 10 หน้า อังกฤษเป็นสวีเดนทีละย่อหน้า ใช้เวลาราว 10 นาที ด้วยโมเดล Haiku</li><li>เดโม due diligence ใช้เอกสารราว 100 ไฟล์ และเดโมแก้สัญญาจ้างเพิ่มวันหยุดคริสต์มาสหนึ่งสัปดาห์ให้ทุกคน</li><li>ตัวอย่างเทมเพลต 50 หน้าที่ต้องเติมหลายจุด ใช้อธิบายปัญหา exhaustiveness ของระบบเดิม</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“my mental model is kind of that you want to have the model almost feel like it&#x27;s inside a coding agent harness, and it just does a legal task.”</p><p class='text-zinc-500'>mental model คือให้โมเดลรู้สึกเหมือนอยู่ใน coding agent harness แต่ทำงานกฎหมาย</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“It&#x27;s basically ESLint, but for legal documents.”</p><p class='text-zinc-500'>พูดง่ายๆ คือ ESLint สำหรับเอกสารกฎหมาย</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Whenever they ship something new, you steal the thing and benefit from it.”</p><p class='text-zinc-500'>พอ coding agent ปล่อยของใหม่ ก็หยิบมาใช้ได้เลย</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>จัดฟีเจอร์ของ agent ตัวเองเป็นสามถัง: ใช้ซ้ำ (planning, sub-agents, approval), แปลง, และสร้างใหม่ ก่อนเริ่มออกแบบ</li><li>ถ้าต้องแก้เอกสารที่ไม่ใช่ข้อความเรียบ ลองแปลงเป็น intermediate representation แบบข้อความแล้วใช้ loop read, edit, verify แทนการส่งต่อระหว่างโมเดลหลายตัว</li><li>เพิ่มตัวตรวจแบบ static (เช่นการอ้างอิงข้ามข้อ) เป็น feedback loop ให้ agent ในโดเมนของตัวเอง</li><li>เมื่อมีเอกสารจำนวนมาก ให้เครื่องมือแบบตาราง (แถวคือเอกสาร คอลัมน์คือข้อมูลที่สกัด) พร้อม citation เพื่อให้คนตรวจสอบได้</li><li>ติดตามฟีเจอร์ใหม่ของ coding agent แล้วดูว่าอะไรหยิบมาใช้หรือแปลงได้</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>transcript ถอดด้วย Whisper large-v3 ในเครื่อง ไม่ใช่ข้อความต้นฉบับของผู้พูด ชื่อเฉพาะอาจเพี้ยน (Cloud Code = Claude Code, &#x27;Ligora&#x27; ในบางจุดคือ Legora, &#x27;your diligence&#x27; = due diligence, &#x27;tracing documents&#x27; อาจเป็นเอกสารยาวอื่น)</li><li>ชื่อผู้พูดสะกด Jacob ใน transcript แต่คำอธิบายคลิปใช้ Jakob จึงใช้ตามคำอธิบายคลิป และตำแหน่ง Staff Software Engineer มาจากคำอธิบายคลิป ไม่ใช่คำแนะนำตัวในเสียง</li><li>ตัวเลขบริษัท (ลูกค้ากว่า 1,000 มูลค่ากว่า $5 billion ARR 1 ถึง 100 million) เป็นข้ออ้างของผู้พูด ไม่ได้ตรวจสอบกับแหล่งอื่น และยอดเงินอาจฟังคลาดเคลื่อน</li><li>ช่วงท้ายเดโมมีประโยค &#x27;It figured out the key points&#x27; ซ้ำหลายครั้งจาก ASR จึงไม่สรุปรายละเอียดตรงนั้น</li><li>เคส Haiku เป็นข้ออ้างจากประสบการณ์ POC ครั้งเดียว ไม่ใช่ผลการประเมินเชิงระบบ</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=nho1YAEPuwA" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/11-memory-and-dreaming-for-self-learning-agents.html" class="hover:underline">← #11 Memory กับ dreaming ทำให้ Managed Agents เรียนรู้ข้ามงานได้</a><a href="../talks/13-how-to-get-to-production-faster-with-claude-m.html" class="hover:underline ml-auto text-right">#13 Claude Managed Agents: ให้แพลตฟอร์มดูแลโครงสร้าง agent แล้วไป production ได้เร็วขึ้น →</a></nav>
+</main></body></html>

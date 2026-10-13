@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ทำงานกับ Claude Code แบบทีม Anthropic: ให้ Claude… | CwC London #30</title>
+<meta name="description" content="Arno จาก Applied AI team พาทำสามเฟส ให้ Claude สัมภาษณ์ขอ requirement ด้วย ask user question tool, สร้าง design หลายทางเป็นไฟล์ HTML ให้เทียบและให้…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/30-how-we-claude-code.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="ทำงานกับ Claude Code แบบทีม Anthropic: ให้ Claude… | CwC London #30">
+<meta property="og:description" content="Arno จาก Applied AI team พาทำสามเฟส ให้ Claude สัมภาษณ์ขอ requirement ด้วย ask user question tool, สร้าง design หลายทางเป็นไฟล์ HTML ให้เทียบและให้…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/30-how-we-claude-code.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ทำงานกับ Claude Code แบบทีม Anthropic: ให้ Claude… | CwC London #30">
+<meta name="twitter:description" content="Arno จาก Applied AI team พาทำสามเฟส ให้ Claude สัมภาษณ์ขอ requirement ด้วย ask user question tool, สร้าง design หลายทางเป็นไฟล์ HTML ให้เทียบและให้…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "ทำงานกับ Claude Code แบบทีม Anthropic: ให้ Claude สัมภาษณ์ เขียน spec เป็น HTML และฝัง verification ไว้ในตัวงา", "description": "Arno จาก Applied AI team พาทำสามเฟส ให้ Claude สัมภาษณ์ขอ requirement ด้วย ask user question tool, สร้าง design หลายทางเป็นไฟล์ HTML ให้เทียบและให้…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/30-how-we-claude-code.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/30-how-we-claude-code.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "How we Claude Code", "url": "https://www.youtube.com/watch?v=IlqJqcl8ONE", "duration": "PT31M43S"}, "about": ["claude-code", "devex", "agent-reliability", "prompt-engineering"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#30 ทำงานกับ Claude Code แบบทีม Anthropic: ให้ Claude สัมภาษณ์ เขียน spec เป็น HTML และฝัง verification ไว้ในตัวงาน", "item": "https://chalermporn.github.io/cwc-london-2026/talks/30-how-we-claude-code.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#30 · Claude Code · 31:43</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">ทำงานกับ Claude Code แบบทีม Anthropic: ให้ Claude สัมภาษณ์ เขียน spec เป็น HTML และฝัง verification ไว้ในตัวงาน</h1>
+<p class="mono text-xs text-zinc-500 mt-1">How we Claude Code</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Arno (Applied AI team, architect (Anthropic))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> คนใช้ Claude Code อยู่แล้วและอยากรีดประสิทธิภาพให้งานที่ agent รันนานๆ ไม่เสียโทเค็นไปกับทิศทางผิด ควรรู้ React กับ Playwright เบื้องต้น</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Arno จาก Applied AI team พาทำสามเฟส ให้ Claude สัมภาษณ์ขอ requirement ด้วย ask user question tool, สร้าง design หลายทางเป็นไฟล์ HTML ให้เทียบและให้ feedback แทน markdown ยาว และฝัง verification ให้ agent อ่านได้ผ่าน state ใน DOM ข้อสรุปคือยิ่ง agent รันนาน ยิ่งต้องย้าย verification ของมนุษย์ขึ้นมาไว้ต้นทาง</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Anthropic&#x27;s Arno shows three phases: let Claude interview you for specs, review design directions as HTML instead of markdown, and make verification agent-native by publishing state to the DOM.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>โมเดลเก่งขึ้น agent รันนานขึ้น จึงต้องเปลี่ยนนิสัยการทำงาน ผู้พูดอ้าง bitter lesson ของ Richard Sutton ว่าอย่าไปบีบโมเดลมากเกินไป และให้ยอมรับว่า Claude น่าจะดึง requirement ออกจากคุณได้ดีกว่าที่คุณเขียนสเปกเอง</li><li>prompt ที่ไม่ดีคือ &#x27;make it better&#x27; หรือ &#x27;make no mistakes&#x27; prompt ที่ดีให้ขอบเขตหัวข้อ ไม่ระบุผลลัพธ์ตายตัว แล้วสั่งให้ Claude ใช้ ask user question tool สัมภาษณ์ทีละข้อ ตัวอย่างคือแอปแบ่งบิลกับเพื่อน</li><li>ผู้พูดแนะนำ auto mode (สลับด้วย shift tab) ตั้ง effort ที่ xhigh (หรือ max) ผ่าน /effort และลอง fast mode (/fast) สำหรับวนสเปกเร็ว ซึ่งแพงกว่าแต่ iterate ไว</li><li>ไฟล์ markdown ยาวเกินราว 200 บรรทัดแทบไม่มีใครอ่าน HTML แน่นกว่าและมีปฏิสัมพันธ์ได้ ผู้พูดให้ Claude (Opus 4.7) สร้างสี่ทิศทางดีไซน์เป็น HTML (เช่น brutalist กับ Tokyo fintech) ให้คลิกเทียบแล้ว feedback ได้ตรงกว่า และอ้างบล็อกของ Tariq เรื่อง &#x27;The Unreasonable Effectiveness of HTML files&#x27;</li><li>การส่ง screenshot ให้ Claude ช่วยบอกสิ่งที่พูดยาก เช่น layout เพี้ยนเล็กน้อย ผู้พูดว่า Opus 4.7 มี vision model ดีขึ้นมาก และไม่แนะนำ Sonnet สำหรับงานนี้</li><li>เฟสสามคือ verification ที่ agent-native บนแอป to-do ด้วย React: component เผยแพร่ state ลง DOM (data-verify attribute) มี schema, fixture, known states และ invariants ที่ต้องเป็นจริงเสมอ ตรวจด้วย probe และใช้ Storybook fixtures, testing library, Playwright MCP</li><li>verification มีสามพื้นผิว dashboard ที่คนอ่านได้, agent ขับผ่านเบราว์เซอร์ และ headless ใน CI ด้วยคำสั่ง bun verify เดโมจงใจฝังความผิดพลาด (3 + 4 ไม่เท่า 10) และลบ stats ออกจาก DOM เพื่อให้เห็นว่าพังที่ contract ไม่ใช่ที่แอป แล้วให้ Claude (Opus 4.7 ผ่าน Playwright MCP) วินิจฉัยให้</li><li>ผู้พูดบอกว่าทีม Claude Code บันทึกวิดีโอการ verify ของ frontend change เกือบทั้งหมด เก็บบน S3 หรือแชร์ให้เพื่อนร่วมทีม และกล่าวว่า HTML spec ไม่ได้เปลืองโทเค็นกว่าในระยะยาวเพราะต้องวนแก้น้อยลง</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>Phase 1: เปิด Claude Code ตั้ง auto mode (shift tab), /effort เป็น xhigh, ลอง /fast แล้ววาง prompt ให้ Claude สัมภาษณ์ requirement ของแอปแบ่งบิลด้วย ask user question tool ตอบทีละข้อจนได้ spec</li><li>Phase 2: สั่งให้ Claude สร้างสี่ทิศทางดีไซน์เป็น HTML แยกไฟล์ให้เทียบ เปิดคลิกดู แล้วถ่าย screenshot ส่ง feedback กลับ</li><li>Phase 3: โหลดแอป to-do (React) ดู element ที่ publish state ลง DOM (data-verify unit, total, done, active) พร้อม schema, fixtures, invariants</li><li>รัน verification dashboard ให้คนดู กดรันทั้งหมด พบเคสที่ฝังความผิด 3 + 4 != 10</li><li>ให้ agent ขับผ่านเบราว์เซอร์ด้วย Playwright MCP อ่าน manifest ของ verification ที่อยู่ใน DOM แล้วรันเอง และบันทึกเป็นคลิปเป็นหลักฐาน</li><li>ทดลองทำลาย contract (ลบ total stats ออกจาก DOM) เพื่อดูว่าเทสต์ล้มเพราะ contract ไม่ใช่แอป</li><li>ให้ Claude (Opus 4.7) วินิจฉัยสาเหตุที่ verify ล้ม และรัน headless ด้วย bun verify แบบ CI</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ความยาวคลิป 31:43 เป็นเวิร์กชอปที่มี repo ให้ clone มีสาม phase และใช้ credits ผ่าน QR code</li><li>ผู้พูดบอกว่า markdown ที่ยาวกว่าราว 200 บรรทัด มักไม่มีใครอ่าน</li><li>ตั้ง effort แนะนำ xhigh (หรือ max) ผ่าน /effort</li><li>โมเดลที่แนะนำสำหรับงานนี้ Opus 4.7 เพราะ vision ดีกว่าเดิม และไม่แนะนำ Sonnet</li><li>ทิศทางดีไซน์ที่ให้ Claude สร้างเป็น HTML มี 4 แบบ</li><li>ตัวอย่างความล้มเหลวที่ฝังไว้ในเดโม: ผลรวม 3 + 4 ไม่เท่ากับ 10</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“the more capable the models get the more you should try to resist constraining them”</p><p class='text-zinc-500'>ยิ่งโมเดลเก่ง ยิ่งควรต้านทานความอยากบีบกรอบให้มัน</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Claude is likely better at extracting what you want and what you need from you than you are in specifying it to Claude.”</p><p class='text-zinc-500'>Claude น่าจะดึงสิ่งที่คุณต้องการออกจากคุณได้ดีกว่าที่คุณระบุให้ Claude เอง</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“The Markdown file is the lingua franca of the AI native software development life cycle.”</p><p class='text-zinc-500'>ไฟล์ markdown คือภาษากลางของ software development life cycle แบบ AI-native</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ก่อนสั่ง agent รันงานยาว ให้ Claude สัมภาษณ์ requirement ด้วย ask user question tool แทนการเขียนสเปกเองทั้งหมด</li><li>เปลี่ยนสเปกหรือแผนที่ยาวจาก markdown เป็น HTML ที่คลิกเทียบได้ โดยเฉพาะงาน UI แล้วใช้ screenshot ป้อน feedback</li><li>ให้ component เผยแพร่ state/contract ลง DOM เช่น data attribute เพื่อให้ agent ตรวจได้โดยไม่ต้อง scrape โครงสร้างภายใน</li><li>ออกแบบ verification ให้ครบสามพื้นผิว: dashboard สำหรับคน, ขับด้วย agent ผ่าน Playwright MCP, และ headless สำหรับ CI พร้อม probe ที่ผลักออกนอก happy path</li><li>ตั้ง effort สูง (xhigh), ใช้ auto mode และลอง fast mode ตอนวนสเปก แล้วเก็บคลิป verification ไว้เป็นหลักฐานให้ทีม</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ผู้พูดแนะนำตัวว่าชื่อ Arno (Applied AI team) สะกดชื่ออาจเพี้ยนจาก ASR และ transcript ไม่ได้ให้นามสกุล</li><li>ชื่อ Tariq และบล็อก &#x27;The Unreasonable Effectiveness of HTML files&#x27; มาจาก ASR ที่ผู้พูดอ้าง ไม่ได้ตรวจสอบ</li><li>ผู้พูดเอ่ยถึง /goal ผ่านๆ ไม่ได้อธิบายการทำงาน จึงไม่ใส่เป็นรายละเอียดฟีเจอร์</li><li>ข้อความ &#x27;Paul&#x27; ใน transcript น่าจะเป็น &#x27;Claude&#x27; ที่ ASR ฟังผิด ตัวเลข 200 บรรทัดเป็นประมาณการของผู้พูด</li><li>ผู้พูดบอกว่าทีม Claude Code บันทึกคลิป verification เป็นประจำ แต่ไม่แน่ใจเรื่องระยะเวลาเก็บหรือบริบท</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=IlqJqcl8ONE" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/29-agents-that-remember.html" class="hover:underline">← #29 agent ที่จำข้าม session ได้: memory store กับ dreaming</a><a href="../talks/31-making-agentic-workflows-trustworthy-and-veri.html" class="hover:underline ml-auto text-right">#31 ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี Elicit กับ AshPL) →</a></nav>
+</main></body></html>

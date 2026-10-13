@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AirOps ไล่แก้จุดฝืด ทำ agent ให้นักการตลาดใช้ได้จริงด้วย… | CwC London #34</title>
+<meta name="description" content="Dylan จาก AirOps เล่าการเปลี่ยนจาก workflow builder แบบ node ไปเป็น agent ชื่อ Quill และ Playbooks บน Claude Agent SDK กับ Managed Agents…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/34-how-airops-chases-friction-to-build-ai-produc.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="AirOps ไล่แก้จุดฝืด ทำ agent ให้นักการตลาดใช้ได้จริงด้วย… | CwC London #34">
+<meta property="og:description" content="Dylan จาก AirOps เล่าการเปลี่ยนจาก workflow builder แบบ node ไปเป็น agent ชื่อ Quill และ Playbooks บน Claude Agent SDK กับ Managed Agents…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/34-how-airops-chases-friction-to-build-ai-produc.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AirOps ไล่แก้จุดฝืด ทำ agent ให้นักการตลาดใช้ได้จริงด้วย… | CwC London #34">
+<meta name="twitter:description" content="Dylan จาก AirOps เล่าการเปลี่ยนจาก workflow builder แบบ node ไปเป็น agent ชื่อ Quill และ Playbooks บน Claude Agent SDK กับ Managed Agents…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "AirOps ไล่แก้จุดฝืด ทำ agent ให้นักการตลาดใช้ได้จริงด้วย Claude Agent SDK — Code with Claude London 2026 #34", "description": "Dylan จาก AirOps เล่าการเปลี่ยนจาก workflow builder แบบ node ไปเป็น agent ชื่อ Quill และ Playbooks บน Claude Agent SDK กับ Managed Agents…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/34-how-airops-chases-friction-to-build-ai-produc.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/34-how-airops-chases-friction-to-build-ai-produc.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "How AirOps chases friction to build AI products with Claude", "url": "https://www.youtube.com/watch?v=M5uwBawBDpw", "duration": "PT26M47S"}, "about": ["managed-agents", "subagents", "enterprise-adoption", "agent-reliability", "mcp-tools-skills"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#34 AirOps ไล่แก้จุดฝืด ทำ agent ให้นักการตลาดใช้ได้จริงด้วย Claude Agent SDK", "item": "https://chalermporn.github.io/cwc-london-2026/talks/34-how-airops-chases-friction-to-build-ai-produc.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#34 · Agents &amp; Platform · 26:47</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">AirOps ไล่แก้จุดฝืด ทำ agent ให้นักการตลาดใช้ได้จริงด้วย Claude Agent SDK</h1>
+<p class="mono text-xs text-zinc-500 mt-1">How AirOps chases friction to build AI products with Claude</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Dylan (Product team, AirOps)</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> ทีมโปรดักต์และวิศวกรที่ต้องส่ง agent เข้า workflow ของคนสายอาชีพที่ไม่ใช่นักพัฒนา และสนใจเรื่อง harness, sub-agent และ governance</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Dylan จาก AirOps เล่าการเปลี่ยนจาก workflow builder แบบ node ไปเป็น agent ชื่อ Quill และ Playbooks บน Claude Agent SDK กับ Managed Agents สำหรับนักการตลาดเนื้อหา โดยแก้สองจุดฝืดคือให้เข้ากับ workflow เดิมของคน (เอกสาร ความโปร่งใส human review) และทำ harness ให้คุณภาพสม่ำเสมอ (specialized tools กับ sub-agents) บทเรียนใหญ่คือจุดฝืดย้ายที่ไปเรื่อยๆ ต้องไล่ตามต่อ</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">AirOps moved from a node-based workflow builder to Claude-powered agents (Quill, Playbooks, Inbox), fitting marketers&#x27; document-based workflow with human review and using specialized tools and sub-agents for quality.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>AirOps เป็นแพลตฟอร์ม growth marketing สำหรับ AI search (คล้าย SEO แต่สำหรับ ChatGPT, Gemini, Claude) ช่วยแบรนด์เห็นตำแหน่ง หาช่องว่าง สร้างหรืออัปเดตคอนเทนต์ และวัดผล ก่อนหน้านี้ใช้ workflow builder แบบลาก node ซึ่งชนเพดานความซับซ้อน ต้องสอนเรื่อง liquid text กับ JSON ให้นักการตลาด และโมเดลใหม่ออกทีก็ต้องไล่แก้ทุก step</li><li>จุดหักเหคือ Opus 4.5 ที่เก่ง tool calling และทำตามคำสั่ง ทีมลองให้ LLM คอมไพล์เอกสารเป็น workflow (เปราะ) และ agent orchestration framework แบบเดิม (เปลี่ยนการ route ต้องแก้โค้ด) จึงลงทุนกับ Claude Agent SDK ที่คุม agent ผ่านไฟล์ markdown และ skills แทนโปรแกรม</li><li>ผลิตภัณฑ์ที่เพิ่งเปิดตัวชื่อ AirOps Next ประกอบด้วย Quill (agent ผู้ช่วยหลัก เข้าถึงข้อมูล AI search และ brand kit) กับ Playbooks (ประสบการณ์สร้างแบบเอกสาร ใกล้เคียง skill มี collaboration, governance, versioning) รวมถึง Inbox และ grid ผู้พูดอ้างกรณีลูกค้า Parallel ที่ได้ผลดีขึ้นและขึ้นระบบเร็วขึ้น</li><li>จุดฝืดแรก ต้องเข้ากับ workflow ที่นักการตลาดทำอยู่ ผู้พูดว่า use case ไม่จำกัดบังคับให้ต้องตั้งใจเลือก โฟกัส &#x27;marketers&#x27; เอกสารคือสิ่งที่คุ้นเคย (ไม่ใช่ node) ต้องโปร่งใสว่าใช้ tool อะไรตอนไหน มีการควบคุม และบังคับ human review ระหว่างทางไม่ใช่แค่รีวิว PR ตอนจบแบบงานโค้ด</li><li>เดโม Playbook สั่งด้วย slash command กำหนด input/output/tools เพิ่ม MCP ใดก็ได้ ตั้ง trigger ตามเวลา webhook หรือ monitor (ร่วมกับ Parallel) และ insights เมื่อ metric ตก ในส่วน outline มอบหมายผู้รีวิวที่เท่านั้นที่ปลดบล็อก agent ได้ ผลโผล่ใน Inbox (ดู thought traces) และ grid ที่รีวิวระดับสเกล</li><li>จุดฝืดที่สอง ความสม่ำเสมอของคุณภาพ ผู้พูดเปรียบ harness เป็นรถ โมเดลคือเครื่องยนต์ ส่วนที่เหลือที่สร้างรอบๆ ก็สำคัญมาก เน้นสองส่วนคือ tools กับการจัดการ context โดย Agent SDK และ Managed Agents API ช่วยให้ iterate เร็ว</li><li>specialized tools: แทนที่ agent จะไล่ใช้ primitive tools เป็นสิบๆ ครั้งเพื่อวิเคราะห์ว่าหน้าเว็บมีปัญหาอะไร ก็ทำ tool เดียวที่รับ URL แล้วคืนข้อมูลหน้านั้น content gaps เทียบคู่แข่ง keyword และ prompt เป้าหมาย รวมถึง tool เทียบหน้ากับหน้าที่ติดอันดับ เป็นแนวคล้าย code mode</li><li>sub-agents: เริ่มจาก Claude ตัวเดียวแล้วค่อยเพิ่มเมื่อเจอจุดบกพร่อง มี compliance check (ให้คะแนนตามกฎแบรนด์), writing (context โฟกัส ไม่ปนงานวิจัย), brand kit ที่ดึง context ต้น run เก็บเป็น artifact ให้ทุกส่วนอ้างอันเดียวกัน และ custom sub-agent ให้ solutions architect สร้างเอง ผู้พูดย้ำว่า context window ใหญ่ขึ้นไม่ได้แปลว่าควรใช้เต็ม</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ผู้พูดบอกว่ากรณีลูกค้า Parallel ได้ citation rate เพิ่ม 130% และ share of voice เพิ่ม 42% และขึ้นระบบได้ใน 1 สัปดาห์ จากปกติราวหนึ่งเดือนด้วย workflow builder</li><li>specialized tool ลดการใช้โทเค็นราว 8% (ตัวเลขจาก ASR ผู้พูดพูดว่า &#x27;an 8% decrease in like fewer tokens consumption&#x27;) เมื่อเทียบกับการเรียก primitive tools วนหลายรอบ</li><li>ก่อนมี tool เดียว agent เรียก tool ราว 20 ครั้งเพื่อดึง context ที่ต้องการ</li><li>ลูกค้า enterprise 10 รายในช่วง beta เริ่มเผยแพร่คอนเทนต์ได้ภายในไม่เกิน 2 สัปดาห์</li><li>Opus 4.5 คือจุดที่ทีมตัดสินใจลงทุน agent หนักขึ้น และผู้พูดยกตัวอย่าง Opus 4.7 ที่มี context window 1 ล้านโทเค็น</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“making agents accessible is honestly really hard problem”</p><p class='text-zinc-500'>การทำให้ agent เข้าถึงได้ง่ายเป็นปัญหาที่ยากจริงๆ</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“just because it is, you know, larger doesn&#x27;t mean that you should be like using the whole thing.”</p><p class='text-zinc-500'>context window ใหญ่ขึ้นไม่ได้แปลว่าควรใช้จนเต็ม</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“every single time a problem is solved, just that friction point always keeps moving.”</p><p class='text-zinc-500'>ทุกครั้งที่แก้ปัญหาหนึ่งได้ จุดฝืดก็ย้ายไปที่อื่นเสมอ</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ถ้าผู้ใช้ไม่ใช่นักพัฒนา ให้ห่อ skill เป็นรูปแบบที่เขาคุ้น เช่น เอกสาร แล้วเพิ่มความโปร่งใสว่าใช้ tool อะไร พร้อม versioning และ governance</li><li>บังคับ human review ระหว่างทางด้วยการมอบหมายผู้รีวิวต่อ section ที่ปลดบล็อก agent ได้ และมีกล่องข้อความ (inbox) รวมงานรอรีวิว</li><li>งานที่ agent ทำซ้ำบ่อย ให้รวมเป็น specialized tool ตัวเดียวแทนการให้ไล่ primitive tools ทีละตัว เพื่อลดโทเค็นและความเร็ว</li><li>เริ่มจากเอเจนต์ตัวเดียว แล้วแตก sub-agent เฉพาะเมื่อคุณภาพติดขัด (compliance, writing, brand context) และดึง context ที่ใช้ร่วมกันครั้งเดียวเก็บเป็น artifact</li><li>อย่าเติม context เต็ม window แม้โมเดลจะรองรับ และเตรียมแผนวัดผลเมื่อเปลี่ยน harness โดยไม่พึ่ง vibes</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ASR เขียนชื่อบริษัทเป็น &#x27;AerOps&#x27; และ &#x27;Ahrefs Next&#x27; ในบางจุด ชื่อที่ถูกคือ AirOps / AirOps Next ตามชื่อคลิปและคำพูดส่วนใหญ่</li><li>ผู้พูดแนะนำตัวว่าชื่อ Dylan อยู่ product team ไม่มีนามสกุล และตัวเลขทั้งหมดเป็นข้ออ้างของผู้พูดเอง ไม่มีหลักฐานแนบในคลิป</li><li>ตัวเลข 8% ลดโทเค็นฟังจาก ASR ไม่ชัดว่าเป็นการลดของอะไรแน่ และเรื่อง Opus &#x27;46, 47&#x27; เป็นการพูดรวบรุ่นที่ ASR เขียน</li><li>ชื่อลูกค้าบางราย (เช่น &#x27;Animal&#x27; และ &#x27;Rock Content&#x27;) ฟังจาก ASR อาจเพี้ยน จึงไม่ได้ใส่เป็นข้อเท็จจริง</li><li>ผู้พูดอ้างถึง &#x27;AO insights&#x27; ซึ่งชื่ออาจเพี้ยนจาก ASR และเอ่ยถึง talks ก่อนหน้าเรื่อง dreaming sequences ซึ่งไม่ใช่ส่วนของคลิปนี้</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=M5uwBawBDpw" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/33-where-code-meets-court-ai-at-the-legal-techni.html" class="hover:underline">← #33 งานสิทธิบัตรไม่เหมาะกับการ delegate ให้ agent: ออกแบบ AI แบบ collaboration</a><a href="../talks/35-how-metaview-built-self-improving-prompts-for.html" class="hover:underline ml-auto text-right">#35 Metaview ทำ prompt คัดใบสมัครให้เรียนรู้จากการตัดสินใจของ recruiter เอง →</a></nav>
+</main></body></html>

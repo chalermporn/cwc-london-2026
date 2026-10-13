@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ใช้ Claude บน AWS: ตั้งแต่ Claude Code บน Bedrock ถึง… | CwC London #22</title>
+<meta name="description" content="ภาพรวมความร่วมมือ Anthropic-AWS และ 3 ทางใช้ Claude บน AWS (Bedrock, Claude platform on AWS, Claude Desktop/Enterprise) ตามด้วยเวิร์กชอป Claude Code บน…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/22-ai-with-claude-on-aws-from-code-to-orchestrat.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="ใช้ Claude บน AWS: ตั้งแต่ Claude Code บน Bedrock ถึง… | CwC London #22">
+<meta property="og:description" content="ภาพรวมความร่วมมือ Anthropic-AWS และ 3 ทางใช้ Claude บน AWS (Bedrock, Claude platform on AWS, Claude Desktop/Enterprise) ตามด้วยเวิร์กชอป Claude Code บน…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/22-ai-with-claude-on-aws-from-code-to-orchestrat.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ใช้ Claude บน AWS: ตั้งแต่ Claude Code บน Bedrock ถึง… | CwC London #22">
+<meta name="twitter:description" content="ภาพรวมความร่วมมือ Anthropic-AWS และ 3 ทางใช้ Claude บน AWS (Bedrock, Claude platform on AWS, Claude Desktop/Enterprise) ตามด้วยเวิร์กชอป Claude Code บน…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "ใช้ Claude บน AWS: ตั้งแต่ Claude Code บน Bedrock ถึง agent orchestration — Code with Claude London 2026 #22", "description": "ภาพรวมความร่วมมือ Anthropic-AWS และ 3 ทางใช้ Claude บน AWS (Bedrock, Claude platform on AWS, Claude Desktop/Enterprise) ตามด้วยเวิร์กชอป Claude Code บน…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/22-ai-with-claude-on-aws-from-code-to-orchestrat.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/22-ai-with-claude-on-aws-from-code-to-orchestrat.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "AI with Claude on AWS: From code to orchestration", "url": "https://www.youtube.com/watch?v=5YHIrTYxM3w", "duration": "PT19M42S"}, "about": ["cloud-platforms", "enterprise-adoption", "claude-code", "subagents", "mcp-tools-skills"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#22 ใช้ Claude บน AWS: ตั้งแต่ Claude Code บน Bedrock ถึง agent orchestration", "item": "https://chalermporn.github.io/cwc-london-2026/talks/22-ai-with-claude-on-aws-from-code-to-orchestrat.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#22 · เวิร์กชอป · 19:42</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">ใช้ Claude บน AWS: ตั้งแต่ Claude Code บน Bedrock ถึง agent orchestration</h1>
+<p class="mono text-xs text-zinc-500 mt-1">AI with Claude on AWS: From code to orchestration</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Antonio Rodriguez (Amazon Web Services (นักพัฒนา/ผู้บรรยายเวิร์กชอป))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> ทีมที่อยู่บน AWS หรืองาน regulated ที่อยากใช้ Claude Code ผ่าน Bedrock รู้จัก Claude Code มาบ้างแล้ว</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">ภาพรวมความร่วมมือ Anthropic-AWS และ 3 ทางใช้ Claude บน AWS (Bedrock, Claude platform on AWS, Claude Desktop/Enterprise) ตามด้วยเวิร์กชอป Claude Code บน Bedrock 3 โมดูลบนโปรเจกต์ Excalidraw ที่ AWS แจก account ให้ทดลอง</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Overview of the Anthropic-AWS partnership and three ways to use Claude on AWS, followed by a three-module Claude Code on Bedrock workshop built around an Excalidraw repo.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ผู้พูดเล่าว่า Amazon ลงทุนหลายพันล้านดอลลาร์ใน Anthropic และเป็น primary cloud provider โดย Anthropic ผูกพันใช้งานบน AWS มากกว่า 100 พันล้าน (หน่วยตามที่ได้ยิน) เช่น Project Rainier และชิป Trainium รุ่น 3</li><li>จุดขายของ Bedrock 3 ข้อ: ฟีเจอร์ครบ (fine-tune รวม Haiku, evaluation, prompt optimization, distillation, knowledge bases, guardrails, automated reasoning checks), ความปลอดภัย (ข้อมูลอยู่ใน AWS boundary, PrivateLink, zero operator access) และ scalability กับการเลือก region เช่น London หรือ EU เพื่อ GDPR</li><li>ผู้พูดระบุว่าไม่มีใครจาก Amazon หรือ Anthropic เข้าถึง instance ได้ และข้อมูลไม่ถูกใช้เทรนโมเดล</li><li>ข้อดีอื่น: data sovereignty, ใบเรียกเก็บเงินรวม, observability ผ่าน CloudWatch/CloudTrail, SLA, auth ผสาน SSO/OAuth/IAM กับ Entra ID หรือ Okta, compliance เช่น FedRAMP กับ HIPAA</li><li>สำหรับ agent มี Amazon Bedrock AgentCore สำหรับ host agent อย่างปลอดภัย ใช้ได้กับ framework เปิด เช่น LangChain, CrewAI และ Claude Agent SDK</li><li>ใช้ Claude บน AWS ได้ 3 ทาง: (1) Bedrock โดยตรง ล่าสุดเพิ่ม Opus 4.7 และ Messages API (2) Claude platform on AWS ที่ GA เมื่อไม่กี่วันก่อน เป็น gateway ส่งคำขอไป Anthropic ได้ feature parity บิลและ access control อยู่ AWS (3) Claude Desktop/Claude Code ผ่าน Claude Enterprise ใน AWS Marketplace หรือ 3P setup ที่ชี้ไป Bedrock</li><li>เวิร์กชอป Introduction to Claude Code on AWS ใช้ repo Excalidraw: โมดูล 1 ตั้งค่าพื้นฐาน, โมดูล 2 context + Playwright MCP จับ screenshot ไดอะแกรม + Git workflows, โมดูล 3 sub agents, plugins, custom skills, hooks และ advanced config และมีเวิร์กชอปขั้นสูงเรื่อง team standards, cost control, dashboards, ROI และ Agent SDK บน AgentCore</li><li>ปิดด้วยตัวอย่างตั้งค่า Claude Code ชี้ Bedrock (region, default model, ลด token, rate limit, telemetry) ซึ่งสั่งให้ Claude ตั้งค่าตัวเองหรือทำมือผ่าน settings ก็ได้</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>เข้า join.thatworkshop.aws ใส่ access code ที่แสดงบนจอ ยอมรับ terms แล้วกด join event (ห้ามอัปโหลดข้อมูลลับหรือข้อมูลส่วนบุคคล)</li><li>เปิด URL ที่ได้ไปยัง terminal และ VS Code UI ใน environment ที่ AWS เตรียมให้</li><li>โมดูล 1: ใช้ Claude Code บน AWS ตั้งค่าและชี้ไปที่ repo Excalidraw</li><li>โมดูล 2: จัดการ context ใช้ Playwright MCP ถ่าย screenshot ไดอะแกรมแล้วให้ Claude แก้อัตโนมัติ และลอง Git workflows</li><li>โมดูล 3: sub agents, plugins, custom skills, hooks และ advanced configuration</li><li>ทางเลือก: รันบนเครื่องตัวเองโดยตั้ง Claude Code ชี้ Bedrock หรือใช้ Claude Desktop ชี้ Bedrock</li><li>ตั้งค่าเอง: กำหนด region ของ Bedrock, default model, พารามิเตอร์ลด token และ rate limit, เปิด telemetry, ปิด login prompt/onboarding message</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>Anthropic ผูกพันการใช้งานบน AWS &quot;more than 100 billion&quot; ตามที่ได้ยิน (หน่วยไม่ชัด)</li><li>Trainium รุ่นที่ 3 ที่ AWS สร้างขึ้นสำหรับ Claude ตามที่ผู้พูดบอก</li><li>Bedrock เพิ่ม Opus 4.7 และรองรับ Messages API</li><li>Claude platform on AWS เป็น GA &quot;since a few days ago&quot;</li><li>ผู้พูดเริ่มทำงานกับ Anthropic เมื่อมากกว่า 3 ปีก่อน ตอน Claude 2 เปิดตัว</li><li>ลิงก์เข้า account เวิร์กชอป: join.thatworkshop.aws (ตามที่ได้ยิน)</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“We have zero operator access in the platform, which means that no one from Amazon or from Anthropic can actually get access to those instances”</p><p class='text-zinc-500'>แพลตฟอร์มมี zero operator access ไม่มีใครจาก Amazon หรือ Anthropic เข้าถึง instance ได้</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Cloud platform on AWS is actually generally available since a few days ago”</p><p class='text-zinc-500'>Claude platform on AWS เปิดให้ใช้ทั่วไปเมื่อไม่กี่วันก่อน (ASR เขียน Cloud แทน Claude)</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“it&#x27;s giving you the best of both worlds”</p><p class='text-zinc-500'>ได้ข้อดีทั้งสองฝั่ง</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ถ้าองค์กรอยู่บน AWS ลองใช้ Claude Code ผ่าน Bedrock เพื่อให้ข้อมูลอยู่ใน boundary และรวมบิล</li><li>เลือก region (เช่น London/EU) ตามข้อกำหนดข้อมูลก่อน deploy</li><li>เริ่มจากเวิร์กชอปโมดูล 1-3 แล้วค่อยไปชุดขั้นสูงเรื่อง team standards และ cost control</li><li>ต้องการ agent hosting ให้ดู Bedrock AgentCore คู่กับ Claude Agent SDK</li><li>เทียบสามทางใช้งาน (Bedrock, Claude platform on AWS, Desktop/Enterprise) ว่า feature parity และ billing แบบไหนตรงกับทีม</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ASR เขียน &quot;Cloud&quot; แทน Claude และ &quot;CodeWhisperer&quot; ปรากฏในที่ที่น่าจะหมายถึง Claude Code / Claude Desktop ตัวชื่อไม่ชัด</li><li>&quot;Scaled Draw&quot; ใน transcript น่าจะเป็น Excalidraw (ตีความจาก ASR ไม่ได้ยืนยัน)</li><li>ตัวเลข 100 billion ไม่ระบุหน่วยในเสียง ตัวเลขทุกตัวเป็นข้ออ้างของผู้พูด</li><li>คลิปจบกลางเนื้อหา advanced configuration ไม่เห็นผลรันจริงของ lab</li><li>ชื่อ Antonio Rodriguez แนะนำตัวเอง นามสกุลอาจเพี้ยน</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=5YHIrTYxM3w" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/21-coding-is-no-longer-the-constraint-scaling-de.html" class="hover:underline">← #21 Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด วางมาตรฐานให้ทั้งทีมและ agent</a><a href="../talks/23-stop-babysitting-your-agents.html" class="hover:underline ml-auto text-right">#23 เลิกเฝ้า agent: verification loop, multi-Claude และงานเบื้องหลัง →</a></nav>
+</main></body></html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สร้าง AI agent ด้วย Claude บน Microsoft Foundry… | CwC London #20</title>
+<meta name="description" content="เวิร์กชอปบน Microsoft Foundry: deploy Claude Sonnet 4.6, ลองใน playground, ต่อเข้า VS Code ด้วย endpoint+key, สร้าง cupcake agent ด้วย Microsoft Agent…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/20-build-ai-agents-using-claude-in-microsoft-fou.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="สร้าง AI agent ด้วย Claude บน Microsoft Foundry… | CwC London #20">
+<meta property="og:description" content="เวิร์กชอปบน Microsoft Foundry: deploy Claude Sonnet 4.6, ลองใน playground, ต่อเข้า VS Code ด้วย endpoint+key, สร้าง cupcake agent ด้วย Microsoft Agent…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/20-build-ai-agents-using-claude-in-microsoft-fou.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="สร้าง AI agent ด้วย Claude บน Microsoft Foundry… | CwC London #20">
+<meta name="twitter:description" content="เวิร์กชอปบน Microsoft Foundry: deploy Claude Sonnet 4.6, ลองใน playground, ต่อเข้า VS Code ด้วย endpoint+key, สร้าง cupcake agent ด้วย Microsoft Agent…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "สร้าง AI agent ด้วย Claude บน Microsoft Foundry (เวิร์กชอป cupcake agent) — Code with Claude London 2026 #20", "description": "เวิร์กชอปบน Microsoft Foundry: deploy Claude Sonnet 4.6, ลองใน playground, ต่อเข้า VS Code ด้วย endpoint+key, สร้าง cupcake agent ด้วย Microsoft Agent…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/20-build-ai-agents-using-claude-in-microsoft-fou.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/20-build-ai-agents-using-claude-in-microsoft-fou.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Build AI agents using Claude in Microsoft Foundry", "url": "https://www.youtube.com/watch?v=TQd_YQvydVg", "duration": "PT34M16S"}, "about": ["cloud-platforms", "mcp-tools-skills", "enterprise-adoption", "model-selection"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#20 สร้าง AI agent ด้วย Claude บน Microsoft Foundry (เวิร์กชอป cupcake agent)", "item": "https://chalermporn.github.io/cwc-london-2026/talks/20-build-ai-agents-using-claude-in-microsoft-fou.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#20 · เวิร์กชอป · 34:16</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">สร้าง AI agent ด้วย Claude บน Microsoft Foundry (เวิร์กชอป cupcake agent)</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Build AI agents using Claude in Microsoft Foundry</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Marlene Mungami (senior developer advocate, Microsoft); Liam Hampton (Microsoft (ผู้ร่วมเวิร์กชอป)); Chris Snoring (ผู้ร่วมเวิร์กชอป (ไม่ระบุตำแหน่ง))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> นักพัฒนาที่ใช้ Azure/Microsoft อยู่และอยากใช้ Claude สร้าง agent บน Foundry ต้องรู้ Python เบื้องต้น</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">เวิร์กชอปบน Microsoft Foundry: deploy Claude Sonnet 4.6, ลองใน playground, ต่อเข้า VS Code ด้วย endpoint+key, สร้าง cupcake agent ด้วย Microsoft Agent Framework แล้วเสียบ MCP server ของร้านให้ดึงข้อมูล คำสั่ง prompt และ banner</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">A Microsoft Foundry workshop: use Claude Sonnet 4.6 in the playground, wire endpoint and key into VS Code, build an agent with Microsoft Agent Framework, and give it a cupcake-store MCP server for tools and prompts.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ผู้พูดมองว่าอุตสาหกรรมเปลี่ยนจาก single-turn ไปเป็น agentic system ซึ่งมีโจทย์ใหม่ 3 ข้อ คือ multi-step reasoning บน long context, ความน่าเชื่อถือ/observability/ความปลอดภัย และการเชื่อมต่อ tool กับแหล่งข้อมูล</li><li>Microsoft Foundry ถูกแนะนำเป็นแพลตฟอร์มรวมสร้าง AI application และ agent ประกอบด้วย models (รวม Claude), agent service, tools/integrations และ ML services เช่น fine-tuning</li><li>ผู้พูดบอกว่ามี connector และ MCP tool built-in กว่า 1,400 ตัว (เช่น SAP, ServiceNow) พร้อมฟีเจอร์ enterprise: security, observability, governance, ผสานกับ Defender, Purview, Entra ID</li><li>เหตุผลที่ใช้ Claude บน Foundry ตามผู้พูด 4 ข้อ: reasoning ระดับดีสุดสำหรับ agent, สร้าง/orchestrate agent และให้ tool ในแพลตฟอร์มเดียว, enterprise features, และวงจร prototype ถึง production เร็วด้วย evaluation/observability/monitoring ในตัว</li><li>workshop ทำบน Skillable VM ผ่าน aka.ms/cloudworkshop โจทย์คือร้านคัพเค้ก Sparkles ที่ลูกค้าเยอะเกินคนรับออเดอร์ จึงสร้าง agent มารับออเดอร์</li><li>ใน Foundry เลือก Build &gt; Models เห็น Claude Sonnet 4.6 เปิด playground แก้ system prompt ลองคุยได้ ใช้เทียบโมเดลและ prompt</li><li>ดึง target URI กับ API key จากแท็บ details ใส่ไฟล์ .env ใน VS Code โดยต้องลบ v1/messages ท้าย endpoint ให้ลงท้ายด้วย anthropic แล้วตั้ง model เป็น Claude Sonnet 4.6</li><li>สร้าง agent ด้วย Microsoft Agent Framework (open source ของ Microsoft, Python และอาจมี TypeScript) แล้วต่อ cupcake store MCP server เป็น tool ได้ข้อมูลรสชาติจริง พร้อมดึง prompt (agent instructions กับ welcome banner) จาก MCP server ด้วย</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>เปิด aka.ms/cloudworkshop กด Launch เพื่อเปิด VM บน Skillable (คลิกกล่องเขียวเพื่อกรอกค่าอัตโนมัติ)</li><li>เปิด Edge &gt; Microsoft Foundry ล็อกอินด้วย username/password ที่ให้มา เลือก project</li><li>Start building &gt; Build &gt; Models ดู Claude Sonnet 4.6 เปิด playground ลองคุยและเปลี่ยน system prompt (เช่น sentient cupcake ตอบด้วยมุกฟรอสติ้ง)</li><li>ไปแท็บ details คัดลอก target URI และ API key</li><li>เปิด VS Code แก้ .env: ใส่ endpoint (ตัด v1/messages ให้ลงท้ายด้วย anthropic), API key และชื่อ model Claude Sonnet 4.6</li><li>เปิด agent.py วางโค้ด Microsoft Agent Framework: import agent, สร้าง chat client (อ่านค่า deployment/key/endpoint จาก .env), นิยาม cupcake agent แล้วรันตามคำสั่งใน terminal</li><li>วางบล็อกโค้ดต่อ cupcake store MCP server ผ่าน URL ส่งเป็น tool ให้ agent (ต้อง save ไฟล์แล้วรันใหม่) ถามรสวันนี้</li><li>โหลด instructions และ welcome banner เป็น prompt จาก MCP server</li><li>คุยกับ agent: สร้าง customer ID ใหม่ (ชื่อ นามสกุล เมือง) เลือกรส red velvet</li><li>อ่าน voucher 6 ตัวอักษรจากแดชบอร์ดหน้าห้อง ใส่ให้ agent รอออเดอร์ขึ้น ready for pickup และรับคัพเค้ก</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>Foundry มี built-in connectors และ MCP tools มากกว่า 1,400 ตัว ตามที่ผู้พูดบอก</li><li>ผู้พูดบอกว่า Opus 4.7 เป็น &quot;daily driver&quot; ของตน</li><li>โมเดลใน workshop: Claude Sonnet 4.6</li><li>รสคัพเค้กจาก MCP: classic vanilla, lemon sponge, red velvet, chocolate</li><li>เทมเพลต endpoint ต้องตัด v1/messages ออก ให้ลงท้าย anthropic</li><li>ลิงก์เวิร์กชอป: aka.ms/cloudworkshop (ตามที่พูด)</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“you can&#x27;t just rely on the models getting better”</p><p class='text-zinc-500'>จะพึ่งแค่โมเดลที่เก่งขึ้นอย่างเดียวไม่ได้</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“MCP is Model Context Protocol, and this is an open standard for letting AI agents talk to external systems”</p><p class='text-zinc-500'>MCP คือ Model Context Protocol มาตรฐานเปิดให้ agent คุยกับระบบภายนอก</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“a good example of why it needs the MCP server because it needs to have that context available for it to be able to know which flavors are available”</p><p class='text-zinc-500'>ตัวอย่างว่าทำไมต้องมี MCP server: agent ต้องมี context นั้นจึงรู้ว่ามีรสอะไรบ้าง</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>จะใช้ Claude บน Foundry ต้องมี endpoint (ตัด v1/messages), API key และชื่อ deployment</li><li>ใช้ playground ทดลองโมเดลกับ system prompt ก่อนเขียนโค้ด</li><li>MCP server ให้ได้ทั้ง tools, prompts, resources ใช้ส่ง persona/banner ของ agent ได้</li><li>Microsoft Agent Framework เป็นทางเริ่มสร้าง agent บน Foundry แบบ open source</li><li>ทำเวิร์กชอปซ้ำที่บ้านได้ โค้ดและเนื้อหาจะแชร์ (ผู้พูดบอก) และมี free Azure credits</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ASR สะกด Foundry เป็น &quot;Boundary&quot; หลายครั้ง และนามสกุล Marlene Mungami / Chris Snoring อาจเพี้ยน</li><li>ผู้พูดหลักคือ Marlene ส่วน Liam กับ Chris ถูกแนะนำชื่อแต่ไม่ได้พูดใน transcript</li><li>ข้ออ้างเรื่อง 1,400 connectors และข้อดีของ Claude บน Foundry เป็นคำของผู้พูด ไม่ได้ยืนยัน</li><li>โค้ดในเวิร์กชอปไม่ได้อ่านออกเสียงครบ จับได้แค่โครงและชื่อไฟล์</li><li>transcript ใช้ &quot;Cloud&quot; แทน Claude ในบางที่ และ &quot;AI Foundry&quot; ปนกับ Microsoft Foundry</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=TQd_YQvydVg" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/19-build-a-proactive-agent-workflow-with-claude.html" class="hover:underline">← #19 สร้าง workflow agent เชิงรุกด้วย routines ใน Claude Code</a><a href="../talks/21-coding-is-no-longer-the-constraint-scaling-de.html" class="hover:underline ml-auto text-right">#21 Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด วางมาตรฐานให้ทั้งทีมและ agent →</a></nav>
+</main></body></html>

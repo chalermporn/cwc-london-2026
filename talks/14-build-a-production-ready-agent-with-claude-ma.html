@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สร้าง agent พร้อม production ด้วย Claude Managed Agents… | CwC London #14</title>
+<meta name="description" content="เวิร์กชอปพาเขียนเว็บแอป Deal Desk ที่ต่อกับ Claude Managed Agents ผ่าน SDK ตั้งแต่ list session ไปจนถึง chat view และ outcomes แล้วไล่ดู multi-agent แบบ…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/14-build-a-production-ready-agent-with-claude-ma.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="สร้าง agent พร้อม production ด้วย Claude Managed Agents… | CwC London #14">
+<meta property="og:description" content="เวิร์กชอปพาเขียนเว็บแอป Deal Desk ที่ต่อกับ Claude Managed Agents ผ่าน SDK ตั้งแต่ list session ไปจนถึง chat view และ outcomes แล้วไล่ดู multi-agent แบบ…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/14-build-a-production-ready-agent-with-claude-ma.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="สร้าง agent พร้อม production ด้วย Claude Managed Agents… | CwC London #14">
+<meta name="twitter:description" content="เวิร์กชอปพาเขียนเว็บแอป Deal Desk ที่ต่อกับ Claude Managed Agents ผ่าน SDK ตั้งแต่ list session ไปจนถึง chat view และ outcomes แล้วไล่ดู multi-agent แบบ…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "สร้าง agent พร้อม production ด้วย Claude Managed Agents (เดโม Deal Desk) — Code with Claude London 2026 #14", "description": "เวิร์กชอปพาเขียนเว็บแอป Deal Desk ที่ต่อกับ Claude Managed Agents ผ่าน SDK ตั้งแต่ list session ไปจนถึง chat view และ outcomes แล้วไล่ดู multi-agent แบบ…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/14-build-a-production-ready-agent-with-claude-ma.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/14-build-a-production-ready-agent-with-claude-ma.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Build a production-ready agent with Claude Managed Agents", "url": "https://www.youtube.com/watch?v=jWWsLe4Gh5Y", "duration": "PT27M23S"}, "about": ["managed-agents", "subagents", "agent-memory", "mcp-tools-skills", "cloud-platforms"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#14 สร้าง agent พร้อม production ด้วย Claude Managed Agents (เดโม Deal Desk)", "item": "https://chalermporn.github.io/cwc-london-2026/talks/14-build-a-production-ready-agent-with-claude-ma.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#14 · เวิร์กชอป · 27:23</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">สร้าง agent พร้อม production ด้วย Claude Managed Agents (เดโม Deal Desk)</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Build a production-ready agent with Claude Managed Agents</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> ไม่ได้ระบุชื่อใน transcript</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> นักพัฒนาที่อยากเริ่มสร้างผลิตภัณฑ์บน Managed Agents API รู้ TypeScript/SDK เบื้องต้นก็พอ</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">เวิร์กชอปพาเขียนเว็บแอป Deal Desk ที่ต่อกับ Claude Managed Agents ผ่าน SDK ตั้งแต่ list session ไปจนถึง chat view และ outcomes แล้วไล่ดู multi-agent แบบ live ใน developer console ผู้พูดสรุปว่าของที่ต้องสร้างเอง (agent loop, sandbox, durable storage, auth) Managed Agents ให้มาพร้อมใช้</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">A hands-on session building a Deal Desk web app on Claude Managed Agents: list/retrieve sessions, chat via events and streaming, outcomes, multi-agent threads, and live debugging in the console. The speaker argues Managed Agents replaces the agent loop, sandbox fleet, storage and auth you would otherwise build.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>Managed Agents คือชุด API endpoint ที่ใช้ได้ด้วย API key ทั่วไป ให้ primitive สำหรับ agent พร้อม production เช่น เครื่องคอมพิวเตอร์ให้ Claude, credential vault, tool harness, retry/error recovery, memory, context management และ multi-agent เลือกใช้เฉพาะชิ้นที่ต้องการได้</li><li>building block หลักมี 4 อย่าง คือ agent (เหมือน template: system prompt, skills, tools, MCP servers, permission ต่อ tool เช่น file read auto-execute แต่ bash ต้องให้ผู้ใช้อนุมัติ), environment (template ของ sandbox: network access, pre-install package จาก npm/pip), session (บทสนทนาต่อเนื่อง ใส่ GitHub repo หรือไฟล์ล่วงหน้าได้) และ events</li><li>events แบ่งเป็น user events (ข้อความ รูป เอกสาร interrupt tool result confirmation และ outcomes), agent events (ข้อความ compaction tool call multi-agent coordination), session events (สถานะ retry error idle terminate รวมถึง outcome processing) และ span events (บอกจุดเริ่ม/จบของงานยาว)</li><li>outcomes คือการส่งไฟล์หรือข้อความที่เขียนเป็น spec/rubric ให้ Claude ทำรอบแรก แล้วเข้าโหมดวนตรวจงานตัวเองกับ rubric จนผ่าน ผู้พูดบอกว่าพบว่าทรงพลังมากและเป็นวิธีตั้ง agent ให้สำเร็จ</li><li>ประกาศวันเดียวกัน คือ self-hosted sandboxes (ใช้ Cloudflare, Modal, Vercel หรือ fleet ของตัวเอง เก็บข้อมูลไว้ใน VPC/perimeter) และ MCP tunnels (secure tunnel ไป private MCP server โดยไม่ต้องเปิดออก internet)</li><li>เดโม Deal Desk เป็นแอปสมมติสำหรับตัดสินใจลงทุน/ซื้อกิจการ ใช้ multi-agent ที่เปิดตัวเมื่อ 2 สัปดาห์ก่อน มี agent หลายตัวคนละ persona (เช่น macro trends กับ financial analysis) ต่อ Linear MCP และไฟล์ที่อัปโหลด</li><li>ฝั่งโค้ด เริ่มจาก stub ที่ยังไม่ implement แล้วเติม client.beta.sessions.list กับ retrieve session จากนั้นให้ Claude Code เขียนส่วน send events และ stream events เอง โดยอาศัย Claude API skill ที่มากับ Claude Code</li><li>ใน developer console ดู session แบบ live ได้ เห็น agent ย่อยแต่ละตัวเป็นเส้นแนวนอน มี context window ของตัวเอง ดู input/output ของแต่ละ event และเวลาที่ tool call ใช้ รวมถึงดู/แก้ memory store ได้ agent มี versioning ย้อนกลับได้</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>ตั้งต้นจาก repo starter (โฟลเดอร์ production-ready agents มีทั้ง starter กับ solution) แล้วรันเซิร์ฟเวอร์ด้วย Bun เพื่อทดสอบ local</li><li>เติม endpoint list sessions ด้วย client.beta.sessions.list จาก Anthropic SDK แล้ว sidebar แสดง session ของ workspace</li><li>เติม retrieve session (to-do ข้อ 4) ได้ API response ของ get session: agent, tools, Linear MCP, outcomes</li><li>ใช้ Claude Code (พร้อม Claude API skill) อ่าน to-do ที่เหลือแล้วเขียน send events กับ stream events เอง</li><li>ใน UI สร้าง session ใหม่ เลือก Linear MCP และ memory stores (เรียก create session endpoint)</li><li>ส่ง outcome definition event ผ่าน suggestion chip ให้ประเมิน 3 บริษัทตาม rubric แล้วดู agent delegate ให้ sub agent</li><li>เปิด developer console ดู session แบบ live: threads ของแต่ละ agent, event, เวลา tool call</li><li>ดู/แก้ memory store และ agent version ใน console</li><li>ปิดด้วยสรุปว่าไม่ต้องสร้าง agent loop, sandbox fleet, durable storage, auth เอง</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>multi-agent feature เปิดตัว &quot;2 weeks ago&quot; ตามที่ผู้พูดบอก</li><li>ผู้พูดกล่าวถึง Opus 4.7 ว่าเขียนเอกสารยาวมากได้ (เป็นเหตุผลที่มี span events)</li><li>ในเดโมมี sub agent 4 ตัวที่ coordinator เรียกมาทำงาน ตามที่ผู้พูดบอกขณะดู console</li><li>เดโมมีบริษัทสมมติ 3 แห่ง: Bridgewell Dynamics, Norwood Automation, Acme Robotics</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Claude can help you build your own Claude”</p><p class='text-zinc-500'>Claude ช่วยคุณสร้าง Claude ของคุณเองได้</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Claude code ships by default with the Claude API skill”</p><p class='text-zinc-500'>Claude Code มาพร้อม Claude API skill เป็นค่าเริ่มต้น</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“without Claude ever seeing what those tokens are”</p><p class='text-zinc-500'>โดย Claude ไม่เคยเห็น token เหล่านั้น (พูดถึง credential vault)</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>เริ่มจากกำหนด agent + environment แล้วสร้าง session ก่อน ที่เหลือคือส่ง/รับ events</li><li>ใช้ outcomes (rubric) เมื่ออยากให้ agent ตรวจงานตัวเองซ้ำก่อนส่งผล</li><li>เก็บ token ของ MCP ไว้ใน credential vault เพื่อไม่ให้เข้า context ของ Claude</li><li>ข้อมูลที่ห้ามออก perimeter ให้ดู self-hosted sandboxes และ MCP tunnels</li><li>ให้ Claude Code เขียนส่วน integration ให้ โดยอาศัย Claude API skill แล้วใช้ console debug</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ผู้พูดไม่ได้แนะนำชื่อใน transcript จึงใส่ speakers เป็น []</li><li>transcript เป็น auto-caption ใช้ &quot;Cloud Managed Agents&quot; แทน Claude Managed Agents ทั้งหมด</li><li>ข้อความ code จริงที่พิมพ์ไม่ปรากฏครบใน transcript มีแค่ชื่อ client.beta.sessions.list</li><li>ผู้พูดระบุว่าเดโมและบริษัททั้งหมดเป็นของสมมติ ผลการประเมินในเดโมไม่ใช่ข้อมูลจริง</li><li>เรื่อง plugins ในคำถามจากผู้ฟัง ผู้พูดบอกว่ายังไม่มี กำลังพัฒนา</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=jWWsLe4Gh5Y" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/13-how-to-get-to-production-faster-with-claude-m.html" class="hover:underline">← #13 Claude Managed Agents: ให้แพลตฟอร์มดูแลโครงสร้าง agent แล้วไป production ได้เร็วขึ้น</a><a href="../talks/15-the-thinking-lever.html" class="hover:underline ml-auto text-right">#15 ปุ่ม thinking และ effort: ให้ Claude ใช้ compute ตอนรันมากน้อยแค่ไหน →</a></nav>
+</main></body></html>

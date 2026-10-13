@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompting playbook: ซ่อม prompt ที่มีอยู่ด้วย evals… | CwC London #05</title>
+<meta name="description" content="Margo van Laar พาดูสองสถานการณ์จริง คือซ่อม prompt เก่าที่พังหลังย้ายโมเดล (บอท support ของ Meridian Mobile) และสร้าง agent ใหม่ (จัดตารางพนักงาน)…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/05-the-prompting-playbook.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="Prompting playbook: ซ่อม prompt ที่มีอยู่ด้วย evals… | CwC London #05">
+<meta property="og:description" content="Margo van Laar พาดูสองสถานการณ์จริง คือซ่อม prompt เก่าที่พังหลังย้ายโมเดล (บอท support ของ Meridian Mobile) และสร้าง agent ใหม่ (จัดตารางพนักงาน)…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/05-the-prompting-playbook.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prompting playbook: ซ่อม prompt ที่มีอยู่ด้วย evals… | CwC London #05">
+<meta name="twitter:description" content="Margo van Laar พาดูสองสถานการณ์จริง คือซ่อม prompt เก่าที่พังหลังย้ายโมเดล (บอท support ของ Meridian Mobile) และสร้าง agent ใหม่ (จัดตารางพนักงาน)…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Prompting playbook: ซ่อม prompt ที่มีอยู่ด้วย evals และสร้าง agent จากศูนย์ — Code with Claude London 2026 #05", "description": "Margo van Laar พาดูสองสถานการณ์จริง คือซ่อม prompt เก่าที่พังหลังย้ายโมเดล (บอท support ของ Meridian Mobile) และสร้าง agent ใหม่ (จัดตารางพนักงาน)…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/05-the-prompting-playbook.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/05-the-prompting-playbook.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "The prompting playbook", "url": "https://www.youtube.com/watch?v=G2B0YWuJUgI", "duration": "PT33M49S"}, "about": ["prompt-engineering", "evals", "model-selection", "extended-thinking", "agent-reliability"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#05 Prompting playbook: ซ่อม prompt ที่มีอยู่ด้วย evals และสร้าง agent จากศูนย์", "item": "https://chalermporn.github.io/cwc-london-2026/talks/05-the-prompting-playbook.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#05 · โมเดล &amp; Prompting · 33:49</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">Prompting playbook: ซ่อม prompt ที่มีอยู่ด้วย evals และสร้าง agent จากศูนย์</h1>
+<p class="mono text-xs text-zinc-500 mt-1">The prompting playbook</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Margo van Laar (Applied AI engineer, Anthropic (London))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> เหมาะกับวิศวกรที่ดูแล prompt ใน production หรือกำลังย้ายโมเดล และเคยเขียน eval เบื้องต้นมาแล้ว</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Margo van Laar พาดูสองสถานการณ์จริง คือซ่อม prompt เก่าที่พังหลังย้ายโมเดล (บอท support ของ Meridian Mobile) และสร้าง agent ใหม่ (จัดตารางพนักงาน) ข้อสรุปหลักคือเริ่มจาก eval แล้วแก้ failure mode ทีละข้อ เก็บกวาด prompt ให้มีโครงสร้าง ถอด patch เก่าที่ overfit ใส่ tool แทนการสั่งให้ทำดี และแยกงานเป็น prompt หลายตัวเมื่อทำ agent</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Two walk-throughs, repairing a production prompt after a model migration (telco support bot) and building a scheduling agent from scratch. Start from evals, fix failure modes one at a time, clean up structure, remove stale patches, add tools, and split agent work into separate prompts.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>เริ่มจาก eval suite ก่อนแตะ prompt เพราะต้องมีหลักฐานว่าการแก้ช่วยจริง ตัวอย่างมี 5 เทสต์ที่ครอบ 3 แบบ คือ control (ต้องผ่านเสมอ), edge case ที่เคยพลาด, และเคสที่โมเดลต้องส่งต่อมนุษย์หรือปฏิเสธ</li><li>เก็บกวาดทั่วไปก่อน: เอาข้อมูลซ้ำที่ copy มาจากเว็บออก, เลิกบอกบอทว่าเป็นมนุษย์, แยก role/guidelines/policy/tone ด้วย XML tags ผลดีขึ้นทันที ตามหลัก ถ้าคนอ่านแยก guideline policy data ไม่ออก โมเดลก็น่าจะแยกไม่ออก</li><li>ทำ output contract: กำหนดรูปแบบ output ด้วย XML tag และเพิ่ม stop sequence ที่ฝั่ง API ส่วน output ซับซ้อนให้ใช้ structured outputs</li><li>เคส hotspot: โมเดลเลี่ยงตอบเพราะ prompt มีคำสั่งเก่า &#x27;never give the wrong plan details&#x27; ที่เป็น patch จากโมเดลรุ่นก่อน ผู้พูดบอกว่าโมเดลใหม่ทำตามคำสั่งเก่งขึ้นจึง overfit ให้ปรับเป็นมุมที่สมดุล และเก็บเหตุผลของ patch ไว้ใน version control</li><li>เคส proration: การสั่งว่า &#x27;ต้องคำนวณให้ถูก&#x27; ไม่ได้เพิ่มความสามารถ แก้ด้วยการเพิ่ม tool คำนวณ (กำหนด schema, ใส่ใน API, เขียนฟังก์ชันจริง) โมเดลไม่ต้องคิดเลขในหัว</li><li>เคส escalation: prompt บอกแต่ต้นทุนของการ escalate (ประมาณ $8) ทำให้โมเดล overfit ไปไม่ escalate ให้บอกทั้งสองด้านของ trade-off รวมต้นทุนเมื่อพลาด (refund และความเชื่อใจลูกค้า)</li><li>สร้าง agent จัดตารางจากศูนย์: ตรวจด้วยฟังก์ชัน Python แทน LLM judge เพราะกฎตายตัว เทียบ Sonnet 4.6 (ล้มทุกเคส) กับ Opus 4.7 (ผิดน้อยลงแต่ยังไม่ผ่าน) กับ Opus 4.7 + adaptive thinking (ผ่านแต่ token และ latency เพิ่มราว 3 เท่า)</li><li>ทางที่ดีกว่า: loop แบบ generate, evaluate, repair ที่แยกเป็น 3 prompt ผ่านทุกเคสด้วย token และ latency ต่ำกว่า Sonnet ที่ปรับ prompt และยังใส่ soft constraint ตอน runtime ได้ (เช่น คนสองคนไม่ควรเข้ากะเดียวกัน)</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>ตั้ง eval suite 5 เคส (control, edge case, escalation/refusal) แล้วรัน baseline V0</li><li>เก็บกวาด prompt: ลบเนื้อหาที่ copy จากเว็บ, แก้ role, แยกส่วนด้วย XML tags แล้วรัน eval ซ้ำ</li><li>เพิ่ม output contract (รูปแบบ XML) และ stop sequence ที่ API call</li><li>แก้เคส hotspot: เอาคำสั่ง &#x27;never give the wrong plan details&#x27; ออก ให้ใช้ข้อมูลลูกค้าเป็น source of truth</li><li>แก้เคส proration: เพิ่ม tool calculate proration (กำหนด schema, ลงทะเบียนใน API, implement ฟังก์ชัน) และสั่งใน prompt ให้ใช้ tool</li><li>แก้เคส escalation: บอกทั้งต้นทุนของการ escalate และต้นทุนเมื่อตอบพลาด</li><li>agent ใหม่ (จัดตาราง): เขียน baseline ด้วย Sonnet 4.6, ตรวจด้วยฟังก์ชัน Python, ลองเปลี่ยนเป็น Opus 4.7, ต่อด้วย adaptive thinking</li><li>ลอง prompt ที่ดีขึ้นบน Sonnet 4.6 (บอกให้ตรวจงานก่อนตอบ) พบว่าชนเพดาน output token</li><li>สร้าง loop generate, evaluate, repair แยก 3 prompt แล้วเทียบ token กับ latency</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>Eval ตัวอย่างมี 5 test cases (ของจริงจะมากกว่านี้) สำหรับบอท support ของบริษัทสมมติ Meridian Mobile</li><li>ต้นทุน escalate ไปหา care specialist ใน prompt เดิม: ประมาณ $8 ต่อเคส</li><li>เคส hotspot: ข้อมูลลูกค้า legacy plan มี 5 GB แต่ policy ปัจจุบันของแพ็กเกจ unlimited คือ 4 GB</li><li>งานจัดตาราง: พนักงาน 8 คน, รัน 5 trials ต่อการตั้งค่า, ตรวจด้วยฟังก์ชัน Python นับ violation</li><li>Opus 4.7 + adaptive thinking: ผู้พูดบอกว่า token เพิ่มราว 3 เท่าและ latency ราว 3 เท่า (ตัวอย่างหนึ่ง 100 วินาที)</li><li>โมเดลที่เทียบ: Sonnet 4.6 และ Opus 4.7</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“instructions don&#x27;t add capability.”</p><p class='text-zinc-500'>คำสั่งไม่ได้เพิ่มความสามารถ</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“if you&#x27;re reading a prompt and you can&#x27;t tell guidelines from policy from data, most likely the model isn&#x27;t able to either.”</p><p class='text-zinc-500'>ถ้าอ่าน prompt แล้วแยก guideline, policy, data ไม่ออก โมเดลก็น่าจะแยกไม่ออกเหมือนกัน</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“we need to remember to state both sides of the trade-offs”</p><p class='text-zinc-500'>ต้องบอกทั้งสองด้านของ trade-off</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>สร้าง eval ให้ครบ 3 แบบ (control, edge case, handoff) ก่อนแตะ prompt หรือย้ายโมเดล</li><li>ตรวจ prompt เก่าหา patch ที่เขียนไว้กันโมเดลรุ่นก่อน อาจ overfit กับโมเดลใหม่ และจดเหตุผลใน version control</li><li>ถ้าอยากให้งานแม่น (คำนวณ ฯลฯ) ให้ใส่ tool ไม่ใช่เพิ่มคำสั่งว่า &#x27;critical&#x27;</li><li>เขียน trade-off ให้ครบสองด้าน แทนการใส่แต่ข้อห้ามหรือต้นทุนด้านเดียว</li><li>ถ้างานมีกฎตายตัว ลองแยก generate, evaluate, repair เป็น prompt สั้นๆ สามตัว แล้วเทียบกับการใช้โมเดลใหญ่ + thinking</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ผู้พูดบอกว่าผลรันเป็น live demo มีความแปรปรวนระหว่างรอบ (เช่น เคส hotspot ถอยหลังชั่วคราวหลังเก็บกวาด) ผลที่เห็นไม่ใช่ benchmark</li><li>ตัวอย่างใช้ prompt ย่อส่วน 5 เทสต์ ผู้พูดบอกเองว่าของจริงจะยาวและซับซ้อนกว่า</li><li>ตัวเลข 3 เท่าของ token/latency เป็นค่าประมาณจากคำพูดของผู้พูด ไม่ได้เห็นตาราง</li><li>Transcript เป็น YouTube auto-caption จึงไม่ได้เห็นหน้าจอ ชื่อ tool/ฟังก์ชันที่ไม่ได้ออกเสียงไม่มีในสรุป</li><li>คำอธิบายคลิปบอกว่า &#x27;ใช้หลัก prompting กับระบบ agentic&#x27; แต่เนื้อหาจริงเน้นการซ่อม prompt และเปรียบเทียบ 4 วิธีของ agent จัดตาราง</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=G2B0YWuJUgI" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/04-getting-more-out-of-the-claude-platform.html" class="hover:underline">← #04 รีดประสิทธิภาพ Claude Platform: caching, context engineering, advisor strategy</a><a href="../talks/06-the-capability-curve.html" class="hover:underline ml-auto text-right">#06 เส้นโค้งความสามารถของโมเดล และวิธีขี่ไปกับมัน →</a></nav>
+</main></body></html>

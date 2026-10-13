@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chalermporn.github.io/cwc-london-2026/sitemap.xml

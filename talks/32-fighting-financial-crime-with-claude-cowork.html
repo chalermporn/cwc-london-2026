@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สู้อาชญากรรมการเงินด้วย Claude Cowork: MCP gateway… | CwC London #32</title>
+<meta name="description" content="Stefano เล่าว่าทีมสร้างระบบช่วยนักสืบอาชญากรรมการเงินด้วย Claude Cowork plugin ที่ต่อข้อมูลผ่าน MCP gateway ซึ่งจัดการ auth, RBAC และ audit trail ให้ครบ…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/32-fighting-financial-crime-with-claude-cowork.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="สู้อาชญากรรมการเงินด้วย Claude Cowork: MCP gateway… | CwC London #32">
+<meta property="og:description" content="Stefano เล่าว่าทีมสร้างระบบช่วยนักสืบอาชญากรรมการเงินด้วย Claude Cowork plugin ที่ต่อข้อมูลผ่าน MCP gateway ซึ่งจัดการ auth, RBAC และ audit trail ให้ครบ…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/32-fighting-financial-crime-with-claude-cowork.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="สู้อาชญากรรมการเงินด้วย Claude Cowork: MCP gateway… | CwC London #32">
+<meta name="twitter:description" content="Stefano เล่าว่าทีมสร้างระบบช่วยนักสืบอาชญากรรมการเงินด้วย Claude Cowork plugin ที่ต่อข้อมูลผ่าน MCP gateway ซึ่งจัดการ auth, RBAC และ audit trail ให้ครบ…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "สู้อาชญากรรมการเงินด้วย Claude Cowork: MCP gateway, plugin และ evals — Code with Claude London 2026 #32", "description": "Stefano เล่าว่าทีมสร้างระบบช่วยนักสืบอาชญากรรมการเงินด้วย Claude Cowork plugin ที่ต่อข้อมูลผ่าน MCP gateway ซึ่งจัดการ auth, RBAC และ audit trail ให้ครบ…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/32-fighting-financial-crime-with-claude-cowork.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/32-fighting-financial-crime-with-claude-cowork.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Fighting financial crime with Claude Cowork", "url": "https://www.youtube.com/watch?v=tUoO4ucrNc0", "duration": "PT27M52S"}, "about": ["finance-ai", "mcp-tools-skills", "evals", "enterprise-adoption", "model-selection"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#32 สู้อาชญากรรมการเงินด้วย Claude Cowork: MCP gateway, plugin และ evals", "item": "https://chalermporn.github.io/cwc-london-2026/talks/32-fighting-financial-crime-with-claude-cowork.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#32 · เคสตามอุตสาหกรรม · 27:52</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">สู้อาชญากรรมการเงินด้วย Claude Cowork: MCP gateway, plugin และ evals</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Fighting financial crime with Claude Cowork</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Stefano Amorelli (Senior Staff Software Engineer ที่ fintech ฝรั่งเศสให้บริการ business banking สำหรับ SME (Whisper เขียนบริษัทเป็น &#x27;Quanto&#x27; / &#x27;Conto&#x27; ไม่คงที่))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> ทีมในองค์กรที่ต้องนำ AI/MCP ไปใช้กับข้อมูลอ่อนไหว และต้องผ่านฝ่าย security กับ compliance</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Stefano เล่าว่าทีมสร้างระบบช่วยนักสืบอาชญากรรมการเงินด้วย Claude Cowork plugin ที่ต่อข้อมูลผ่าน MCP gateway ซึ่งจัดการ auth, RBAC และ audit trail ให้ครบ และใช้ evals สร้างความเชื่อมั่น ข้อสรุปคือต้องวาง boundary ด้าน security/compliance ตั้งแต่ต้น แล้ว AI ใช้ใน workflow เสี่ยงสูงได้</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">A fintech engineer shows a Cowork plugin for financial-crime investigators behind a secure MCP gateway (OAuth, RBAC, audit trail), validated with evals, and argues start with evals and secure data access.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>กระบวนการเดิม: ระบบ alert อัตโนมัติ (ใช้ ML แบบ predictive ไม่ใช่ generative) สร้างเคส แล้วนักสืบเก็บข้อมูลจากหลายแหล่งด้วยมือ จอหลายใบ แท็บเบราว์เซอร์เป็นสิบ ก่อนตัดสินว่าเป็นอาชญากรรมไหม ทีมโฟกัสที่ agentic AI ใน second line of defense ซึ่งผู้พูดบอกว่ายังมีน้อยรายในอุตสาหกรรมที่ทำ</li><li>เลือก Opus 4.7 เพราะต้อง reason ข้าม context ยาว ผู้พูดอ้าง benchmark GraphWalks (หาข้อเท็จจริงที่กระจายใน context) ว่า Opus 4.7 นำ แต่ก็บอกว่างานอื่นอาจไม่ต้องใช้รุ่นใหญ่ ใช้ Claude Cowork เป็น UI ให้นักสืบเพราะ onboard คนที่ไม่ใช่สายเทคนิคง่าย</li><li>ข้อกังวลเรื่อง MCP กับ security/compliance แก้ได้ด้วยการสร้าง boundary และ harness ที่ปลอดภัย: remote MCP servers แบบรวมศูนย์ OAuth, session token แบบ Paseto อายุสั้น, RBAC, audit trail และคงให้คนตัดสินใจในจุดวิกฤต</li><li>สถาปัตยกรรม: Cowork plugin ต่อเข้า MCP gateway (ใช้ ContextForge แบบ open source) ที่ทำ SSO, ตรวจ token, resolve identity, ออก token อายุสั้น และเขียน audit ลงฐานข้อมูลแบบ append-only; ต่อ MCP server ปลายทางที่ deploy บน Kubernetes เรียกตรงไม่ได้ ใช้ streamable HTTP และเขียนด้วยภาษาอะไรก็ได้</li><li>RBAC เขียนเป็นไฟล์ Terraform ที่ version ใน GitHub จึง audit ได้ และผู้ใช้จะไม่เห็นด้วยซ้ำว่ามี MCP server ที่ตัวเองไม่มีสิทธิ์ ส่วน tool call ทุกครั้งถูก instrument ด้วย OTel (บวก field เสริม) เก็บใน ClickHouse และดูผ่าน dashboard Grafana ใน production</li><li>Cowork render inline widget แบบ interactive ได้ทันที (เร็วกว่า artifact เดิม) ให้นักสืบเห็น dashboard และสั่ง action จาก interface เดียว แทนการสลับหลายเครื่องมือ</li><li>โครงสร้าง plugin: แบ่งเป็น sub skills แทน prompt 1,000 บรรทัด มี orchestrator skill เรียก sub skill ตามขั้น มี meta skill ตรวจผลตอนท้ายทุกครั้ง ใช้ XML structured prompt และระบุ MCP server/tool ที่ skill ใช้ไว้ล่วงหน้า</li><li>evals วัด 3 อย่าง: เรียก tool ถูกและถูกลำดับ, ไม่ hallucinate (ข้อมูลใน dashboard ต้องอ้างอิงเอกสาร), และ reasoning ถูก (ใช้ LLM as a judge) ช่วยทั้ง engineering, compliance และความเชื่อมั่นของผู้ใช้ เป้าหมายคือขยับจาก human in the loop ไป human on the loop</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>โมเดลที่เลือก: Opus 4.7 (ผู้พูดว่าเป็น frontier model ที่ดีที่สุดสำหรับงาน long-context ตอนนี้)</li><li>GraphWalks benchmark: วัดการหาข้อเท็จจริงที่กระจายใน context window ผู้พูดบอกว่า Opus 4.7 นำ (ไม่ได้อ่านตัวเลขคะแนน)</li><li>Paseto tokens: เทคโนโลยีจากปี 2018 ใช้เป็น session token อายุสั้น payload base64 ไม่เข้ารหัสแต่ลงลายเซ็น</li><li>Stack: ContextForge (MCP gateway), Terraform (RBAC), Kubernetes, streamable HTTP, OpenTelemetry, ClickHouse, Grafana</li><li>การฟอกเงินทั่วโลก 2-5 ล้านล้านดอลลาร์สหรัฐต่อปี และตรวจพบ/ยึดได้สัดส่วนน้อยมาก (ตามผู้พูด)</li><li>โปรเจกต์แรกใช้เวลาสร้างไม่กี่สัปดาห์ (ผู้พูดว่า a few weeks) ส่วน use case ใหม่ ๆ นำมาใช้ได้ภายในไม่กี่วัน</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Some people even say that the S in MCP stands for security.”</p><p class='text-zinc-500'>บางคนถึงกับบอกว่า S ใน MCP ย่อมาจาก security</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“So instead of creating one huge prompt of 1000 lines, we split it across different sub skills.”</p><p class='text-zinc-500'>แทนที่จะเขียน prompt ยักษ์ 1,000 บรรทัด เราแตกเป็น sub skills</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“I like to compare evals to TDD.”</p><p class='text-zinc-500'>ผมชอบเปรียบ evals กับ TDD</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>เริ่มทำ evals ตั้งแต่ต้น เหมือน TDD: วัด tool use, grounding และ reasoning ก่อนขยายระบบ</li><li>ถ้าต้องต่อ MCP กับข้อมูลอ่อนไหว ให้ใช้ gateway กลางที่รวม SSO, RBAC และ audit trail แทนให้แต่ละ MCP server ทำเอง</li><li>เขียน RBAC เป็น code (เช่น Terraform) ให้ version และ audit ได้</li><li>แตก plugin/skill เป็นชิ้นย่อย มี orchestrator กับ meta skill ตรวจผล และใช้ prompt แบบมีโครงสร้าง</li><li>ทำงานร่วมกับผู้เชี่ยวชาญโดเมนเขียน plugin แล้วให้ทีมอื่นนำ MCP gateway เดิมไปสร้าง plugin ของตัวเอง</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>Transcript มาจาก Whisper large-v3 ที่ถอดเอง: ชื่อบริษัทของผู้พูดสะกดไม่คงที่ (&#x27;Quanto&#x27; และ &#x27;Conto&#x27;) ผู้สรุปจึงไม่ระบุชื่อบริษัทแน่ชัด ชื่อผู้พูดตามที่ MC แนะนำ อาจสะกดเพี้ยน</li><li>ประโยคช่วงต้นมี Whisper ติด loop (ประโยค &#x27;non-profit organization&#x27; ซ้ำ) ไม่ใช่เนื้อหาจริงของผู้พูด</li><li>การอ้างว่า Opus 4.7 นำใน GraphWalks และตัวเลขการฟอกเงิน 2-5 ล้านล้านดอลลาร์เป็นข้ออ้างของผู้พูด ไม่ได้ตรวจกับแหล่งอิสระ</li><li>ผู้พูดไม่ได้เปิดเผยตัวเลขผลลัพธ์ของ evals หรือข้อมูลลูกค้า (เดโมเป็นวิดีโอที่ปิดบังข้อมูล)</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=tUoO4ucrNc0" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/31-making-agentic-workflows-trustworthy-and-veri.html" class="hover:underline">← #31 ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี Elicit กับ AshPL)</a><a href="../talks/33-where-code-meets-court-ai-at-the-legal-techni.html" class="hover:underline ml-auto text-right">#33 งานสิทธิบัตรไม่เหมาะกับการ delegate ให้ agent: ออกแบบ AI แบบ collaboration →</a></nav>
+</main></body></html>

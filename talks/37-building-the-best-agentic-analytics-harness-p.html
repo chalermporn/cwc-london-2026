@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omni สร้าง agent วิเคราะห์ข้อมูล Blobby: บทเรียนจาก… | CwC London #37</title>
+<meta name="description" content="Chris Merrick CTO ของ Omni เล่าว่าทีม engineering ราว 25 คนใช้ Claude Code เร่งความเร็ว และสร้าง agent วิเคราะห์ข้อมูลชื่อ Blobby บน semantic layer ใน 18…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/37-building-the-best-agentic-analytics-harness-p.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="Omni สร้าง agent วิเคราะห์ข้อมูล Blobby: บทเรียนจาก… | CwC London #37">
+<meta property="og:description" content="Chris Merrick CTO ของ Omni เล่าว่าทีม engineering ราว 25 คนใช้ Claude Code เร่งความเร็ว และสร้าง agent วิเคราะห์ข้อมูลชื่อ Blobby บน semantic layer ใน 18…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/37-building-the-best-agentic-analytics-harness-p.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omni สร้าง agent วิเคราะห์ข้อมูล Blobby: บทเรียนจาก… | CwC London #37">
+<meta name="twitter:description" content="Chris Merrick CTO ของ Omni เล่าว่าทีม engineering ราว 25 คนใช้ Claude Code เร่งความเร็ว และสร้าง agent วิเคราะห์ข้อมูลชื่อ Blobby บน semantic layer ใน 18…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Omni สร้าง agent วิเคราะห์ข้อมูล Blobby: บทเรียนจาก harness, semantic layer และ evals — Code with Claude Londo", "description": "Chris Merrick CTO ของ Omni เล่าว่าทีม engineering ราว 25 คนใช้ Claude Code เร่งความเร็ว และสร้าง agent วิเคราะห์ข้อมูลชื่อ Blobby บน semantic layer ใน 18…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/37-building-the-best-agentic-analytics-harness-p.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/37-building-the-best-agentic-analytics-harness-p.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Building the best agentic analytics harness: Powered by Claude, built with Claude Code", "url": "https://www.youtube.com/watch?v=K4-flzsPraE", "duration": "PT26M46S"}, "about": ["claude-code", "subagents", "evals", "model-selection", "agent-reliability"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#37 Omni สร้าง agent วิเคราะห์ข้อมูล Blobby: บทเรียนจาก harness, semantic layer และ evals", "item": "https://chalermporn.github.io/cwc-london-2026/talks/37-building-the-best-agentic-analytics-harness-p.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#37 · เคสตามอุตสาหกรรม · 26:46</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">Omni สร้าง agent วิเคราะห์ข้อมูล Blobby: บทเรียนจาก harness, semantic layer และ evals</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Building the best agentic analytics harness: Powered by Claude, built with Claude Code</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Chris Merrick (Cofounder and CTO, Omni (ตามคำอธิบายคลิป และผู้พูดบอกว่าตนเป็น CTO))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> วิศวกรที่สร้าง agent บนข้อมูลองค์กรหรือออกแบบ agent harness และอยากได้บทเรียนจากการแก้ปัญหาจริงผ่าน traces กับ evals</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Chris Merrick CTO ของ Omni เล่าว่าทีม engineering ราว 25 คนใช้ Claude Code เร่งความเร็ว และสร้าง agent วิเคราะห์ข้อมูลชื่อ Blobby บน semantic layer ใน 18 เดือน บทเรียนหลักคือเพิ่ม context ในนิยามข้อมูล, ให้ agentic loop กู้จาก error ได้, รวม sub-agent กลับเข้า agent ตัวนอก (consolidating the brain) และให้ Claude เขียน SQL แล้ว parse แทนรูปแบบ JSON ที่คิดขึ้นเอง</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Omni&#x27;s CTO describes building the Blobby analytics agent over 18 months: richer semantic-layer context, error recovery, merging sub-agent tools into the outer agent, and letting Claude write SQL that Omni parses.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ผู้พูดบอกว่าทีม engineering ราว 25 คนเริ่มทดลองเครื่องมือ AI ต้นปี 2025 และจุดเปลี่ยนคือเมื่อ Claude Code กับโมเดล Opus ออก วิศวกรอาวุโสเริ่มเห็นว่าช่วยได้สม่ำเสมอ ความเร็วพุ่งหลังกลับมาจากช่วงวันหยุดปลายปี สะท้อนในกราฟ commit เข้า main ที่เขาเปิดให้ดู</li><li>Omni ให้คุยกับข้อมูล: Claude แปลคำถามเป็น semantic query แล้วผ่าน semantic layer แปลงเป็น SQL รันบน warehouse เหตุผลคือ Claude ต้องรู้ธุรกิจและข้อมูลของคุณ (เช่น &#x27;last quarter&#x27; หมายถึงต่างกันระหว่างทีม product กับทีม sales)</li><li>semantic layer ทำสามอย่าง: รวมและคัดชุดข้อมูลในคลังที่มีนับหมื่นนับแสนตาราง, เก็บ context ไว้ข้างนิยามของ field นั้น (เทียบกับ Claude.md ที่วางใกล้โค้ด) และคุม permissions และมี feedback loop ให้คำถามถัดไปไหลกลับมาปรับนิยาม</li><li>ยกระดับคุณภาพด้วย metadata สำหรับ LLM: ฟิลด์ AI context, sample queries และตัวอย่าง values ของ field (เช่น EMEA, NAM, APAC) ให้โมเดลอนุมานรูปแบบได้</li><li>เพิ่ม agentic loop (สร้าง harness เอง มี tasks) แล้วพบว่าจุดที่เพิ่มคุณภาพมากที่สุดอย่างหนึ่งคือสอนให้ Blobby กู้จาก error พร้อมงบให้ลองใหม่ และลงทุนเขียน error message ที่บอกวิธีแก้ จากนั้นสลับ Haiku เป็น Sonnet เพราะบทสนทนาแบบ agentic ซับซ้อนและยาวขึ้น การใช้งานก็พุ่งตาม</li><li>จากการดู traces ของเซสชันที่แย่ (เรียกว่า Blobotomies) พบว่า agent ตัวนอกวางแผนแต่ sub-agent สร้าง query ครั้งละหนึ่งอัน agent ตัวนอกไม่รู้ว่า query เดียวตอบอะไรได้บ้าง จึงแก้ด้วย &#x27;consolidating the brain&#x27; ดึง tools ขึ้นมาไว้ที่ agent ตัวนอก ลดพฤติกรรมที่คาดเดายาก</li><li>เปลี่ยนอินเทอร์เฟซสร้าง query จาก JSON ที่ออกแบบเอง มาเป็นให้ Claude เขียน SQL แล้ว parse (ฟื้นโค้ด SQL parser ที่เก็บไว้หลายปี) ได้ query ที่คุ้มกว่าในช็อตเดียวและไม่ต้องสอนรูปแบบเฉพาะ ผู้พูดว่า Claude ชอบเขียน CTE และ parser รองรับดี</li><li>สถาปัตยกรรมปัจจุบัน: outer loop ทำ checkpoint เพื่อกู้จากความล้มเหลว, inner loop มี tools (dashboards, visualizations, validation, data modeling) และมีระบบ evals ภายใน กำลังทำสำหรับลูกค้าด้วย ผู้พูดชอบ evals เพราะได้ trace มาวิเคราะห์ และสรุปเป็น judge ได้ การเป็นผู้ใช้ Claude Code เองช่วยให้เข้าใจ harness ที่ดี เพราะ semantic model คล้าย codebase</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ทีม engineering ราว 25 คน และมีลูกค้าหลายร้อยราย (ตามผู้พูด)</li><li>คำอธิบายคลิประบุว่า 99% ของโค้ดแพลตฟอร์มเขียนด้วย Claude Code แต่ตัวเลขนี้ไม่ได้ยินในส่วนที่ผู้พูดพูด</li><li>Blobby พัฒนามาราว 18 เดือน</li><li>คลังข้อมูลองค์กรจริงมีชุดข้อมูลหลักหมื่นถึงหลักแสน ตามที่ผู้พูดยกเป็นเหตุผลของ semantic layer</li><li>การเปลี่ยนจาก Haiku เป็น Sonnet ทำให้การใช้ token สูงขึ้นโดยตั้งใจ และการใช้งาน Blobby พุ่ง</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“You want to be careful not to have a split brain between any sort of sub-agent system and outer agent system.”</p><p class='text-zinc-500'>ระวังอย่าให้ระบบ sub-agent กับ agent ตัวนอกแยกสมองกัน</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Claude is incredible at answering questions, but you need to tell it more about your business if you want it to answer questions about your business”</p><p class='text-zinc-500'>Claude เก่งตอบคำถาม แต่ต้องบอกเรื่องธุรกิจของคุณเพิ่มถ้าอยากให้ตอบเรื่องธุรกิจคุณ</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“being users of Claude Code helped us understand what a good harness looks like”</p><p class='text-zinc-500'>การเป็นผู้ใช้ Claude Code ช่วยให้เข้าใจว่า harness ที่ดีหน้าตาเป็นอย่างไร</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ใส่ context ให้ LLM ไว้ข้างนิยามที่เกี่ยวข้อง (AI context, sample queries, ตัวอย่าง values) ไม่ใช่รวมไว้ที่เดียว</li><li>ให้ agentic loop มีงบลองใหม่เมื่อเจอ error และเขียน error message ให้บอกสาเหตุกับทางแก้</li><li>เมื่อคุณภาพไม่คงที่ ให้ดู traces ของเซสชันที่ล้มเหลว แล้วหา root cause เชิงสถาปัตยกรรม เช่น ความรู้ที่แยกระหว่าง agent ตัวนอกกับ sub-agent</li><li>ให้โมเดลใช้รูปแบบที่มันเก่งอยู่แล้ว (เช่น SQL) แทนคิดภาษาเฉพาะขึ้นมาให้ต้องสอน</li><li>เก็บ traces จาก evals ไว้ใช้ทั้งเป็น observability และสร้าง judge ต่อ</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>transcript มาจาก Whisper large-v3 ที่ถอดเอง ชื่อเฉพาะอาจเพี้ยน เช่น &#x27;Cloud&#x27; = Claude, &#x27;Bobby/blobby&#x27; = Blobby, &#x27;Omnia&#x27; ในเดโม น่าจะเป็น Omni, ชื่อวิศวกร Joel กับ Steven ได้ยินจาก ASR</li><li>ประโยคช่วงท้ายหัวข้อ &#x27;build with Claude&#x27; มีข้อความซ้ำวนและขาดความหมาย จึงสรุปจากช่วงที่ชัดเท่านั้น</li><li>ตัวเลข 99% มาจากคำอธิบายคลิป ไม่ใช่คำพูดในไฟล์ ส่วน 25 engineers, หลายร้อยลูกค้า, 18 เดือน เป็นคำบอกของผู้พูด ไม่มีหลักฐานเพิ่ม</li><li>เดโมสดมีบางกราฟว่าง ผู้พูดบอกว่าไม่แน่ใจสาเหตุ ไม่ใช่ผลที่ยืนยันแล้ว</li><li>ชื่อผู้พูด Chris Merrick และตำแหน่ง Cofounder &amp; CTO มาจากคำอธิบายคลิป ในเสียงผู้พูดบอกเพียงว่าเป็น CTO</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=K4-flzsPraE" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/36-teaching-agents-to-learn-from-your-team.html" class="hover:underline">← #36 สอน agent ให้เรียนรู้จากทีม: เคส Buzz ของ Warp กับ feedback loop รายวัน</a></nav>
+</main></body></html>

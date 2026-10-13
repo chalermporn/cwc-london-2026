@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด… | CwC London #21</title>
+<meta name="description" content="Niklas เล่าว่า Spotify ใช้ AI เขียนโค้ดทั้งองค์กร และสร้าง Honk เป็น background coding agent บน Agent SDK ต่อเข้ากับ Fleet Shift (แพลตฟอร์ม migration) กับ…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/21-coding-is-no-longer-the-constraint-scaling-de.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด… | CwC London #21">
+<meta property="og:description" content="Niklas เล่าว่า Spotify ใช้ AI เขียนโค้ดทั้งองค์กร และสร้าง Honk เป็น background coding agent บน Agent SDK ต่อเข้ากับ Fleet Shift (แพลตฟอร์ม migration) กับ…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/21-coding-is-no-longer-the-constraint-scaling-de.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด… | CwC London #21">
+<meta name="twitter:description" content="Niklas เล่าว่า Spotify ใช้ AI เขียนโค้ดทั้งองค์กร และสร้าง Honk เป็น background coding agent บน Agent SDK ต่อเข้ากับ Fleet Shift (แพลตฟอร์ม migration) กับ…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด วางมาตรฐานให้ทั้งทีมและ agent — Code with Claude London 2026 #2", "description": "Niklas เล่าว่า Spotify ใช้ AI เขียนโค้ดทั้งองค์กร และสร้าง Honk เป็น background coding agent บน Agent SDK ต่อเข้ากับ Fleet Shift (แพลตฟอร์ม migration) กับ…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/21-coding-is-no-longer-the-constraint-scaling-de.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/21-coding-is-no-longer-the-constraint-scaling-de.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Coding is no longer the constraint: Scaling devex to teams and agents at Spotify", "url": "https://www.youtube.com/watch?v=zFslvuvYifQ", "duration": "PT27M36S"}, "about": ["devex", "enterprise-adoption", "claude-code", "agent-reliability", "mcp-tools-skills"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#21 Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด วางมาตรฐานให้ทั้งทีมและ agent", "item": "https://chalermporn.github.io/cwc-london-2026/talks/21-coding-is-no-longer-the-constraint-scaling-de.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#21 · องค์กร &amp; ทีม · 27:36</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">Spotify กับ Honk: เมื่อการเขียนโค้ดไม่ใช่คอขวด วางมาตรฐานให้ทั้งทีมและ agent</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Coding is no longer the constraint: Scaling devex to teams and agents at Spotify</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Niklas Gustavsson (Chief Architect &amp; VP of Engineering, Spotify (ชื่อและตำแหน่งจากคำอธิบายคลิป ผู้พูดแนะนำตัวว่า Niklas))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> วิศวกร / engineering lead ที่ดูแลองค์กรใหญ่ และอยากรู้ว่าต้องเตรียม codebase กับ platform อย่างไรให้ agent ทำงานได้ดี</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Niklas เล่าว่า Spotify ใช้ AI เขียนโค้ดทั้งองค์กร และสร้าง Honk เป็น background coding agent บน Agent SDK ต่อเข้ากับ Fleet Shift (แพลตฟอร์ม migration) กับ Backstage (catalog ซอฟต์แวร์) ข้อสรุปคือ stack ที่เป็นมาตรฐานเดียวกันทำให้ทีมเก่งขึ้น agent ก็เก่งขึ้นด้วย พอโค้ดไม่ใช่คอขวด คอขวดก็ย้ายไปอยู่ที่การตัดสินใจและการ review ของคน</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Spotify&#x27;s Chief Architect describes Honk, a background coding agent built on the Claude Agent SDK and wired into Fleet Shift and Backstage, and argues that standardization, tests and guardrails make agents effective while the bottleneck shifts from coding to human decisions and review.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>Spotify วิศวกรเกือบ 3,000 คน deploy ราว 4,500 ครั้งต่อวัน backend อยู่ใน monorepo 40 ล้านบรรทัด และมี polyrepo อีกหลายพัน การใช้ AI coding tools พุ่งหลัง Opus 4.5 ออกเมื่อเดือนพฤศจิกายนปีก่อน</li><li>ผู้พูดบอกว่าวิศวกรเกิน 99% ใช้เครื่องมือ AI ทุกสัปดาห์ 94% ในแบบสำรวจรอบล่าสุดบอกว่าทำงานมีประสิทธิภาพขึ้น และ PR frequency เพิ่มขึ้น 76% โดย PR ส่วนใหญ่ agent เขียนร่วมกับ developer</li><li>ก่อนมี AI Spotify เจอปัญหา production code โตเร็วกว่าจำนวนวิศวกร 7 เท่า จึงสร้าง fleet management (ระบบข้างใต้ชื่อ Fleet Shift) ให้ automation สร้าง validate และ merge PR งานบำรุงรักษาเอง ถึงตอนนี้ merge ไปแล้ว 2.5 ล้าน PR ส่วนใหญ่ auto-merge</li><li>script แบบ deterministic ใช้ได้ดีกับการแก้ config หรือ bump dependency แต่พอเป็นการแก้ API call ที่ซับซ้อน script ก็บวมเพราะโค้ดมี API surface กว้าง ทีมเลยลองใช้ LLM แทน ผลที่ได้คือ Honk</li><li>Honk ใช้ Claude ผ่าน Agent SDK ห่อใน harness ของ Spotify รันใน Kubernetes pod พร้อม verification tools เช่นสั่ง build บน CI หลาย OS และ Fleet Shift ทำหน้าที่ schedule/orchestrate งานข้ามหลายพัน repo Java migration ล่าสุดที่เคยใช้หลายทีมหลายเดือนเหลือวิศวกรคนเดียวใช้ 3 วัน</li><li>คนใช้ Honk ผ่าน Slack ด้วยการ @mention แล้วได้ PR กลับมา และสัปดาห์นี้ (Hack Week) ปล่อย Honk V2 alpha ที่ผูกกับ agent orchestration tool ชื่อ Chirp มี shared session หลายคนช่วยกันได้ ผู้พูดเปรียบว่าเป็น Google Docs สำหรับ Claude</li><li>Spotify เชื่อมานานว่ายิ่งใช้เทคโนโลยีน้อยยิ่งไว จึงบังคับ stack มาตรฐานผ่าน Backstage, technology radar, golden state และ Sound Check พร้อม lint/static analysis ที่ให้ feedback ทันทีตอน Claude เขียนโค้ด ผู้พูดบอกว่า codebase ที่กระจัดกระจาย Claude ทำได้แย่กว่า</li><li>Backstage เปิดเป็น MCP/CLI ให้ agent หาเจ้าของ component แล้วไปถามทีมใน Slack ได้ ส่วนวิศวกรรมที่ดี (test ที่ agent เรียกเองได้, โค้ดสม่ำเสมอ, วัดผลทุกอย่าง) ยังจำเป็นเท่าเดิม</li><li>PR เพิ่ม 76% แปลว่า review หนักขึ้น Spotify เริ่ม auto-approve PR ที่ปลอดภัยพอ และเอาแรงคนไปไว้ที่จุดสำคัญ ส่วน prototype ที่เคยใช้หลายวันหรือหลายสัปดาห์ ตอนนี้ใครก็ใช้ Claude ใน client monorepo ทำได้ในไม่กี่นาที คอขวดย้ายไปที่การตัดสินใจว่าจะ ship อะไร</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>วิศวกรใกล้ 3,000 คน · deploy ราว 4,500 ครั้ง/วัน · backend monorepo 40 ล้านบรรทัด</li><li>ผู้พูดบอกว่า &gt;99% ของวิศวกรใช้ AI coding tools ทุกสัปดาห์ และ 94% รายงานว่าผลิตภาพดีขึ้น</li><li>PR frequency เพิ่ม 76% (ผู้พูดบอกว่าตัวเลขขยับตลอดช่วงเตรียมสไลด์) และมี PR ให้ review มากขึ้นตามนั้น</li><li>production code โตเร็วกว่าจำนวนวิศวกร 7 เท่า (ก่อนมี AI)</li><li>Fleet Shift merge แล้ว 2.5 ล้าน automated maintenance PR; migration ตัวอย่างหนึ่งเล็ก ๆ ครอบคลุม 39 repo</li><li>Java migration ล่าสุดใช้ 3 วันด้วยเครื่องมือเหล่านี้ (จากเดิมหลายสัปดาห์ถึงหลายเดือน)</li><li>จุดเปลี่ยนการใช้งาน: Opus 4.5 release เดือนพฤศจิกายนปีก่อน</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“the need for strong engineering practices has not gone away with agents. It remains as important as it was before.”</p><p class='text-zinc-500'>ความจำเป็นของแนวปฏิบัติวิศวกรรมที่ดีไม่ได้หายไปเพราะมี agent และยังสำคัญเท่าเดิม</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Simply, if Claude has a lot of other code to look at, and that code looks roughly consistent, Claude will do a better job.”</p><p class='text-zinc-500'>ถ้า Claude มีโค้ดอื่นให้ดูเยอะและโค้ดเหล่านั้นหน้าตาสม่ำเสมอ Claude ก็ทำงานได้ดีขึ้น</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“And this has brought prototyping for something that could take days or weeks to literally taking minutes now.”</p><p class='text-zinc-500'>การทำ prototype ที่เคยใช้หลายวันหรือหลายสัปดาห์ ตอนนี้เหลือไม่กี่นาที</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ทำ codebase ให้สม่ำเสมอก่อน: ลดความหลากหลายของ stack ที่ไม่จำเป็น แล้ว agent จะทำงานได้ดีกว่าใน repo ที่หน้าตาคล้ายกัน</li><li>ฝัง guardrail เป็น lint / static analysis ให้ agent ได้ feedback ทันทีว่าใช้ pattern ผิด แทนการเขียนกฎเป็นเอกสารอย่างเดียว</li><li>ให้ agent เรียก test และ verification tools ได้เอง จะได้ทำงานอิสระและได้ผลดีขึ้น</li><li>เปิด internal catalog (เช่น Backstage หรือระบบเทียบเท่า) เป็น MCP หรือ CLI ให้ agent ถามเจ้าของ component ได้</li><li>วางแผนรับ review load: ตัดสินว่า PR แบบไหนปล่อยผ่านอัตโนมัติได้ และให้คนดูเฉพาะจุดเสี่ยง</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>Transcript มาจาก Whisper large-v3 ที่ถอดเอง ชื่อเฉพาะอาจเพี้ยน (เช่น Hiram&#x27;s Law ที่ผู้พูดอ้างถึง ซึ่งอาจเป็นชื่ออื่น ผู้พูดบอกเพียงว่ามาจากวิศวกรที่ Google)</li><li>คำอธิบายคลิปเขียน 96% และ 60% ต่างจากที่ผู้พูดพูดใน transcript (&gt;99% และ 76%) สรุปนี้ยึดตามที่ได้ยิน อาจเป็นสไลด์คนละรอบ</li><li>ตัวเลขทั้งหมดเป็นข้ออ้างของ Spotify เอง ยังไม่มีหลักฐานอิสระยืนยัน</li><li>ชื่อผู้พูดและตำแหน่งเต็มมาจากคำอธิบายคลิป ใน transcript ผู้พูดบอกแค่ชื่อ Niklas</li><li>ช่วงท้ายมีประโยคเพี้ยน เช่น &#x27;post-pandemic&#x27; น่าจะหมายถึง post-agent / หลังจาก agent ทำงาน</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=zFslvuvYifQ" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/20-build-ai-agents-using-claude-in-microsoft-fou.html" class="hover:underline">← #20 สร้าง AI agent ด้วย Claude บน Microsoft Foundry (เวิร์กชอป cupcake agent)</a><a href="../talks/22-ai-with-claude-on-aws-from-code-to-orchestrat.html" class="hover:underline ml-auto text-right">#22 ใช้ Claude บน AWS: ตั้งแต่ Claude Code บน Bedrock ถึง agent orchestration →</a></nav>
+</main></body></html>

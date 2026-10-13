@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Battle: แข่งสร้าง agent ขุดเพชรใน Minecraft ด้วย… | CwC London #27</title>
+<meta name="description" content="เวิร์กชอปแข่งขันสั้นๆ ที่ผู้เข้าร่วมแต่ง Claude managed agent ให้เล่น Minecraft ขุดเพชร ผ่าน Mineflayer bot กับ MCP tools แล้วแข่งกันบน leaderboard ในเวลา…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/27-agent-battle-mine-the-most-diamonds-in-45-min.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="Agent Battle: แข่งสร้าง agent ขุดเพชรใน Minecraft ด้วย… | CwC London #27">
+<meta property="og:description" content="เวิร์กชอปแข่งขันสั้นๆ ที่ผู้เข้าร่วมแต่ง Claude managed agent ให้เล่น Minecraft ขุดเพชร ผ่าน Mineflayer bot กับ MCP tools แล้วแข่งกันบน leaderboard ในเวลา…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/27-agent-battle-mine-the-most-diamonds-in-45-min.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agent Battle: แข่งสร้าง agent ขุดเพชรใน Minecraft ด้วย… | CwC London #27">
+<meta name="twitter:description" content="เวิร์กชอปแข่งขันสั้นๆ ที่ผู้เข้าร่วมแต่ง Claude managed agent ให้เล่น Minecraft ขุดเพชร ผ่าน Mineflayer bot กับ MCP tools แล้วแข่งกันบน leaderboard ในเวลา…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Agent Battle: แข่งสร้าง agent ขุดเพชรใน Minecraft ด้วย Managed Agents — Code with Claude London 2026 #27", "description": "เวิร์กชอปแข่งขันสั้นๆ ที่ผู้เข้าร่วมแต่ง Claude managed agent ให้เล่น Minecraft ขุดเพชร ผ่าน Mineflayer bot กับ MCP tools แล้วแข่งกันบน leaderboard ในเวลา…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/27-agent-battle-mine-the-most-diamonds-in-45-min.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/27-agent-battle-mine-the-most-diamonds-in-45-min.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Agent Battle: Mine the most diamonds in 45 minutes", "url": "https://www.youtube.com/watch?v=dxqX_6ciVQA", "duration": "PT8M45S"}, "about": ["managed-agents", "evals", "agent-reliability", "mcp-tools-skills"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#27 Agent Battle: แข่งสร้าง agent ขุดเพชรใน Minecraft ด้วย Managed Agents", "item": "https://chalermporn.github.io/cwc-london-2026/talks/27-agent-battle-mine-the-most-diamonds-in-45-min.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#27 · เวิร์กชอป · 8:45</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">Agent Battle: แข่งสร้าง agent ขุดเพชรใน Minecraft ด้วย Managed Agents</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Agent Battle: Mine the most diamonds in 45 minutes</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Ben (Applied AI team, Anthropic); Jeff (Applied AI team, Anthropic)</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> คนที่อยากเห็นตัวอย่างการจัด eval แบบแข่งขัน และการปรับ system prompt, model, skill, MCP ของ managed agent เพื่อ hill climb</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">เวิร์กชอปแข่งขันสั้นๆ ที่ผู้เข้าร่วมแต่ง Claude managed agent ให้เล่น Minecraft ขุดเพชร ผ่าน Mineflayer bot กับ MCP tools แล้วแข่งกันบน leaderboard ในเวลา 35 นาที ตัดสินที่จำนวนเพชร และตัดเสมอด้วยอัตราเพชรต่อ token ผลที่ได้ยินคือมีคนขุดได้ 19 เพชรหลายคน และมีคนทำเกิน 19 ก่อนหมดเวลา</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">A short in-room competition where participants tune a Claude managed agent to mine diamonds in a Minecraft clone via a Mineflayer bot; ranked by diamonds, tie-broken by token efficiency; 19 diamonds was the common top score and one run beat it.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ผู้จัดคือ Ben กับ Jeff จาก Applied AI ที่ Anthropic เป้าหมาย 3 อย่าง: เรียนรู้การสร้างและ deploy managed agent ที่โฮสต์บนโครงสร้างของ Anthropic, เข้าใจผลของ agent configuration (system prompt, model string, skills, MCP) และฝึก hill climb บน evals</li><li>กติกา: จับเวลาราว 35 นาทีให้สร้างและทดลอง ส่งกี่รอบก็ได้แต่นับรอบที่ดีที่สุดเพียงรอบเดียวต่อคน แต่ละรอบ agent ขุดเพชร 5 นาที หยุดกลางคันได้ด้วย Ctrl-C</li><li>มี eval set ที่รันราว 1 นาทีไว้ให้ปรับ agent อย่างรวดเร็ว ผู้ชนะคือคนที่ได้เพชรมากสุดเมื่อครบเวลา</li><li>กติกาตัดเสมอใช้ token efficiency คืออัตราเพชรต่อ token ผู้จัดย้ำว่าไม่ใช่แค่ขุดให้ได้มากสุด และไม่ควรโยนโมเดลหนักสุดใส่ แต่ต้องปรับ system prompt ให้แหลม</li><li>harness: Minecraft clone ที่เชื่อมกับ Mineflayer bot ไม่ใช้ภาพ มี MCP tools เช่น mine block, jump, go near; ทุกคนเริ่มจาก seed และ start kit เดียวกัน; แก้ไขที่ myagent.py ในรีโป /agentbattle ได้แก่ model, system prompt (เริ่มต้นว่างเปล่า), skill ที่ Anthropic ส่งมาให้หรือใส่เอง และมี MCP server ให้ปรับ</li><li>ในรีโปมี Claude Code skill ช่วย setup และมีปัญหา Cloudflare จาก Wi-Fi งานที่คนเข้าเยอะ ผู้จัดแปะคำสั่งแก้ที่ได้ผลกับอย่างน้อยหนึ่งคน</li><li>ระหว่างแข่ง: เริ่มมีรอบแรกที่ได้ 10, เหลือราว 5 นาทีเสมอกันสามทาง และคนแรกแสดง 0 token ซึ่งน่าสงสัย ผู้จัดบอกว่า 19 น่าจะเป็นเพดานของที่ทำได้ แต่ก่อนหมดเวลา 1 นาที 20 วินาทีมีคนทำเกิน 19</li><li>ผลสรุป: ผู้ชนะชัดเจนหนึ่งคน คนที่ขุดได้ 19 ให้มาหา Ben กับ Jeff และเนื่องจากอันดับสองแสดง 0 token ผู้จัดยังตัดสินอันดับสองกับสามไม่ได้ จึงเรียกอันดับ 1 ถึง 5 ขึ้นมา โดยยังไม่ประกาศรางวัล</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>เข้ารีโป /agentbattle แล้วเปิดไฟล์ myagent.py</li><li>ปรับ model, system prompt (เริ่มต้นว่าง), skill ที่ให้มา หรือ skill ของตัวเอง และ MCP server ถ้าต้องการ</li><li>ใช้ Claude Code skill ในรีโปช่วย setup ถ้าติดปัญหา</li><li>รัน eval ราว 1 นาทีเพื่อ iterate เร็ว แล้วส่ง run เต็ม 5 นาที (หยุดด้วย Ctrl-C ได้)</li><li>ดู leaderboard และแชตที่ agent คุยกัน; ส่งได้หลายรอบแต่นับรอบที่ดีที่สุดรอบเดียว</li><li>เมื่อหมดเวลาประกาศผล ตัดเสมอด้วย diamonds-to-tokens ratio</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>เวลาแข่งราว 35 นาที (ชื่อคลิปบอก 45 นาที)</li><li>แต่ละรอบ agent ขุด 5 นาที; eval set รันราว 1 นาที</li><li>รอบแรกที่เห็นบน leaderboard ได้ 10 เพชร</li><li>19 เพชร ถูกเรียกว่าน่าจะเป็นเพดาน และมีคนทำเกิน 19 เมื่อเหลือ 1 นาที 20 วินาที (ไม่ได้ยินตัวเลขสุดท้าย)</li><li>ตัดเสมอด้วยอัตราเพชรต่อ token</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“So, this is not just mine the most diamonds. It is get the best diamonds-to-tokens ratio.”</p><p class='text-zinc-500'>ไม่ใช่แค่ขุดเพชรให้มากสุด แต่ต้องได้อัตราเพชรต่อ token ที่ดีที่สุด</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Seems like 19 might be the upper echelon of what&#x27;s possible.”</p><p class='text-zinc-500'>ดูเหมือน 19 อาจเป็นระดับสูงสุดที่ทำได้</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“because our second place has zero tokens, we don&#x27;t know who actually won second and third place yet”</p><p class='text-zinc-500'>เพราะอันดับสองแสดง token เป็นศูนย์ เลยยังไม่รู้ว่าใครได้อันดับสองกับสาม</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ตั้ง eval ที่เร็ว (ราว 1 นาที) ไว้ก่อน แล้ว hill climb ที่ system prompt/model/skill ทีละอย่าง</li><li>ตั้งเมตริกตัดสินที่รวมประสิทธิภาพ (เพชรต่อ token) ไม่ใช่แค่ผลลัพธ์ดิบ เพื่อไม่ให้ชนะด้วยการโยนโมเดลหนักสุด</li><li>ใช้ seed และ start kit เดียวกันเพื่อให้เทียบ config ได้เป็นธรรม</li><li>ตรวจค่า token ที่ผิดปกติ (เช่น 0 token) ก่อนเชื่อผล leaderboard</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>transcript ไม่ได้ระบุชื่อผู้เข้าแข่งหรือคะแนนของแต่ละคน มีแค่ตัวเลข 10 และ 19 ที่ได้ยิน จึงไม่ทราบว่าใครชนะหรือคะแนนผู้ชนะเกิน 19 เท่าไร</li><li>ชื่อคลิประบุ 45 นาที แต่ผู้พูดพูดว่าจับเวลาประมาณ 35 นาที</li><li>ไม่ได้ยินคำสั่งแก้ปัญหา Cloudflare เพราะผู้พูดบอกว่าแปะไว้บนจอ</li><li>ผู้พูด Ben กับ Jeff ได้ยินจากการแนะนำตัว แต่ transcript ไม่แยกว่าใครพูดช่วงไหน</li><li>ASR เขียน &#x27;MCV server&#x27; ในส่วน Jeff น่าจะหมายถึง MCP server และ &#x27;CloudFlare&#x27; อาจเป็นชื่อบริการเครือข่ายที่ติดขัด ไม่ใช่ตัว agent</li><li>ที่ว่า &#x27;Minecraft clone&#x27; มาจากคำพูดของผู้พูด ไม่ได้ยืนยันว่าเป็น Minecraft ตัวจริง</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=dxqX_6ciVQA" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/26-tool-skill-or-subagent-decomposing-an-agent-t.html" class="hover:underline">← #26 แยก agent ที่ prompt บวมให้ลงตัว: อะไรควรเป็น tool, skill หรือ subagent</a><a href="../talks/28-evals-for-taste-hill-climbing-a-slide-generat.html" class="hover:underline ml-auto text-right">#28 สร้าง eval ให้ agent ทำสไลด์ แล้วไต่คุณภาพขึ้นทีละรอบ →</a></nav>
+</main></body></html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สร้าง eval ให้ agent ทำสไลด์ แล้วไต่คุณภาพขึ้นทีละรอบ | CwC London #28</title>
+<meta name="description" content="เวิร์กชอปพาสร้าง eval ให้ agent สร้างสไลด์ PowerPoint ตั้งแต่ code grader ง่ายๆ ไปจนถึง model judge แล้วใช้คะแนนที่ได้วนปรับ system prompt และเพิ่ม QA…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/28-evals-for-taste-hill-climbing-a-slide-generat.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="สร้าง eval ให้ agent ทำสไลด์ แล้วไต่คุณภาพขึ้นทีละรอบ | CwC London #28">
+<meta property="og:description" content="เวิร์กชอปพาสร้าง eval ให้ agent สร้างสไลด์ PowerPoint ตั้งแต่ code grader ง่ายๆ ไปจนถึง model judge แล้วใช้คะแนนที่ได้วนปรับ system prompt และเพิ่ม QA…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/28-evals-for-taste-hill-climbing-a-slide-generat.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="สร้าง eval ให้ agent ทำสไลด์ แล้วไต่คุณภาพขึ้นทีละรอบ | CwC London #28">
+<meta name="twitter:description" content="เวิร์กชอปพาสร้าง eval ให้ agent สร้างสไลด์ PowerPoint ตั้งแต่ code grader ง่ายๆ ไปจนถึง model judge แล้วใช้คะแนนที่ได้วนปรับ system prompt และเพิ่ม QA…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "สร้าง eval ให้ agent ทำสไลด์ แล้วไต่คุณภาพขึ้นทีละรอบ — Code with Claude London 2026 #28", "description": "เวิร์กชอปพาสร้าง eval ให้ agent สร้างสไลด์ PowerPoint ตั้งแต่ code grader ง่ายๆ ไปจนถึง model judge แล้วใช้คะแนนที่ได้วนปรับ system prompt และเพิ่ม QA…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/28-evals-for-taste-hill-climbing-a-slide-generat.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/28-evals-for-taste-hill-climbing-a-slide-generat.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Evals for taste: Hill-climbing a slide-generation agent", "url": "https://www.youtube.com/watch?v=v9FTCvkV_a0", "duration": "PT39M16S"}, "about": ["evals", "agent-reliability", "prompt-engineering", "model-selection"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#28 สร้าง eval ให้ agent ทำสไลด์ แล้วไต่คุณภาพขึ้นทีละรอบ", "item": "https://chalermporn.github.io/cwc-london-2026/talks/28-evals-for-taste-hill-climbing-a-slide-generat.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#28 · เวิร์กชอป · 39:16</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">สร้าง eval ให้ agent ทำสไลด์ แล้วไต่คุณภาพขึ้นทีละรอบ</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Evals for taste: Hill-climbing a slide-generation agent</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> ไม่ได้ระบุชื่อใน transcript</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> คนที่กำลังสร้าง agent และอยากรู้ว่า eval ควรวัดอะไร ออกแบบ grader อย่างไร ไม่ต้องมีพื้นมาก่อน</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">เวิร์กชอปพาสร้าง eval ให้ agent สร้างสไลด์ PowerPoint ตั้งแต่ code grader ง่ายๆ ไปจนถึง model judge แล้วใช้คะแนนที่ได้วนปรับ system prompt และเพิ่ม QA loop จนคุณภาพดีขึ้น ผู้พูดย้ำว่า eval ต้องเป็นของที่มีชีวิต ต้อง calibrate grader ต่อเนื่อง ไม่ใช่ตั้งครั้งเดียวแล้วเชื่อตลอด</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">A workshop on building evals for a slide-generation agent: code graders and LLM judges drive a prompt/QA-loop iteration cycle, with the warning that graders must be calibrated and kept alive.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>Eval คือชุดทดสอบเชิงระบบที่วัดว่า AI ทำงานในโดเมนเฉพาะได้ดีแค่ไหน ช่วยแปลงความรู้สึกว่า &#x27;วันนี้แย่ลงนะ&#x27; ให้เป็นสิ่งที่ลงมือแก้ได้ benchmark ทั่วไปอย่าง SWE-bench บอกเรื่องของคุณได้น้อย จึงควรสร้าง eval ของตัวเอง</li><li>ไม่มี eval จะบินตาบอด ต้องรอลูกค้าบ่นแล้วค่อยตามแก้ แก้จุดหนึ่งอาจทำอีกจุดพัง และยืนยันไม่ได้ว่าดีขึ้นหรือถดถอย ส่วนมี eval แล้วต้องนิยาม &#x27;ความสำเร็จ&#x27; ออกมาชัด ย้ายไปโมเดลใหม่ได้เร็วขึ้น และเห็นปัญหาก่อนปล่อย</li><li>Grader มีสามแบบ code-based (เร็ว ถูก deterministic แต่เปราะและไม่มี nuance) model-based (rubric, pairwise comparison, multi-judge consensus ยืดหยุ่นแต่ non-deterministic และแพงกว่า) และ human grader (คุณภาพสูงสุดแต่แพงและช้าที่สุด ใช้ spot check/AB testing)</li><li>ใน repo เวิร์กชอป agent นิยามด้วย agent.yaml (Managed Agents) code grader นับ emoji, จำนวนสไลด์, สไลด์ที่แน่นเกิน, ฟอนต์เล็ก, text-heavy ส่วน judge ให้คะแนน 0-5 ด้าน text, image, layout, color หลักคิดคือ grader ที่ไม่ให้ข้อมูลที่ลงมือแก้ได้ ไม่ควรอยู่ใน eval</li><li>วงไต่คุณภาพ ดูผลสไลด์กับคะแนน แล้วแก้ system prompt ตามจุดที่พลาด (ขนาดตัวอักษร layout ห้าม emoji ห้ามเส้น accent บางๆ แบบ AI tell) แล้วรันใหม่ รอบหนึ่ง emoji count พุ่งเป็น 20 ทั้งที่ผู้พูดไม่เห็นในสไลด์ แปลว่า grader ยังนิยามไม่ดี จึงต้องมนุษย์ตรวจควบคู่</li><li>เพิ่มข้อกำหนดว่าทุกสไลด์ต้องมีไดอะแกรมหรือกราฟเป็นภาพจริง แล้วเพิ่ม QA loop ที่สั่ง agent ให้ &#x27;assume there are problems&#x27; ทำ QA เหมือนล่าบั๊ก แปลงสไลด์เป็นภาพ ตรวจทุกหน้า แก้ render ใหม่ อย่างน้อยหนึ่งรอบ คะแนน judge ขยับไปราว 4.2-4.4</li><li>ลองสลับเป็น Opus 4.7 กับ prompt เริ่มต้นสั้นๆ ผลดีกว่า Sonnet อย่างเห็นได้ชัด แทบไม่ใช้ emoji แต่คะแนน judge สูงลิ่วทั้งที่บางรอบไม่มีภาพเลย ผู้พูดชี้ว่า rubric ไม่มีจุดยึด (ไม่มีตัวอย่างว่า 0 หรือ 5 หน้าตาเป็นอย่างไร) จึงควรเขียน anchor ตัวอย่างและบังคับให้ judge ให้เหตุผลก่อนแล้วค่อยให้คะแนน เพราะ LLM จะหาเหตุผลมาปกป้องตัวเลขที่พูดไปก่อน</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>นิยาม agent ใน agent.yaml (Managed Agents) พร้อม system prompt สั้นๆ ให้สร้างไฟล์ PowerPoint ด้วย Python PPTX ใน shell</li><li>รัน agent สร้างสไลด์ 5 หน้า แล้วดูผลจริงเพื่อหา failure mode (ข้อความทับกัน สีแปลก ฟอนต์เล็ก emoji)</li><li>เขียน code grader (emoji count, slide count, cluttered, small font, text-heavy, slides with image) และ judge (color, image, layout, text, title-body coherence ให้คะแนน 0-5)</li><li>รัน script ให้คะแนนอัตโนมัติ อ่าน score.json แล้วแก้ system prompt ตามจุดที่พลาด (typography, layout/density, ห้าม AI tells)</li><li>เพิ่มข้อกำหนดทุกสไลด์ต้องมีไดอะแกรม/กราฟเป็นภาพ แล้วรันซ้ำและเทียบคะแนน</li><li>เพิ่ม QA loop แบบ adversarial: แปลงสไลด์เป็นภาพ ตรวจทุกหน้า แก้ render ซ้ำ อย่างน้อยหนึ่งรอบ fix-and-verify</li><li>สลับเป็น Opus 4.7 ด้วย prompt พื้นฐาน เทียบผล แล้วย้อนไปปรับ rubric ของ judge ให้มี anchor และให้เหตุผลก่อนให้คะแนน</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ความยาวคลิป 39:16 โดยผู้พูดบอกว่า session ราว 45 นาทีสั้นเกินกว่าจะลง eval ได้ลึก</li><li>คะแนน judge รอบแรกอยู่ราว 2.8 ถึง 4 จากเต็ม 5 ซึ่งผู้พูดมองว่าสูงเกินไปเมื่อดูสไลด์จริง</li><li>หลังเพิ่ม QA loop คะแนน judge ทุกด้านขยับเป็นช่วงประมาณ 4.2 ถึง 4.4</li><li>รอบ Opus 4.7 prompt พื้นฐาน ผู้พูดอ่านคะแนน เช่น color judge 4.8, layout judge 4.2, title-body coherence 4.4, image 5 (ทั้งที่สไลด์นั้นไม่มีภาพ)</li><li>รอบแก้ prompt ครั้งที่สองผู้พูดบอกว่า emoji count ขึ้นเป็น 20 ซึ่งไม่ตรงกับที่เห็นในสไลด์ จึงสงสัยว่าเป็นความผิดพลาดของ grader</li><li>ชื่อโมเดลที่พูดถึง: Sonnet (พูด 4.7 แล้วแก้เป็น 4.6) กับ Opus 4.7</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“systematic tests that measure how well an AI system performs on a specific domain or use case”</p><p class='text-zinc-500'>eval คือชุดทดสอบเชิงระบบที่วัดผลงานของ AI ในโดเมนหรือ use case เฉพาะ</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“It&#x27;s not because you have set up your evals once that they are now like the ground truth”</p><p class='text-zinc-500'>ตั้ง eval ครั้งเดียวไม่ได้แปลว่ามันเป็นความจริงสูงสุดตลอดไป</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Approach QA as a bug hunt, not a confirmation step.”</p><p class='text-zinc-500'>ให้ทำ QA แบบล่าบั๊ก ไม่ใช่ขั้นตอนยืนยันว่าดีแล้ว</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>สร้าง eval ของ use case ตัวเองก่อนเชื่อ benchmark ทั่วไป และถามทุก grader ว่าให้ข้อมูลที่ลงมือแก้ได้ไหม ถ้าไม่ ตัดทิ้ง</li><li>ใช้ code grader กับของที่นับได้แน่ๆ ใช้ model judge กับของที่ต้องใช้วิจารณญาณ และเขียน rubric พร้อมตัวอย่าง anchor ว่าคะแนนต่ำสุดสูงสุดหน้าตาอย่างไร</li><li>สั่ง judge ให้เขียนข้อดีข้อเสียและเหตุผลก่อน ค่อยให้คะแนนท้ายสุด กันไม่ให้ LLM แต่งเหตุผลมาปกป้องตัวเลขที่เลือกไว้แล้ว</li><li>เพิ่ม QA agent หรือ QA loop แบบสันนิษฐานว่ามีปัญหา แล้วป้อนผลกลับไปให้ agent ผู้สร้างจนทั้งสองฝั่งพอใจ</li><li>อ่านผลจริงด้วยตาควบคู่คะแนนเสมอ เมื่อคะแนนกับสิ่งที่เห็นขัดกัน ให้แก้ grader ไม่ใช่เชื่อตัวเลข และทดลองสลับโมเดลที่เก่งขึ้นโดยใช้ eval ชุดเดิมวัด</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ไม่มีการแนะนำชื่อผู้พูดใน transcript จึงใส่ speakers เป็นว่าง</li><li>ตัวเลขคะแนนและชื่อรุ่นโมเดลมาจาก ASR ผู้พูดพูด &#x27;Sonnet 4 7&#x27; แล้วแก้เป็น &#x27;4 6&#x27; จึงบันทึกเป็นไม่ชัดเจน</li><li>ผู้พูดอ้างว่าทำชุดสไลด์ผลลัพธ์ล่วงหน้าไว้ ตัวเลขทั้งหมดมาจากการเดโมในห้อง ไม่ใช่ผลวัดซ้ำที่ตรวจสอบได้</li><li>ผู้พูดบอกว่า &#x27;Tower Bench&#x27; ซึ่งน่าจะเป็นชื่อ benchmark ที่ ASR เพี้ยน ไม่ได้ใส่เป็นข้อเท็จจริง</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=v9FTCvkV_a0" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/27-agent-battle-mine-the-most-diamonds-in-45-min.html" class="hover:underline">← #27 Agent Battle: แข่งสร้าง agent ขุดเพชรใน Minecraft ด้วย Managed Agents</a><a href="../talks/29-agents-that-remember.html" class="hover:underline ml-auto text-right">#29 agent ที่จำข้าม session ได้: memory store กับ dreaming →</a></nav>
+</main></body></html>

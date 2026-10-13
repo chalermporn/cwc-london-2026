@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metaview ทำ prompt คัดใบสมัครให้เรียนรู้จากการตัดสินใจของ… | CwC London #35</title>
+<meta name="description" content="Metaview สร้างระบบคัดใบสมัครที่ไม่ตั้งเกณฑ์ตายตัว แต่ให้ agent สังเกตว่า recruiter ผ่านหรือปัดใคร แล้วปรับ Ideal Candidate Profile (ICP) ซึ่งเป็น markdown…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/35-how-metaview-built-self-improving-prompts-for.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="Metaview ทำ prompt คัดใบสมัครให้เรียนรู้จากการตัดสินใจของ… | CwC London #35">
+<meta property="og:description" content="Metaview สร้างระบบคัดใบสมัครที่ไม่ตั้งเกณฑ์ตายตัว แต่ให้ agent สังเกตว่า recruiter ผ่านหรือปัดใคร แล้วปรับ Ideal Candidate Profile (ICP) ซึ่งเป็น markdown…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/35-how-metaview-built-self-improving-prompts-for.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Metaview ทำ prompt คัดใบสมัครให้เรียนรู้จากการตัดสินใจของ… | CwC London #35">
+<meta name="twitter:description" content="Metaview สร้างระบบคัดใบสมัครที่ไม่ตั้งเกณฑ์ตายตัว แต่ให้ agent สังเกตว่า recruiter ผ่านหรือปัดใคร แล้วปรับ Ideal Candidate Profile (ICP) ซึ่งเป็น markdown…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Metaview ทำ prompt คัดใบสมัครให้เรียนรู้จากการตัดสินใจของ recruiter เอง — Code with Claude London 2026 #35", "description": "Metaview สร้างระบบคัดใบสมัครที่ไม่ตั้งเกณฑ์ตายตัว แต่ให้ agent สังเกตว่า recruiter ผ่านหรือปัดใคร แล้วปรับ Ideal Candidate Profile (ICP) ซึ่งเป็น markdown…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/35-how-metaview-built-self-improving-prompts-for.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/35-how-metaview-built-self-improving-prompts-for.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "How Metaview built self-improving prompts for application review", "url": "https://www.youtube.com/watch?v=A3rmSUp6Dxg", "duration": "PT16M46S"}, "about": ["self-improving", "prompt-engineering", "model-selection", "agent-reliability"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#35 Metaview ทำ prompt คัดใบสมัครให้เรียนรู้จากการตัดสินใจของ recruiter เอง", "item": "https://chalermporn.github.io/cwc-london-2026/talks/35-how-metaview-built-self-improving-prompts-for.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#35 · เคสตามอุตสาหกรรม · 16:46</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">Metaview ทำ prompt คัดใบสมัครให้เรียนรู้จากการตัดสินใจของ recruiter เอง</h1>
+<p class="mono text-xs text-zinc-500 mt-1">How Metaview built self-improving prompts for application review</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Nick Mayhew (Product Engineer, Metaview)</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> คนสร้างระบบ evaluation หรือ agent ที่ผู้ใช้เป็นคนตัดสินใจ และอยากรู้ว่าจะให้ prompt พัฒนาตามพฤติกรรมผู้ใช้ได้อย่างไร</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Metaview สร้างระบบคัดใบสมัครที่ไม่ตั้งเกณฑ์ตายตัว แต่ให้ agent สังเกตว่า recruiter ผ่านหรือปัดใคร แล้วปรับ Ideal Candidate Profile (ICP) ซึ่งเป็น markdown prompt ให้ทันความต้องการที่เปลี่ยนไป ข้อสรุปคือ preferences ของผู้ใช้เปลี่ยนเสมอ ให้เขียนเป็นร้อยแก้วไม่ใช่กฎ และฝัง guardrail ในสถาปัตยกรรมให้ระบบเป็นแค่ apprentice</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Metaview&#x27;s application review keeps an Ideal Candidate Profile prompt up to date by watching recruiter decisions; design rules: expect preferences to evolve, use prose not rules, and build guardrails in so the system stays the apprentice.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ผู้พูดบอกว่าตั้งแต่ปี 2023 LLM ทำให้ใบสมัครงานเพิ่มพรวด ผู้สมัครใช้ AI ช่วยเขียน recruiter จึงต้องการตัวช่วยคัดกรอง</li><li>ปัญหาแกนกลางคือเกณฑ์ของ hiring manager เปลี่ยนไปเรื่อยๆ (เช่น เพิ่งบอกว่าอยากได้ประสบการณ์ startup แล้วค่อยเพิ่ม zero-to-one) ถ้า prompt เป็นกฎที่ตั้งไว้ล่วงหน้า ต้องเขียนใหม่ทุกรอบ จึงต้องวางให้ prompt เปลี่ยนตาม preferences ตั้งแต่ฐานระบบ</li><li>ขั้นตอน: ลบข้อมูลระบุตัวตนของผู้สมัคร (ชื่อ อีเมล เบอร์) แล้วจับคู่กับ ICP เพื่อสร้างผลประเมิน ส่วน ICP คือ prompt ที่เรียนรู้และปรับตัวเอง</li><li>หลักคิดคือ human in the center ไม่ใช่แค่ in the loop: ระบบเป็น apprentice ช่วยงานหนักและชี้ข้อสังเกต ส่วนการผ่านหรือปัดผู้สมัครเป็นของ recruiter เสมอ</li><li>ICP agent รับ user messages (ผ่าน ปัด feedback แก้ ICP ด้วยมือ) และเพราะ feedback เป็นเชิงเปรียบเทียบกับสิ่งที่เพิ่งเห็น จึงมี tool เฉพาะชื่อ query files ไว้ไล่ resume ที่ลบข้อมูลตัวตนแล้ว เพื่อตีความคำอย่าง &#x27;Python น้อยไป&#x27; ก่อนส่งให้ ICP manager agent ที่มีหน้าที่เดียวคือรักษา prompt ให้ทันสมัย</li><li>ทำไมเป็น workflow ที่มี agent ครอบอยู่ข้างบน: ปริมาณพันๆ ใบสมัครต่อวันรับต้นทุนไม่ไหวถ้าโยนทุกอย่างให้ agent จึงต้องประหยัด token</li><li>ICP เป็นเอกสาร markdown ภาษาธรรมชาติ (role summary, must haves, nice to haves, red flags) ไม่ใช้ weighting หรือ if-statement เพราะ recruiter คิดและเขียนแบบนั้น และ LLM เก่งภาษา</li><li>เลือกโมเดล: Haiku ทำ evaluation ปริมาณสูง Sonnet ทำงานหาแพตเทิร์นที่ latency สำคัญน้อยกว่า ผู้พูดว่าใช้โมเดล Claude เพราะต้องการตัวที่คิดเชิงวิพากษ์ ไม่เชื่อ fluff ใน CV ตามคำผู้พูด ในเดโมเห็น Sonnet 4.6 เรียก tool อัปเดต ICP แล้วแสดง diff สีเขียวแดงให้ผู้ใช้ยืนยันหรือแก้</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ลูกค้ารายหนึ่งได้ 2,740 ใบสมัครสำหรับงานเดียวใน 24 ชั่วโมง (ผู้พูดบอกว่าเกิดบ่อยกับงาน remote ระดับ junior)</li><li>คำตอบของคำถามในใบสมัคร (เช่น ทำไมอยากทำงานที่นี่) ยาวขึ้นราว 50% ในสองปีที่ผ่านมา ตามที่ผู้พูดบอก</li><li>โมเดลที่ใช้: Haiku สำหรับ evaluation, Sonnet สำหรับ ICP agent (ในเดโมเห็น Sonnet 4.6)</li><li>ผู้พูดบอกว่าปกติเริ่มเห็นแพตเทิร์นทุก 100-200 ครั้ง จึงไม่ปรับ ICP จาก feedback ครั้งเดียว</li><li>ประมวลผลหลายพันใบสมัครต่อวัน และมี input per token limit พิเศษจาก Anthropic ตามคำผู้พูด</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Make the user the master and make the system the apprentice.”</p><p class='text-zinc-500'>ให้ผู้ใช้เป็นนาย และให้ระบบเป็นลูกมือ</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Allow them to reason in prose, not in flow charts.”</p><p class='text-zinc-500'>ให้ LLM คิดเป็นร้อยแก้ว ไม่ใช่ flow chart</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Lean into what LLMs are good at, which is natural language.”</p><p class='text-zinc-500'>ใช้จุดแข็งของ LLM คือภาษาธรรมชาติ</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ถ้าระบบให้ผู้ใช้เป็นคนตัดสินใจ ให้ถือว่า preferences จะเปลี่ยนแน่ และออกแบบกลไกอัปเดต prompt ตั้งแต่วันแรก</li><li>เก็บเกณฑ์ประเมินเป็นเอกสารภาษาธรรมชาติที่ผู้ใช้อ่านและแก้เองได้ แทน weighting หรือ if-statement</li><li>แสดงการเปลี่ยน prompt เป็น diff ให้ผู้ใช้ confirm หรือแก้ก่อนมีผล และอย่าอัปเดตจากตัวอย่างเดียว รอให้เห็นแพตเทิร์น</li><li>แยกงานปริมาณสูงที่ต้องถูกและเร็ว (โมเดลเล็ก) ออกจากงานหาแพตเทิร์นที่ใช้ความฉลาด (โมเดลใหญ่)</li><li>ฝัง guardrail ในสถาปัตยกรรม ให้ระบบช่วยและแนะนำ แต่ไม่ overrule ผู้ใช้</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>transcript มาจาก Whisper large-v3 ที่ถอดเอง ชื่อเฉพาะอาจเพี้ยน เช่น &#x27;clored models&#x27; = Claude models, &#x27;Langchain/LandGraph&#x27; = LangChain/LangGraph, &#x27;UPSA ICP tool&#x27; น่าจะเป็น upsert ICP tool</li><li>ช่วงเล่าเรื่อง feedback เชิงเปรียบเทียบใน ICP agent มีประโยคซ้ำวนและขาดความหมายในไฟล์ จึงสรุปจากส่วนที่ชัดเท่านั้น</li><li>ตัวเลข 2,740 และ 50% เป็นข้ออ้างของผู้พูด ไม่มีแหล่งอ้างอิงในคลิป</li><li>ผู้พูดบอกว่ายังโต้เถียงกับตัวแทน Anthropic เรื่อง Claude Managed Agents ปัจจุบัน deploy บน LangChain/LangGraph</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=A3rmSUp6Dxg" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/34-how-airops-chases-friction-to-build-ai-produc.html" class="hover:underline">← #34 AirOps ไล่แก้จุดฝืด ทำ agent ให้นักการตลาดใช้ได้จริงด้วย Claude Agent SDK</a><a href="../talks/36-teaching-agents-to-learn-from-your-team.html" class="hover:underline ml-auto text-right">#36 สอน agent ให้เรียนรู้จากทีม: เคส Buzz ของ Warp กับ feedback loop รายวัน →</a></nav>
+</main></body></html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>เส้นโค้งความสามารถของโมเดล และวิธีขี่ไปกับมัน | CwC London #06</title>
+<meta name="description" content="ผู้พูดไล่ให้เห็นว่าโมเดลเก่งขึ้นเร็วแค่ไหนในรอบ 12 เดือน ผ่านสามเรื่องหลัก คือ วางแผนก่อนลงมือ กู้คืนจาก error และรักษาสมาธิในงานยาว…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/06-the-capability-curve.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="เส้นโค้งความสามารถของโมเดล และวิธีขี่ไปกับมัน | CwC London #06">
+<meta property="og:description" content="ผู้พูดไล่ให้เห็นว่าโมเดลเก่งขึ้นเร็วแค่ไหนในรอบ 12 เดือน ผ่านสามเรื่องหลัก คือ วางแผนก่อนลงมือ กู้คืนจาก error และรักษาสมาธิในงานยาว…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/06-the-capability-curve.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="เส้นโค้งความสามารถของโมเดล และวิธีขี่ไปกับมัน | CwC London #06">
+<meta name="twitter:description" content="ผู้พูดไล่ให้เห็นว่าโมเดลเก่งขึ้นเร็วแค่ไหนในรอบ 12 เดือน ผ่านสามเรื่องหลัก คือ วางแผนก่อนลงมือ กู้คืนจาก error และรักษาสมาธิในงานยาว…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "เส้นโค้งความสามารถของโมเดล และวิธีขี่ไปกับมัน — Code with Claude London 2026 #06", "description": "ผู้พูดไล่ให้เห็นว่าโมเดลเก่งขึ้นเร็วแค่ไหนในรอบ 12 เดือน ผ่านสามเรื่องหลัก คือ วางแผนก่อนลงมือ กู้คืนจาก error และรักษาสมาธิในงานยาว…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/06-the-capability-curve.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/06-the-capability-curve.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "The capability curve", "url": "https://www.youtube.com/watch?v=DNRddIEoH3c", "duration": "PT26M25S"}, "about": ["model-selection", "evals", "agent-reliability", "extended-thinking", "self-improving"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#06 เส้นโค้งความสามารถของโมเดล และวิธีขี่ไปกับมัน", "item": "https://chalermporn.github.io/cwc-london-2026/talks/06-the-capability-curve.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#06 · คีย์โน้ต · 26:25</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">เส้นโค้งความสามารถของโมเดล และวิธีขี่ไปกับมัน</h1>
+<p class="mono text-xs text-zinc-500 mt-1">The capability curve</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Jeremy (Product Manager ที่ Anthropic ทำงานกับทีม research ดูแลเรื่อง coding behaviors และ capabilities (ผู้พูดแนะนำตัวเองด้วยชื่อแรกเท่านั้น))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> developer ที่สร้างแอปหรือ agent บน Claude และอยากรู้ว่าต้องปรับวิธีทำงานอย่างไรเมื่อโมเดลใหม่ออกมาทุกไม่กี่เดือน</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">ผู้พูดไล่ให้เห็นว่าโมเดลเก่งขึ้นเร็วแค่ไหนในรอบ 12 เดือน ผ่านสามเรื่องหลัก คือ วางแผนก่อนลงมือ กู้คืนจาก error และรักษาสมาธิในงานยาว แล้วสรุปเป็นแนวปฏิบัติสำหรับ developer ว่า ต้องมี evals ที่เชื่อถือได้ ลด scaffolding ลง เปิดพื้นที่ให้โมเดลทำงาน และปิด loop ให้ agent ช่วยปรับปรุง agent ด้วยกันเอง</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Anthropic&#x27;s Jeremy traces how models improved in a year (planning, error recovery, long-run coherence) and gives developers four habits to ride the curve: trusted evals, shrinking scaffolding, giving the model room to work, and closing the agent loop.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ผู้พูดเล่าว่าเมื่อปีก่อน Opus 4 ยังเป็น state of the art และ Claude Code เพิ่งเปิดตัว ตอนนี้ coding agent เปลี่ยนวิธีทำซอฟต์แวร์ไปเกือบหมด ถามผู้ฟังแล้วราวครึ่งห้องเคย ship PR ที่ Claude เขียนทั้งหมดในสัปดาห์ที่ผ่านมา</li><li>SWE-bench Verified เคยอยู่ราว 60% ตอน Sonnet 3.7 และ Opus 4.7 ผ่าน 87% ผู้พูดบอกว่าโมเดลระดับ frontier ภายใน (Mythos Preview) อิ่มตัว benchmark นี้จนไม่ใช้วัดแล้ว คอขวดจึงย้ายจากการแก้ PR ไปที่เรื่องอื่น</li><li>เดโมให้ Claude สร้างเว็บ Claude.ai ใหม่ในครั้งเดียว Sonnet 4 เขียน 2,000 บรรทัดแต่ chat ไม่ตอบ ส่วน Opus 4.7 เขียนราว 1,700 บรรทัด ได้แอปที่ chat ใช้งานได้ มี sidebar ประวัติ แผนภาพ mermaid และ dark mode</li><li>ความก้าวหน้าสามด้าน ได้แก่ วางแผนและให้เหตุผลก่อนลงมือ (ไม่ต้อง scaffold บังคับ แค่ตั้ง reasoning effort สูง) กู้คืนจากความล้มเหลวจน doom looping แทบหายไป และรักษา coherence ได้ถึง 1 ล้าน token หรือมากกว่า ทำให้ไม่ต้องหั่นงานเป็นชิ้นเล็กหรือคอยเฝ้า</li><li>รวมสามด้านแล้วได้ long-horizon agent ที่รันได้หลายชั่วโมง ตัวอย่างที่ผู้พูดเล่าคือผู้ก่อตั้ง Bun ให้ Claude เขียน JavaScript engine ของ Bun ใหม่เป็น Rust ภายในหนึ่งสัปดาห์ จนเกือบผ่าน test suite ครบ เพราะ Bun มี test suite coverage เกือบ 100% คอยตรวจ</li><li>Evals คือ unit test และ regression test ของยุค AI ควรสร้างให้ตรงกับ traffic จริงแทนใช้ academic benchmark และต้องรู้ว่าเมื่อไหร่ eval อิ่มตัว (เช่นโมเดลได้ 90% แล้วที่เหลือทำไม่ได้) มิฉะนั้นจะมองไม่เห็นว่าโมเดลใหม่ดีขึ้น ทีมที่มี evals ปรับตัวกับโมเดลใหม่ได้เร็วกว่า</li><li>ให้ลด scaffolding (prompt, tools, harness) ลงเมื่อได้โมเดลใหม่ เพราะ prompt ยาวสะสมคำสั่งที่ออกแบบกับข้อบกพร่องของโมเดลเก่า ผู้พูดยกตัวอย่างตัวอย่าง citation format เก่าใน prompt ของ Claude.ai ที่โมเดลใหม่ทำตามจนผิดรูปแบบ พอแก้ไม่กี่ตัวอักษรก็หายทั้งกลุ่ม</li><li>ให้พื้นที่โมเดลทำงาน คือเปิด adaptive thinking และตั้ง effort สูง ปล่อยให้ทำงานแบบอัตโนมัติอย่างควบคุมได้ด้วย Auto Mode ที่มี classifier ตรวจทุก tool call และปิด loop ให้ Claude Code รัน eval ของ agent แล้วช่วยปรับ prompt กับ tools เอง</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>SWE-bench Verified: Sonnet 3.7 ราว 60% เมื่อปีก่อน เทียบกับ Opus 4.7 ผ่าน 87% ผู้พูดสรุปว่าแก้ issue ได้มากขึ้นราว 3 เท่า</li><li>เดโมสร้าง Claude.ai: Sonnet 4 ราว 2,000 บรรทัด เทียบกับ Opus 4.7 ราว 1,700 บรรทัด</li><li>โมเดลรักษา coherence ได้ถึง 1 ล้าน token และมากกว่านั้นตามที่ผู้พูดบอก (แต่ยังไม่สมบูรณ์เมื่อถึงหลายล้าน token)</li><li>เคส Bun เขียนใหม่เป็น Rust ใช้เวลาประมาณ 1 สัปดาห์ ผ่าน test suite เกือบ 100% ซึ่งผู้พูดบอกว่าถ้าทำเองจะใช้หลายเดือน</li><li>ตัวอย่าง eval อิ่มตัว: Opus 4.7 ทำได้ 90% แล้วอีก 10% ที่เหลือไม่มีโมเดลไหนทำได้ (ผู้พูดยกเป็นตัวอย่างสมมติ)</li><li>ตัวอย่าง prompt แบบ Frankenstein ราว 3,000 บรรทัดที่สะสมจากการแก้ failure ของโมเดลเก่า</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“evaluations are just the unit tests and the regression tests of the AI era.”</p><p class='text-zinc-500'>evals ก็คือ unit test กับ regression test ของยุค AI</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“you want to cut down your prompt, figure out what&#x27;s not necessary anymore, and describe what you actually intend for your application”</p><p class='text-zinc-500'>ตัด prompt ให้สั้นลง หาว่าอะไรไม่จำเป็นแล้ว แล้วบอกเจตนาจริงของแอปแทน</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“you don&#x27;t want it to delete your cluster or deploy jobs to prod without you asking.”</p><p class='text-zinc-500'>ไม่อยากให้มันลบ cluster หรือ deploy ขึ้น prod เองโดยไม่ถามก่อน</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>สร้าง eval ชุดแรกจาก failure mode และ traffic จริงของแอปตัวเอง ไม่ต้องรอให้สมบูรณ์ แล้วใช้รันเทียบโมเดลใหม่ทันทีที่ออก</li><li>เช็กว่า eval ที่ใช้อยู่อิ่มตัวหรือยัง ถ้าโมเดลใหม่ได้คะแนนเพิ่มแค่ 1% ให้ลองเพิ่มความยากก่อนสรุปว่าโมเดลไม่ดีขึ้น</li><li>ทบทวน system prompt ทุกครั้งที่เปลี่ยนโมเดล ลองตัดให้เหลือน้อยที่สุดแล้วใช้ evals ยืนยันว่าคุณภาพไม่ตก</li><li>ตั้ง effort สูงและเปิด adaptive thinking ในงานที่ต้องการความฉลาด แล้วลดการบังคับให้วางแผนเอง</li><li>ให้ Claude Code รัน eval ของ agent ตัวเองเพื่อเสนอการปรับ prompt และ tools แทนการแก้ทีละจุดด้วยมือ</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>transcript ถอดด้วย Whisper large-v3 ในเครื่อง ไม่ใช่ข้อความต้นฉบับของผู้พูด ชื่อเฉพาะอาจเพี้ยน (ในไฟล์เขียน Claude เป็น Quad/Cloud, SWE-bench เป็น SweeBench, Sonnet เป็น Sonic ในบางจุด)</li><li>ผู้พูดพูดว่าเริ่มงานที่ Anthropic &#x27;March of 2021&#x27; ซึ่งน่าจะเป็นการฟังผิดหรือพูดผิด (ปีก่อนหน้าคือ 2025) ไม่นำไปใช้ยืนยันวันที่</li><li>ชื่อ Windsor น่าจะเป็นการถอดผิดของลูกค้ารายหนึ่ง และผู้ก่อตั้ง Bun ถูกเรียกว่า &#x27;Jared&#x27; ใน transcript ไม่ยืนยันการสะกดชื่อ</li><li>ตัวเลขและเคส (SWE-bench, Bun rewrite, ตัวเลขลูกค้า Vercel/Shopify) เป็นข้ออ้างของผู้พูด ไม่ได้ตรวจสอบกับแหล่งอื่น</li><li>ช่วงเรื่อง evals และ Auto Mode มีประโยคซ้ำจาก ASR ในต้นฉบับ (ประโยคถูกพูดวนซ้ำ) เนื้อหาที่สรุปยึดส่วนที่อ่านได้ชัด</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=DNRddIEoH3c" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/05-the-prompting-playbook.html" class="hover:underline">← #05 Prompting playbook: ซ่อม prompt ที่มีอยู่ด้วย evals และสร้าง agent จากศูนย์</a><a href="../talks/07-designing-with-claude-from-prompt-to-producti.html" class="hover:underline ml-auto text-right">#07 เบื้องหลังสร้าง Claude Design ใน 10 สัปดาห์ด้วยทีมสามคน →</a></nav>
+</main></body></html>

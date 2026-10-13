@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี… | CwC London #31</title>
+<meta name="description" content="James Brady เล่าว่า Elicit ให้ research agent เขียนแผนงานเป็น AshPL ซึ่งเป็น DSL ย่อยของ Python ที่ Turing incomplete แล้วให้ตัว interpreter…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/31-making-agentic-workflows-trustworthy-and-veri.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี… | CwC London #31">
+<meta property="og:description" content="James Brady เล่าว่า Elicit ให้ research agent เขียนแผนงานเป็น AshPL ซึ่งเป็น DSL ย่อยของ Python ที่ Turing incomplete แล้วให้ตัว interpreter…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/31-making-agentic-workflows-trustworthy-and-veri.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี… | CwC London #31">
+<meta name="twitter:description" content="James Brady เล่าว่า Elicit ให้ research agent เขียนแผนงานเป็น AshPL ซึ่งเป็น DSL ย่อยของ Python ที่ Turing incomplete แล้วให้ตัว interpreter…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี Elicit กับ AshPL) — Code with Claude London 2026 #31", "description": "James Brady เล่าว่า Elicit ให้ research agent เขียนแผนงานเป็น AshPL ซึ่งเป็น DSL ย่อยของ Python ที่ Turing incomplete แล้วให้ตัว interpreter…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/31-making-agentic-workflows-trustworthy-and-veri.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/31-making-agentic-workflows-trustworthy-and-veri.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Making agentic workflows trustworthy and verifiable with a custom DSL", "url": "https://www.youtube.com/watch?v=qOjleN2-50c", "duration": "PT29M39S"}, "about": ["agent-reliability", "evals", "cloud-platforms", "self-improving"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#31 ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี Elicit กับ AshPL)", "item": "https://chalermporn.github.io/cwc-london-2026/talks/31-making-agentic-workflows-trustworthy-and-veri.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#31 · เคสตามอุตสาหกรรม · 29:39</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">ทำให้ agent น่าเชื่อถือด้วยภาษา DSL ของตัวเอง (กรณี Elicit กับ AshPL)</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Making agentic workflows trustworthy and verifiable with a custom DSL</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> James Brady (Elicit (ใน transcript ถูกเขียนว่า &#x27;Alissa&#x27;/&#x27;illicit&#x27; จาก ASR))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> คนออกแบบ agent ที่ต้องการความน่าเชื่อถือสูง (งานวิจัย การตัดสินใจเสี่ยงสูง) และสนใจสถาปัตยกรรมเบื้องหลัง ควรเข้าใจ interpreter และ event sourcing คร่าวๆ</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">James Brady เล่าว่า Elicit ให้ research agent เขียนแผนงานเป็น AshPL ซึ่งเป็น DSL ย่อยของ Python ที่ Turing incomplete แล้วให้ตัว interpreter รันแผนนั้นจริง ทำให้กระบวนการตรวจสอบได้ ต่อยอดได้โดยไม่เพี้ยน และทำตามแผนจริง ข้อสรุปคือไม่ได้ชวนให้ทุกคนใช้ DSL แต่ให้ใส่ใจ mechanism ว่าคำตอบเกิดขึ้นอย่างไร</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Elicit&#x27;s research agent writes plans in AshPL, a Turing-incomplete Python subset that an interpreter actually executes, making the process legible, iterable without drift, and faithfully followed. The pitch: care about the mechanism.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>คำถามตั้งต้น ถ้าสองระบบให้ผลลัพธ์ตัวอักษรเหมือนกัน เราเชื่อมันเท่ากันไหม คำตอบคือขึ้นกับกระบวนการข้างใน mechanism สำคัญไม่แพ้ผลลัพธ์ และไม่มี mechanism เดียวที่ถูกสำหรับทุกกรณี มี trade-off ระหว่างความเร็วกับความเข้มงวด</li><li>Elicit วางตัวเรื่องความน่าเชื่อถือสูง คุณภาพสูง และ data provenance จึงตั้งสามข้อ (desiderata) คือ process ต้อง legible ทั้งต่อผู้ใช้และ agent อื่น, การ iterate ต้องไม่เพี้ยนจากเจตนาเดิม (fidelity), และระบบต้องทำตามแผนจริง (followed faithfully)</li><li>AshPL เป็น DSL ที่ Turing incomplete ไม่มี loop ไม่มี recursion ไม่มี mutation เป็น purely functional แบบ reactive และเป็น subset แบบมีหลักการของ Python มี type และมี primitive เฉพาะโดเมน เช่น ดึงงานวิจัยหรือ clinical trial เหตุผลที่เลือกพื้นฐาน Python คือโมเดลมีตัวอย่างเยอะอยู่แล้ว ไม่ต้องเรียนไวยากรณ์ใหม่</li><li>แกนของระบบคือ loop เขียนแล้วตีความแล้วเขียนใหม่ curator เป็นตัวเขียน AshPL (ใช้ Agent SDK และเคยลอง Pi) Python service parse ตรวจ syntax และ type check ถ้า error ส่งกลับไปแก้ทันทีโดยแทบไม่เสียต้นทุน แล้ว interpret ด้วยโค้ด Python ธรรมดา</li><li>สถาปัตยกรรมประกอบด้วย UI, event log แบบ append-only (event sourcing), Python service เป็น message broker, sandbox, wrapper ที่สลับ harness/โมเดลได้ และ gateway ที่เก็บ API key ไว้ เพื่อกัน user input หลอก curator ให้พิมพ์ env ออกมา</li><li>ทุกรอบ interpret โปรแกรมทั้งก้อนใหม่ตั้งแต่ต้น แต่เร็วเพราะ content-addressable store ทำ memoization (hash expression ถ้าเคยคำนวณแล้วก็ใช้ซ้ำ) ซึ่งเป็นไปได้เพราะภาษาเป็น pure ผู้พูดว่าการ interpret ทั้งโปรแกรมช่วยให้มั่นใจเรื่อง cohesion และกัน drift</li><li>เดโมคือ research landscape ของบริษัทที่ลงทุนด้าน foundation model สำหรับชีววิทยา ได้ตารางเป็น artifact ที่คลิกดูโค้ด AshPL ที่สร้างตารางนั้นได้ มี visualization ที่ derive จากโค้ดเดียวกัน และต่อยอดด้วย join กับตาราง oversight bodies โดยโปรแกรมยาวขึ้นแต่ส่วนต้นเหมือนเดิมและ cache ได้</li><li>งานส่วนใหญ่ไม่ใช่ตัว DSL แต่เป็นวิศวกรรมซอฟต์แวร์ทั่วไป เช่น wrapper, interrupt handling, rehydrate session, credential isolation, จัดการ message ของโมเดล, event sourcing และทีม eval โดยเฉพาะที่ยากเพราะระบบเขียนโปรแกรมแล้วรันสดๆ</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ความยาวคลิป 29:39 หัวข้อ Elicit research agent ที่ใช้ AshPL</li><li>โปรแกรม AshPL ของตารางแรกยาวราว 100-150 บรรทัด ส่วนตารางที่ join แล้วยาวราว 1,000 บรรทัดขึ้นไป (ผู้พูดประมาณเอง)</li><li>ตอนนี้ curator ใช้ Pi ร่วมกับโมเดลของ Anthropic ซึ่งผู้พูดบอกว่าเป็นชุดที่ดีที่สุดสำหรับพวกเขา และเคยลอง Agent SDK กับ Pi ร่วมกับโมเดลอื่นมาก่อน</li><li>ผู้พูดบอกว่าเดโมจริงใช้เวลาทำงานรวมราวสองสามชั่วโมงรวมการต่อยอด ไม่ใช่ทำในห้องได้ทัน จึงเปิด session ที่บันทึกไว้</li><li>รายการสิ่งที่ต้องสร้างรอบ DSL ผู้พูดไล่ไว้ราวแปดข้อ (DSL, wrapper, interrupt handling, rehydrate, credential isolation, message handling, event sourcing, eval)</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“my pitch is that you should care a lot about the mechanism”</p><p class='text-zinc-500'>ข้อเสนอของผมคือให้ใส่ใจกับ mechanism ให้มาก</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“the Ash PL is not just a representation of a plan. It is literally the plan which is executable”</p><p class='text-zinc-500'>AshPL ไม่ใช่แค่ตัวแทนของแผน แต่คือแผนที่รันได้จริง</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“firstly it is Turing incomplete. It&#x27;s relatively simple. There&#x27;s no loops.”</p><p class='text-zinc-500'>ข้อแรกคือมัน Turing incomplete ค่อนข้างเรียบง่าย ไม่มี loop</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ถามตัวเองก่อนว่าผลิตภัณฑ์ต้องการ legibility, fidelity ตอนต่อยอด และ faithfulness ต่อแผนแค่ไหน ถ้าสูงมาก ให้ทำแผนเป็นของที่รันได้ ไม่ใช่แค่ข้อความ</li><li>ถ้าจะทำ DSL ให้ย่อยจากภาษาที่โมเดลรู้จักดีอยู่แล้วเพื่อลดการสอนไวยากรณ์ และตัดฟีเจอร์ที่ไม่จำเป็น เช่น loop, recursion, mutation</li><li>ใช้ type check กับ parse เป็นด่านราคาถูกก่อนรัน แล้วส่ง error กลับให้ agent แก้ ก่อนเสียโทเค็นกับขั้นตอนแพง</li><li>ถ้ารันทั้งโปรแกรมใหม่ทุกรอบ ให้ทำ memoization ผ่าน content-addressed store เพื่อไม่ให้ซ้ำงาน</li><li>แยก credential ออกจาก agent ผ่าน gateway และลงทุนกับ eval ตั้งแต่ต้น เพราะ eval ของระบบที่เขียนโปรแกรมสดๆ ยากแต่จำเป็น</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ASR เขียนชื่อบริษัทเป็น &#x27;Alissa&#x27; และ &#x27;illicit&#x27; ชื่อที่ผู้พูดหมายถึงน่าจะเป็น Elicit (ผู้พูดพูดถึง elicit.com) และชื่อภาษา &#x27;Ash PL/HPL/ASPL&#x27; คือ AshPL เดียวกัน</li><li>ชื่อผู้พูด James Brady มาจากคำแนะนำตัวใน transcript ส่วนตำแหน่งไม่ได้ระบุ</li><li>ผู้พูดอ้างความน่าเชื่อถือและความถูกต้องของระบบ แต่ในคลิปไม่มีตัวเลข benchmark ให้ตรวจสอบ</li><li>ผู้พูดพูดถึงโมเดลรุ่นเก่าเป็น &#x27;3.5 Sonar&#x27; ซึ่งน่าจะเป็น Sonnet ที่ ASR เพี้ยน จึงไม่ใช้เป็นข้อเท็จจริง</li><li>ชื่อ Pi (harness) และการเอ่ยถึง Codex มาจากคำพูดของผู้พูด ไม่ได้ตรวจสอบรายละเอียดผลิตภัณฑ์</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=qOjleN2-50c" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/30-how-we-claude-code.html" class="hover:underline">← #30 ทำงานกับ Claude Code แบบทีม Anthropic: ให้ Claude สัมภาษณ์ เขียน spec เป็น HTML และฝัง verification ไว้ในตัวงาน</a><a href="../talks/32-fighting-financial-crime-with-claude-cowork.html" class="hover:underline ml-auto text-right">#32 สู้อาชญากรรมการเงินด้วย Claude Cowork: MCP gateway, plugin และ evals →</a></nav>
+</main></body></html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ปุ่ม thinking และ effort: ให้ Claude ใช้ compute… | CwC London #15</title>
+<meta name="description" content="Alexander อธิบาย test-time compute ว่าเมื่อ Claude ใช้ token คิดมากขึ้นคุณภาพก็ดีขึ้น โดยมี 3 ทางใช้ compute คือ thinking, tool calling และ text…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/15-the-thinking-lever.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="ปุ่ม thinking และ effort: ให้ Claude ใช้ compute… | CwC London #15">
+<meta property="og:description" content="Alexander อธิบาย test-time compute ว่าเมื่อ Claude ใช้ token คิดมากขึ้นคุณภาพก็ดีขึ้น โดยมี 3 ทางใช้ compute คือ thinking, tool calling และ text…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/15-the-thinking-lever.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ปุ่ม thinking และ effort: ให้ Claude ใช้ compute… | CwC London #15">
+<meta name="twitter:description" content="Alexander อธิบาย test-time compute ว่าเมื่อ Claude ใช้ token คิดมากขึ้นคุณภาพก็ดีขึ้น โดยมี 3 ทางใช้ compute คือ thinking, tool calling และ text…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "ปุ่ม thinking และ effort: ให้ Claude ใช้ compute ตอนรันมากน้อยแค่ไหน — Code with Claude London 2026 #15", "description": "Alexander อธิบาย test-time compute ว่าเมื่อ Claude ใช้ token คิดมากขึ้นคุณภาพก็ดีขึ้น โดยมี 3 ทางใช้ compute คือ thinking, tool calling และ text…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/15-the-thinking-lever.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/15-the-thinking-lever.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "The thinking lever", "url": "https://www.youtube.com/watch?v=T7KqH7kYnE4", "duration": "PT21M17S"}, "about": ["extended-thinking", "model-selection", "evals", "prompt-engineering"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#15 ปุ่ม thinking และ effort: ให้ Claude ใช้ compute ตอนรันมากน้อยแค่ไหน", "item": "https://chalermporn.github.io/cwc-london-2026/talks/15-the-thinking-lever.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#15 · โมเดล &amp; Prompting · 21:17</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">ปุ่ม thinking และ effort: ให้ Claude ใช้ compute ตอนรันมากน้อยแค่ไหน</h1>
+<p class="mono text-xs text-zinc-500 mt-1">The thinking lever</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Alexander Briken (applied AI research team, Anthropic (สะกดนามสกุลตาม ASR))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> นักพัฒนาที่ใช้ Claude API/Claude Code และสงสัยว่าควรตั้ง effort กับ thinking ระดับไหน ควรรู้จักโมเดล Haiku/Sonnet/Opus ในระดับพื้นฐาน</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Alexander อธิบาย test-time compute ว่าเมื่อ Claude ใช้ token คิดมากขึ้นคุณภาพก็ดีขึ้น โดยมี 3 ทางใช้ compute คือ thinking, tool calling และ text ควบคุมได้ด้วย effort กับ budget เขาย้ำว่า adaptive thinking ไม่ใช่ model router และการปิด thinking ไม่ใช่การลด effort แต่คือการถอด capability ออก คำแนะนำคือเปิด thinking ไว้ ทดสอบด้วย eval และเมื่อไม่แน่ใจเริ่มที่ extra high</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">More test-time compute improves results; control it with effort levels and budgets, keep thinking enabled (adaptive thinking), evaluate per task, and default to extra high when unsure.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>test-time compute คือการใช้ token ตอน inference เพื่อให้โมเดลแก้โจทย์ได้ดีขึ้น เหมือนที่เพิ่ม compute ตอน train ก็ได้โมเดลฉลาดขึ้น ผู้พูดโชว์กราฟว่าทั้งขนาดโมเดลและจำนวน token ที่ใช้คิดดันคะแนนขึ้น และเห็นแนวเดียวกันในหลาย benchmark (Deep Search QA, OSWorld, Humanity&#x27;s Last Exam)</li><li>เดโมสด: prompt เดียว (จำลองรถบนถนนวันเวย์กับไฟจราจร) รันบน Opus 4.7 ที่ low, high และ max effort พบว่า low ใช้ราว 50 วินาที ราว 4,600 output token ได้ผลพอใช้ high ใช้เวลาและ token ราวสองเท่า ละเอียดขึ้น (มีรถหลายแบบ ไฟจราจรเหนือถนน) ส่วน max ใช้ราว 10 เท่า ละเอียดที่สุด</li><li>ผู้พูดอ้างกราฟ METR ว่างานที่โมเดลทำได้ยาวขึ้นตามรุ่น และ Mythos ทำงานเทียบเท่ามนุษย์ราว 16 ชั่วโมงที่ความแม่นยำ 50% (ตามที่ผู้พูดบอก)</li><li>compute ตอนรันมี 3 ช่อง: thinking (scratch pad), tool calling (ช่องทางกับโลกภายนอก เช่น web search, MCP, เขียนไฟล์) และ text (ข้อความ/คำถามกลับที่ตอบผู้ใช้) ผู้ใช้คุมได้ด้วย effort (dial จาก low ถึง max) และ budget (เช่น max token หรือ task budgets ใน API)</li><li>วิวัฒนาการ: คิดก่อนแล้วค่อย tool call หลายครั้ง -&gt; interleaved thinking (คิดหลังทุก tool call) -&gt; adaptive thinking ที่ให้โมเดลเลือกเองว่าจะคิด เรียก tool หรือเขียน text ตอนไหน หรือไม่คิดเลยก็ได้ ผู้พูดบอกว่ามันไม่ใช่ model router และ benchmark ทั้งหมดรันบน adaptive thinking ซึ่ง Pareto efficient กว่า interleaved</li><li>thinking toggle เป็นตัวแทนของ effort ที่แย่ เพราะการปิดคือการถอด capability หนึ่งใน 3 อย่างของ Claude ออก ควรให้ Claude รู้ว่ามีเครื่องมือคิดแล้วตัดสินเองเหมือนที่ให้ search tool แล้วให้เลือกว่าจะค้นเมื่อไร</li><li>แนวปฏิบัติ: วัดด้วย eval ที่ยากและตรงงานจริง สังเกต diminishing returns (max ใช้ token ราวสองเท่าของ extra high แต่ดีขึ้นนิดเดียวในกราฟตัวอย่าง) และ low เหมาะงานที่ไม่ติดที่ความฉลาด เช่น classification, summarization, data extraction</li><li>rule of thumb: max เมื่อรู้ว่างานยากจริง, extra high เป็นค่า default ของ Claude Code และ claude.ai (สมดุลดีสุดตามผู้พูด), high ถ้างานต้องการความฉลาดอยู่บ้าง, medium/low เพื่อลด token และ latency ตัวอย่างเสริม: Claude Plays Pokémon ที่ low effort Claude ใช้วิธีเลี่ยงการสู้ (repel, potion, escape rope) จนจบเร็วขึ้น</li><li>โมเดลเล็ก effort สูง หรือโมเดลใหญ่ effort ต่ำ: เทียบ Opus กับ Haiku 4.5 บนโจทย์จำลองรถ Haiku ใช้เวลาครึ่งเดียวแต่ใช้ token เท่ากัน และผลแย่กว่ามาก ผู้พูดสรุปว่าถ้างานต้องการความฉลาดแม้นิดเดียว ใช้โมเดลใหญ่แม้ตั้ง effort ต่ำก็ดีกว่า โมเดลเล็กเหมาะงานง่ายที่ผลลัพธ์ไม่ซับซ้อน ส่วนอนาคตอยากให้ผู้ใช้กำหนดงบ/เวลา แล้ว Claude จัดสรร compute เอง</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>เดโม: รัน prompt จำลองรถบนถนนวันเวย์กับไฟจราจรบน Opus 4.7 ที่ low effort แล้วดูเวลา/token/ผล</li><li>รันซ้ำที่ high effort แล้วเทียบ: เวลา token สองเท่า ผลละเอียดขึ้น</li><li>รันที่ max effort: ราว 10 เท่า ผลละเอียดที่สุด</li><li>เทียบกับ Haiku 4.5 บน prompt เดิม: เวลาครึ่งเดียว token เท่ากัน ผลด้อยกว่า</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>เดโม low effort บน Opus 4.7: ราว 50 วินาที และราว 4,600 output token</li><li>high effort ใช้เวลาและ token ราวสองเท่าของ low; max ใช้ราว 10 เท่า (ตามที่ผู้พูดบอกในเดโม)</li><li>กราฟ internal agentic coding benchmark: โมเดลใหญ่สุดได้ประมาณต่ำกว่า 80% (ผู้พูดอ้างลอยๆ จากกราฟ)</li><li>Mythos: งานเทียบเท่ามนุษย์ราว 16 ชั่วโมงที่ความแม่นยำ 50% บนกราฟ METR (ตามที่ผู้พูดบอก)</li><li>ค่า default ของ Claude Code และ claude.ai คือ effort extra high (ตามที่ผู้พูดบอก)</li><li>effort level ที่กล่าวถึง: low, medium, high, extra high, max</li><li>Haiku 4.5 ใช้เวลาประมาณครึ่งหนึ่งของ Opus แต่ใช้ token เท่ากันในโจทย์จำลองรถ</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Adaptive thinking isn&#x27;t a model router.”</p><p class='text-zinc-500'>adaptive thinking ไม่ใช่ตัว route ไปหาโมเดล</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“a thinking toggle is actually a poor proxy for the amount of effort that a model should put in.”</p><p class='text-zinc-500'>สวิตช์เปิดปิด thinking เป็นตัวแทนที่แย่ของระดับความพยายามที่โมเดลควรใช้</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“And then finally, when in doubt, go with extra high.”</p><p class='text-zinc-500'>สุดท้าย ถ้าไม่แน่ใจ ให้ใช้ extra high</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>เปิด thinking (adaptive) ไว้เป็น default แล้วควบคุมต้นทุนด้วย effort ไม่ใช่ปิด thinking</li><li>สร้าง eval ที่ยากและตรงงานจริง แล้วทดสอบหลาย effort level เพื่อหาจุดที่ผลลัพธ์เริ่มไม่คุ้ม</li><li>ถ้ายังไม่มี eval เริ่มที่ extra high; ลดเป็น high/medium/low สำหรับงานเน้น latency เช่น classification, summarization, extraction</li><li>ถ้างานต้องการความฉลาดแม้เพียงเล็กน้อย เลือกโมเดลใหญ่ effort ต่ำก่อนโมเดลเล็ก effort สูง</li><li>สำหรับงานยาว ให้ลองใช้ budget (max tokens / task budgets) เพื่อคุมต้นทุน</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ชื่อผู้พูดสะกดตาม ASR (&#x27;Alexander Briken&#x27;) ไม่แน่ใจนามสกุล</li><li>ตัวเลขเดโม (50 วินาที, 4,600 token, 2x, 10x) เป็นตัวเลขที่ผู้พูดอ่านจากหน้าจอ ผมไม่ได้เห็นภาพ</li><li>ไม่ได้ยินชัดว่า &#x27;extra high&#x27; กับ &#x27;max&#x27; ต่างกันกี่เท่า ผู้พูดพูดว่า max ใช้ token &#x27;double the amount&#x27; ของ extra high ในกราฟตัวอย่างเท่านั้น</li><li>ชื่อโมเดล &#x27;Mythos&#x27; และ &#x27;Opus 47&#x27; มาจาก ASR สะกดเดาว่า Opus 4.7</li><li>ท่อน &#x27;Deep Search QA&#x27; อาจเป็นชื่อ benchmark ที่ ASR เขียนเพี้ยน (&#x27;Deep Search QA&#x27;)</li><li>ข้ออ้างว่า adaptive thinking Pareto efficient กว่า interleaved เป็นของผู้พูด ไม่มีตัวเลขใน transcript</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=T7KqH7kYnE4" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/14-build-a-production-ready-agent-with-claude-ma.html" class="hover:underline">← #14 สร้าง agent พร้อม production ด้วย Claude Managed Agents (เดโม Deal Desk)</a><a href="../talks/16-how-lovable-vibecodes-production-software-at.html" class="hover:underline ml-auto text-right">#16 Lovable ทำให้แพลตฟอร์ม vibe coding ซ่อมตัวเองได้ยังไง (Lovable Overflow + vent tool) →</a></nav>
+</main></body></html>

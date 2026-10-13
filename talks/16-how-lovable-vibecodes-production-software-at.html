@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lovable ทำให้แพลตฟอร์ม vibe coding ซ่อมตัวเองได้ยังไง… | CwC London #16</title>
+<meta name="description" content="CTO ของ Lovable เล่าว่า ผู้ใช้ที่ไม่ใช่นักพัฒนาพอติดขัดแล้วหลุดจากแพลตฟอร์มง่ายมาก ทีมเลยสร้างระบบให้แพลตฟอร์มซ่อมตัวเอง 2 ชั้น ชั้นแรกคือ Lovable…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/16-how-lovable-vibecodes-production-software-at.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="Lovable ทำให้แพลตฟอร์ม vibe coding ซ่อมตัวเองได้ยังไง… | CwC London #16">
+<meta property="og:description" content="CTO ของ Lovable เล่าว่า ผู้ใช้ที่ไม่ใช่นักพัฒนาพอติดขัดแล้วหลุดจากแพลตฟอร์มง่ายมาก ทีมเลยสร้างระบบให้แพลตฟอร์มซ่อมตัวเอง 2 ชั้น ชั้นแรกคือ Lovable…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/16-how-lovable-vibecodes-production-software-at.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lovable ทำให้แพลตฟอร์ม vibe coding ซ่อมตัวเองได้ยังไง… | CwC London #16">
+<meta name="twitter:description" content="CTO ของ Lovable เล่าว่า ผู้ใช้ที่ไม่ใช่นักพัฒนาพอติดขัดแล้วหลุดจากแพลตฟอร์มง่ายมาก ทีมเลยสร้างระบบให้แพลตฟอร์มซ่อมตัวเอง 2 ชั้น ชั้นแรกคือ Lovable…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Lovable ทำให้แพลตฟอร์ม vibe coding ซ่อมตัวเองได้ยังไง (Lovable Overflow + vent tool) — Code with Claude London", "description": "CTO ของ Lovable เล่าว่า ผู้ใช้ที่ไม่ใช่นักพัฒนาพอติดขัดแล้วหลุดจากแพลตฟอร์มง่ายมาก ทีมเลยสร้างระบบให้แพลตฟอร์มซ่อมตัวเอง 2 ชั้น ชั้นแรกคือ Lovable…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/16-how-lovable-vibecodes-production-software-at.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/16-how-lovable-vibecodes-production-software-at.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "How Lovable vibecodes production software at scale", "url": "https://www.youtube.com/watch?v=mhW-XXnDFSU", "duration": "PT31M10S"}, "about": ["agent-reliability", "self-improving", "agent-memory"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#16 Lovable ทำให้แพลตฟอร์ม vibe coding ซ่อมตัวเองได้ยังไง (Lovable Overflow + vent tool)", "item": "https://chalermporn.github.io/cwc-london-2026/talks/16-how-lovable-vibecodes-production-software-at.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#16 · เคสตามอุตสาหกรรม · 31:10</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">Lovable ทำให้แพลตฟอร์ม vibe coding ซ่อมตัวเองได้ยังไง (Lovable Overflow + vent tool)</h1>
+<p class="mono text-xs text-zinc-500 mt-1">How Lovable vibecodes production software at scale</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Fabian Hedin (Cofounder และ CTO ของ Lovable (ตามคำอธิบายคลิป; ใน transcript ผู้พูดไม่ได้พูดชื่อตัวเอง))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> คนที่สร้างแพลตฟอร์ม agent ให้ผู้ใช้ทั่วไป และอยากรู้วิธีเอา failure จริงมาวนปรับปรุงระบบ (ไม่ต้องรู้ Lovable มาก่อน)</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">CTO ของ Lovable เล่าว่า ผู้ใช้ที่ไม่ใช่นักพัฒนาพอติดขัดแล้วหลุดจากแพลตฟอร์มง่ายมาก ทีมเลยสร้างระบบให้แพลตฟอร์มซ่อมตัวเอง 2 ชั้น ชั้นแรกคือ Lovable Overflow คลังปัญหาและวิธีแก้ที่ฉีดเข้า context ของ agent ก่อนผู้ใช้ติด ชั้นที่สองคือ vent tool ที่ให้ agent ส่งความหงุดหงิดกลับมา แล้ว agent อีกตัวเปิด PR ให้วิศวกรรีวิว ผู้พูดอ้างว่าลดอัตรา stuck ได้ 5% และ merge fix เข้า production ราว 10 รายการต่อวัน</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Lovable&#x27;s CTO describes two self-healing systems for a consumer vibe-coding platform: Lovable Overflow (a curated problem/solution corpus injected into the agent&#x27;s context) and a vent tool through which the agent reports platform friction and agents open PRs for engineers to review.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>Lovable เริ่มจากแนวคิดทำซอฟต์แวร์ให้คนที่เขียนโค้ดไม่เป็น (ผู้พูดเรียกว่า 99%) UI เป็นแชตซ้ายกับ preview ขวา ซึ่งแทบไม่เปลี่ยนมาตลอด แต่ความสามารถของโมเดลข้างหลังเปลี่ยนไปมาก ผู้พูดบอกว่าโมเดลเริ่มเอื้อให้ abstraction แบบนี้ใช้ได้จริงเมื่อราวปีครึ่งก่อน</li><li>หลักการสองข้อของทีม คือทำ production grade software ไม่หยุดที่ prototype และทำให้ผู้ใช้ที่ไม่ใช่เทคนิคใช้ได้ ซึ่งยากกว่า เพราะไม่มีผู้เชี่ยวชาญอยู่ใน loop คอยช่วย</li><li>ผู้พูดเทียบกับคำกล่าวเก่าว่า 10% สุดท้ายกินเวลา 90% แล้วบอกว่าใน vibe coding ก็เป็นแบบเดียวกัน ได้เวอร์ชันแรกเร็วแต่การทำให้จบกินเวลานาน ถ้าผู้ใช้ติดแล้วแก้เองไม่ได้ ถือเป็นประสบการณ์ที่แย่ที่สุด เป้าหมายทางเทคนิคคือให้ทุกแอปที่สร้างบนแพลตฟอร์มช่วยให้แอปถัดไปดีขึ้น</li><li>นิยามคำว่า stuck มี metric ภายในชื่อ is_stuck เป็นจริงเมื่อผู้ใช้ขอสิ่งเดิมซ้ำ 3 ครั้งติด บ่นเรื่องผลงาน หรือขอแล้วหายไปเลย ใช้ classification model ขนาดเล็กตัดสิน แล้วแบ่งเป็น 3 กลุ่ม คือแก้ได้ด้วยการ prompt ใหม่ / เรื่องง่ายที่แพลตฟอร์มยังไม่รองรับ / ต้องลงทุนใหญ่ เช่น server side rendering เพื่อ SEO ที่เพิ่งปล่อยเมื่อสัปดาห์ก่อน</li><li>Lovable Overflow ตั้งชื่อตาม Stack Overflow เป็นคลังคำอธิบายปัญหาพร้อมวิธีแก้ พอผู้ใช้พิมพ์ปัญหา เช่น scroll กระตุก ระบบจะค้นคลังโดยดู tech stack กับเวอร์ชัน package แล้วให้ lightweight model ปรับความรู้ให้เข้ากับสถานการณ์ก่อนฉีดเข้า main agent ไม่ใช่ dump ดิบๆ</li><li>ความรู้ในคลังมีอายุ ระบบเลยเก็บ success ratio ต่อไฟล์ความรู้ และตัดทิ้งเมื่อล้าสมัย พร้อมเติมความรู้ใหม่ ผู้พูดบอกว่าการจูนจังหวะ deprecate กับเพิ่มความรู้เป็นส่วนสำคัญที่สุดของการทำให้ระบบนี้ใช้ได้ และเคยลองทำแล้วล้มเหลวเพราะยังไม่จูนสัญญาณให้ดี</li><li>vent tool คือ tool ของ agent ชื่อ vent --send_feedback ใช้ได้ครั้งเดียวต่อข้อความผู้ใช้ เมื่อเอกสาร tool หรือพฤติกรรมแพลตฟอร์มทำให้งานช้าลงหรือแย่ลง ข้อความไปลง Slack แล้ว agent อีกตัวคัด dedupe สืบสวน และเปิด PR ให้วิศวกรรีวิว ผู้พูดบอกว่าราว 50% ของ PR มีเหตุผลถูกต้อง</li><li>ตัวอย่างที่ผู้พูดเล่า คือ tool copy ไฟล์พังกับชื่อไฟล์ที่มีอักขระพิเศษ แล้วมี PR merged ใน production ภายใน 10 นาที, agent บ่นเรื่อง type ของ Framer Motion, ช่วง production incident ยอด vent พุ่งจนกลายเป็นสัญญาณแรกของ incident หลายครั้ง และ agent ที่ vent ซ้ำ 43 ครั้งก็เสนอ dedupe safeguard เองจนถูก merge</li><li>บทเรียนที่ผู้พูดสรุป คือการเรียนรู้จาก failure ผูกกับโมเดลที่ใช้ เมื่อมีโมเดลใหม่ต้องจูนหรือตัดความรู้ที่โมเดลรู้อยู่แล้วออก ความรู้มี half-life และระบบต้องจูนตลอดด้วยสัญญาณจากข้อมูลจริงของแพลตฟอร์ม</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ผู้พูดบอกว่าแพลตฟอร์มมี 50 ล้านโปรเจกต์ และเว็บที่สร้างบน Lovable มี 600 ล้าน monthly visits (คำอธิบายคลิปเขียน 600M+ monthly sessions)</li><li>GPT-Engineer repo ของผู้ร่วมก่อตั้ง Anton เกิดเมื่อราว 35 เดือนก่อน และผู้พูดบอกว่าเป็น repo ที่ได้ stars เร็วที่สุดบน GitHub ในตอนนั้น</li><li>is_stuck เป็นจริงเมื่อขอสิ่งเดิมซ้ำ 3 ครั้งติด</li><li>ผลของ Lovable Overflow เวอร์ชันแรกเทียบกับไม่มี: อัตรา stuck ลดลง 5% และ publish rate เพิ่มขึ้น 2% ผู้พูดบอกว่า 5% นี้อยู่ในระดับเดียวกับที่ metric ขยับเมื่อมีโมเดลรุ่นใหม่</li><li>vent tool: merge fix เข้า production ราว 10 รายการต่อวัน และ PR ราว 50% ที่ agent เสนอมีเหตุผลถูกต้อง</li><li>ตัวอย่างบั๊ก tool copy ไฟล์ มี PR merged ใน production ภายใน 10 นาทีหลังได้รับ vent</li><li>agent เรียก vent 43 ครั้งในกรณีที่ spam Slack ก่อนเสนอ dedupe safeguard เอง</li><li>ผู้พูดบอกว่ามีแอปใหม่ราว 200,000 ต่อวัน และข้อความหลายล้านต่อวัน ใช้เป็นสัญญาณจูนระบบ</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“every app that is built on the platform should help improve the next”</p><p class='text-zinc-500'>ทุกแอปที่สร้างบนแพลตฟอร์มควรช่วยให้แอปถัดไปดีขึ้น</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“if you give the agent a tool to tell you when it&#x27;s feeling frustration, that&#x27;s another way to do it”</p><p class='text-zinc-500'>ถ้าให้ agent มี tool บอกเราตอนมันหงุดหงิด นั่นก็เป็นอีกทางหนึ่ง</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“knowledge has a half-life”</p><p class='text-zinc-500'>ความรู้มีครึ่งชีวิต</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ถ้าทำแพลตฟอร์ม agent ให้ผู้ใช้ทั่วไป นิยาม metric ว่าผู้ใช้ติดขัดตอนไหน (ขอซ้ำ บ่น หายไป) ก่อน แล้วค่อยออกแบบระบบแก้</li><li>ทำคลังความรู้ปัญหา/วิธีแก้ แล้วฉีดเข้า context เฉพาะตอนเกี่ยวข้อง พร้อมวัด success ratio ต่อรายการเพื่อตัดความรู้ที่ล้าสมัย</li><li>ลองให้ agent มี tool ส่ง feedback เรื่อง tool/doc/platform ที่ใช้ไม่ได้ แล้วต่อเข้า Slack กับ agent คัดกรองที่เปิด PR ให้คนรีวิว</li><li>ใช้ปริมาณ vent เป็นสัญญาณเสริมตอนสืบ incident ควบคู่กับ monitoring ปกติ</li><li>เมื่อเปลี่ยนโมเดล ทบทวนคลังความรู้ด้วย บางอย่างต้องจูนใหม่ บางอย่างโมเดลรู้อยู่แล้วจนไม่ต้องมี</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>transcript มาจาก Whisper large-v3 ที่ถอดเอง ไม่ใช่ caption ทางการ ชื่อเฉพาะและตัวเลขอาจเพี้ยน</li><li>ชื่อ Fabian Hedin มาจากคำอธิบายคลิป ผู้พูดไม่ได้พูดชื่อตัวเองใน transcript</li><li>ประโยค 50,000 million apps now ฟังเพี้ยนชัดเจน (ช่วงต้นผู้พูดพูดว่า 50 million projects) จึงใช้ 50 ล้านโปรเจกต์ตามช่วงต้น; stack rate ที่ได้ยินน่าจะเป็น stuck rate</li><li>ผลลดอัตรา stuck 5% และ publish rate +2% เป็นตัวเลขที่ผู้พูดรายงานเอง ไม่มีหลักฐานอิสระ และเป็นของเวอร์ชันแรกของระบบ</li><li>ผู้พูดเสนอไอเดียให้ agent contribute เข้า open source library แต่บอกว่ายังไม่อนุญาตและไม่แน่ใจว่าทำอะไรไปแล้ว ไม่ใช่ฟีเจอร์ที่ใช้อยู่</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=mhW-XXnDFSU" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/15-the-thinking-lever.html" class="hover:underline">← #15 ปุ่ม thinking และ effort: ให้ Claude ใช้ compute ตอนรันมากน้อยแค่ไหน</a><a href="../talks/17-building-ai-native-at-enterprise-scale-monday.html" class="hover:underline ml-auto text-right">#17 สามบริษัทยุโรปปรับเป็น AI-native บนโค้ดเก่า (monday.com, Doctolib, Delivery Hero) →</a></nav>
+</main></body></html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สร้าง workflow agent เชิงรุกด้วย routines ใน Claude Code | CwC London #19</title>
+<meta name="description" content="routines คือฟีเจอร์ใน Claude Code ที่รัน session บน managed infrastructure ของ Anthropic เริ่มได้จาก schedule, GitHub event หรือ webhook ผู้พูดเดโมทำ…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/19-build-a-proactive-agent-workflow-with-claude.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="สร้าง workflow agent เชิงรุกด้วย routines ใน Claude Code | CwC London #19">
+<meta property="og:description" content="routines คือฟีเจอร์ใน Claude Code ที่รัน session บน managed infrastructure ของ Anthropic เริ่มได้จาก schedule, GitHub event หรือ webhook ผู้พูดเดโมทำ…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/19-build-a-proactive-agent-workflow-with-claude.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="สร้าง workflow agent เชิงรุกด้วย routines ใน Claude Code | CwC London #19">
+<meta name="twitter:description" content="routines คือฟีเจอร์ใน Claude Code ที่รัน session บน managed infrastructure ของ Anthropic เริ่มได้จาก schedule, GitHub event หรือ webhook ผู้พูดเดโมทำ…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "สร้าง workflow agent เชิงรุกด้วย routines ใน Claude Code — Code with Claude London 2026 #19", "description": "routines คือฟีเจอร์ใน Claude Code ที่รัน session บน managed infrastructure ของ Anthropic เริ่มได้จาก schedule, GitHub event หรือ webhook ผู้พูดเดโมทำ…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/19-build-a-proactive-agent-workflow-with-claude.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/19-build-a-proactive-agent-workflow-with-claude.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Build a proactive agent workflow with Claude Code", "url": "https://www.youtube.com/watch?v=eSP7PLTXNy8", "duration": "PT22M03S"}, "about": ["claude-code", "self-improving", "devex", "mcp-tools-skills"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#19 สร้าง workflow agent เชิงรุกด้วย routines ใน Claude Code", "item": "https://chalermporn.github.io/cwc-london-2026/talks/19-build-a-proactive-agent-workflow-with-claude.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#19 · เวิร์กชอป · 22:03</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">สร้าง workflow agent เชิงรุกด้วย routines ใน Claude Code</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Build a proactive agent workflow with Claude Code</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Maya (applied AI team, Anthropic)</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> นักพัฒนาที่ใช้ Claude Code อยู่และอยากให้รันเองโดยไม่ต้องดูแล cron/infra</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">routines คือฟีเจอร์ใน Claude Code ที่รัน session บน managed infrastructure ของ Anthropic เริ่มได้จาก schedule, GitHub event หรือ webhook ผู้พูดเดโมทำ routine อัปเดต docs อัตโนมัติ และให้กรอบตัดสินใจ 3 เรื่อง คือ trigger, context, steering</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Routines run remote Claude Code sessions on managed infrastructure, triggered by schedule, GitHub events or webhooks. The talk demos a docs-automation routine and frames design as trigger, context, steering.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ปัญหาของ proactive agent ตอนนี้มี 3 ข้อ คือ ต้องตัดสินใจว่ารันที่ไหน (ไม่ควรรันบนเครื่องตัวเอง เพราะปิดเครื่องแล้วจบ ต้องจัดการ hosting, persistence, auth), ต้องคิดว่าจะ trigger เมื่อไหร่, และ headless session ดู/คุม/resume ลำบาก</li><li>routine คือ automation ที่เปิด remote Claude Code session โดยกำหนดแค่ prompt, repo, connector และ trigger ที่เหลือ Claude Code จัดการ ทำงานบน managed infrastructure ไม่ผูกกับ laptop</li><li>trigger มี 2 แบบ คือ time-based schedule และ event-based (GitHub events แบบ native หรือ POST ไป webhook/endpoint พร้อม payload เป็น context) ตัวอย่างเช่น ทำเมื่อ cut release หรือเมื่อ PR ที่ติด label &quot;need docs&quot; ถูก merge</li><li>ทุก routine คือ Claude Code session ที่เปิดดู ถามต่อ steer และ resume ได้จาก web, CLI และ desktop</li><li>กรณีศึกษาภายใน: weekly PR ของ Claude Code เพิ่ม 200% ตั้งแต่ต้นปี วิศวกรที่ดูแล docs จึงตั้ง routine ให้รีวิวสิ่งที่ merge เข้า main เทียบกับ docs repo แล้วเปิด PR อัปเดต docs ทุกสัปดาห์ ผ่านคำสั่ง /schedule</li><li>ตัดสินใจ 3 เรื่อง: trigger (เมื่อไหร่), context (repo + connector เช่น Google Drive, Slack — context ที่ให้คือเพดานความสำเร็จ), steering (ทำให้ Claude ซื่อสัตย์)</li><li>วิธี steer: agent-on-agent review (routine หนึ่งสร้าง PR อีก routine รีวิวก่อนคน), เข้าไปดู/ถามกลางทางจาก Claude Code บนเว็บ, และ verify output เช่น render หน้า docs ที่แก้</li><li>เดโมที่สอง: routine trigger จาก GitHub issue opened ที่สืบสวนว่าเป็น docs gap หรือไม่ ถ้าใช่เปิด PR และ ping Slack ผู้พูดสั่งหยุด session กลางทางเพราะมี PR อยู่แล้ว เพื่อโชว์การ steer แบบ real time</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>เปิด Claude Code ใน terminal แล้วพิมพ์ /schedule ตามด้วยคำสั่ง เช่น ทุกสัปดาห์ให้รีวิวสิ่งที่ merge เข้า main เทียบกับ docs repo แล้วสร้าง PR ถ้ามีการเปลี่ยนแปลง</li><li>ตอบคำถามที่ Claude ถามกลับ เช่น เวลาที่ให้รัน และจะแจ้งเตือนทาง Slack ไหม</li><li>Claude สร้าง routine และ instructions ให้ ไปดูได้ที่ Claude Code บนเว็บ (claude.ai แท็บ Code แล้วเลือก routines)</li><li>ตรวจ routine: เชื่อม 2 repo (source code กับ docs), รันทุกวันจันทร์ 10:00, ต่อ GitHub และ Slack</li><li>เปิด session ที่รันแล้ว ดู Claude อ่านซอร์ส PR ที่ merge change log เทียบกับ docs แล้วเปิด PR</li><li>สร้าง routine ใหม่ trigger จาก GitHub event ชนิด issue opened ต่อ docs repo, source repo, Slack และ GitHub MCP</li><li>สร้าง issue ทดสอบ ดู run ใหม่ที่ได้ context จาก issue แล้ว steer ให้หยุด session</li><li>ตัวอย่างต่อยอด: deploy verifier (CD pipeline POST ไป webhook, ต่อ Datadog/Grafana/Slack), on-call investigator, PM triage backlog รายสัปดาห์</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>weekly PRs ของ Claude Code เพิ่มขึ้น 200% ตั้งแต่ต้นปีใหม่ ตามที่ผู้พูดบอก</li><li>routine ตัวอย่างรันทุกวันจันทร์ 10:00 น. เชื่อม GitHub และ Slack</li><li>trigger มี 2 ประเภทหลัก: schedule และ event (GitHub native หรือ webhook POST)</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“we believe that coding agents shouldn&#x27;t wait for you to press enter to get started”</p><p class='text-zinc-500'>เราเชื่อว่า coding agent ไม่ควรรอให้คนกด enter ก่อนเริ่ม</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Every routine is really just a Claude Code session under the hood”</p><p class='text-zinc-500'>ทุก routine ก็คือ Claude Code session ธรรมดาเบื้องหลัง</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Proactive agents beat reactive agents. We want Claude to go from a tool to a teammate.”</p><p class='text-zinc-500'>agent เชิงรุกชนะเชิงรับ เราอยากให้ Claude เปลี่ยนจากเครื่องมือเป็นเพื่อนร่วมทีม</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ลองหา task ประจำวันที่เปลี่ยนเป็น routine ได้ แล้วเริ่มด้วย /schedule</li><li>ก่อนสร้างทุก routine ตอบ 3 ข้อ: trigger อะไร, context อะไรที่ต้องให้, steer อย่างไร</li><li>ให้ routine ที่สร้างงาน กับ routine ที่รีวิวงาน แยกกัน</li><li>เริ่มจาก human-in-the-loop (agent วิเคราะห์ คนตัดสิน) แล้วค่อยเพิ่มสิทธิ์เมื่อไว้ใจ</li><li>ทุกเอาต์พุตควร verify ได้ เช่น render หน้า docs</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ผู้พูดแนะนำตัวว่า Maya อยู่ applied AI team ของ Anthropic ไม่มีนามสกุล</li><li>transcript เป็น auto-caption ใช้ &quot;Cloud Code&quot; แทน Claude Code</li><li>คนที่ดูแล docs ถูกเรียกว่า &quot;Sarah&quot; (ชื่อจาก ASR)</li><li>ตัวเลข 200% เป็นข้ออ้างของผู้พูด ไม่ได้ระบุช่วงเวลาที่แน่ชัดนอกจาก &quot;since the beginning of the new year&quot;</li><li>deploy verifier เป็นแนวคิด/ตัวอย่างสมมติ ไม่ได้เดโมจริง</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=eSP7PLTXNy8" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/18-from-one-person-to-80-scaling-a-hypergrowth-e.html" class="hover:underline">← #18 Base44 โตจากคนเดียวเป็นทีม 80 คน ด้วย Claude Code และหลัก keep it simple</a><a href="../talks/20-build-ai-agents-using-claude-in-microsoft-fou.html" class="hover:underline ml-auto text-right">#20 สร้าง AI agent ด้วย Claude บน Microsoft Foundry (เวิร์กชอป cupcake agent) →</a></nav>
+</main></body></html>

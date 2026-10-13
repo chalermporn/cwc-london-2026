@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Man Group: governed skills ทำให้ AI… | CwC London #09</title>
+<meta name="description" content="Man Group (ผู้จัดการกองทุนทางเลือก) เล่าว่ามีสัญญาณเทรดที่ AI คิดไอเดีย ดึงข้อมูล backtest และเขียนข้อเสนอ รันด้วยเงินจริงแล้ว โดยมีมนุษย์รีวิว…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/09-building-signals-that-trade-themselves.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="Man Group: governed skills ทำให้ AI… | CwC London #09">
+<meta property="og:description" content="Man Group (ผู้จัดการกองทุนทางเลือก) เล่าว่ามีสัญญาณเทรดที่ AI คิดไอเดีย ดึงข้อมูล backtest และเขียนข้อเสนอ รันด้วยเงินจริงแล้ว โดยมีมนุษย์รีวิว…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/09-building-signals-that-trade-themselves.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Man Group: governed skills ทำให้ AI… | CwC London #09">
+<meta name="twitter:description" content="Man Group (ผู้จัดการกองทุนทางเลือก) เล่าว่ามีสัญญาณเทรดที่ AI คิดไอเดีย ดึงข้อมูล backtest และเขียนข้อเสนอ รันด้วยเงินจริงแล้ว โดยมีมนุษย์รีวิว…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Man Group: governed skills ทำให้ AI สร้างสัญญาณเทรดที่ใช้เงินจริงได้ — Code with Claude London 2026 #09", "description": "Man Group (ผู้จัดการกองทุนทางเลือก) เล่าว่ามีสัญญาณเทรดที่ AI คิดไอเดีย ดึงข้อมูล backtest และเขียนข้อเสนอ รันด้วยเงินจริงแล้ว โดยมีมนุษย์รีวิว…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/09-building-signals-that-trade-themselves.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/09-building-signals-that-trade-themselves.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Building signals that trade themselves", "url": "https://www.youtube.com/watch?v=EOg4gY0Yln0", "duration": "PT20M45S"}, "about": ["finance-ai", "mcp-tools-skills", "enterprise-adoption", "claude-code"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#09 Man Group: governed skills ทำให้ AI สร้างสัญญาณเทรดที่ใช้เงินจริงได้", "item": "https://chalermporn.github.io/cwc-london-2026/talks/09-building-signals-that-trade-themselves.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#09 · เคสตามอุตสาหกรรม · 20:45</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">Man Group: governed skills ทำให้ AI สร้างสัญญาณเทรดที่ใช้เงินจริงได้</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Building signals that trade themselves</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Sharan Fernando (Head of data and AI, Man Group (ชื่อตาม caption; คำอธิบายคลิปเขียน &#x27;Tushara Fernando&#x27;))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> เหมาะกับคนที่ต้องพา AI เข้าองค์กรที่มี compliance เข้มและอยากรู้ว่า governance ของ skills ควรหน้าตาเป็นอย่างไร</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Man Group (ผู้จัดการกองทุนทางเลือก) เล่าว่ามีสัญญาณเทรดที่ AI คิดไอเดีย ดึงข้อมูล backtest และเขียนข้อเสนอ รันด้วยเงินจริงแล้ว โดยมีมนุษย์รีวิว ตัวเปิดทางคือ skills ที่ผ่าน governance ไม่ใช่การเทรนโมเดลใหม่ ข้อสรุปคือ skill ต้องมีเจ้าของที่เป็นเจ้าของ workflow จริง มี eval รีวิว และ lifecycle เหมือน production code</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">Man Group says trading signals researched, backtested and proposed by AI are running real capital, enabled by a governed skills marketplace rather than retraining. Skills need workflow owners, evals, review and lifecycle like production code.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>Man Group บริหารสินทรัพย์เกิน 200 พันล้านดอลลาร์ ลูกค้าเป็นกองทุนบำนาญและกองทุนความมั่งคั่ง ผู้พูดจึงบอกว่าความเสี่ยงสูงถ้า AI ผิดพลาด ธุรกิจหลักส่วนหนึ่งคือ systematic trading ที่ตัดสินใจจากสัญญาณข้ามหลักทรัพย์จำนวนมาก</li><li>ผู้พูดเปรียบสัญญาณเทรดกับทีมแฟนตาซีฟุตบอล: จัดอันดับหุ้นด้วย factor (เช่น ผลตอบแทน 3 เดือน) แล้วทดสอบย้อนหลังด้วย backtest ดูตัวชี้วัดอย่างผลตอบแทนต่อปี drawdown และ Sharpe ratio</li><li>ผู้พูดบอกว่ามีสัญญาณที่ AI คิดไอเดีย หาข้อมูล รัน backtest เขียนข้อเสนอ และทำเป็น production ซึ่งรันด้วยทุนจริงอยู่ตอนนี้ โดยมนุษย์รีวิวผลทั้งหมด แต่ไม่เปิดเผยว่าเป็นสัญญาณอะไร เพราะเป็น IP</li><li>สัญญาณเป็นแค่ยอดภูเขาน้ำแข็ง ใต้น้ำคือ workflow (ล้างข้อมูล, ต่อราคา, จับ outlier, infra, backtest) ถ้าแต่ละทีมใช้ workflow คนละเวอร์ชัน ผลจะเทียบกันไม่ได้ จึงต้องมีฐานร่วม</li><li>สอน Claude ด้วยการให้เข้าถึงข้อมูล ความสามารถ และ workflow ขององค์กร ไม่ใช่ fine-tuning โดย skills เป็นชั้นเชื่อม</li><li>บทเรียนความผิดพลาด: รอบแรกเน้น adoption (workshop, hackathon, show-and-tell) ได้คนเขียน skill เยอะ แต่ส่วนใหญ่เป็น power user ไม่ใช่เจ้าของ process ตัวอย่างคือ skill ทำใบเบิกค่าใช้จ่ายที่ hardcode cost center ทำให้ผู้อนุมัติฝ่ายขายได้รับรายงานของแผนกอื่น</li><li>ทางแก้: marketplace กลาง (Man a knowledge) ที่ทุก skill มองเห็นได้ มี tag มีเจ้าของคือ workflow owner ทดสอบด้วย evals ติดตามการใช้งาน รีวิว และมี lifecycle เดโมแสดงการค้นหา alternative data (credit card data) ใช้ 4 skills สร้างสัญญาณเบื้องต้นแล้วรัน backtest บน compute แบบกระจาย</li><li>บทเรียนปิดท้าย: organizational context คือ moat, ปฏิบัติต่อ skills เหมือน production code, วางแผนเจ้าของ/รีวิว/ปลดระวางก่อน rollout, และ adoption เป็นปัญหาของคน ไม่ใช่ license</li></ol>
+
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>Man Group บริหารสินทรัพย์เกิน 200 พันล้านดอลลาร์ (ตามที่ผู้พูดบอก)</li><li>Backtest รันบนประวัติศาสตร์ 15 ปี หรือนานกว่า</li><li>ใช้ Claude Code 750 คน จากพนักงานราว 17,800 คน (ผู้พูดพูดทั้ง 17,800 และ 1,700 ในประโยคเดียว จึงไม่แน่ใจ)</li><li>มี governed skills เกิน 100 ตัว และ community skills อย่างน้อยเท่ากัน</li><li>เดโม: ลงทุน $1,000 ในปี 2021 ตามสัญญาณ credit card จะเป็นราว $2,500 สำหรับ Amazon (ผู้พูดบอกเองว่าอาจเป็นความบังเอิญ จึงรันกับกลุ่มค้าปลีกเพิ่ม)</li><li>เคสเดโมใช้ 4 skills สร้างสัญญาณ</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Treat those skills like production code because that&#x27;s what they will become.”</p><p class='text-zinc-500'>ปฏิบัติต่อ skills เหมือนโค้ด production เพราะสุดท้ายมันจะกลายเป็นอย่างนั้น</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“Adoption is not a licensing problem. It&#x27;s a people problem.”</p><p class='text-zinc-500'>การนำไปใช้ไม่ใช่ปัญหาเรื่องไลเซนส์ แต่เป็นปัญหาของคน</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“The work is on exposing it, not reinventing it.”</p><p class='text-zinc-500'>งานคือเปิดเผยบริบทที่มี ไม่ใช่คิดใหม่</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ก่อนปล่อย skill ตัวแรก ตกลงให้ชัดว่าใครเป็นเจ้าของ ใครรีวิว ทดสอบอย่างไร และปลดระวางเมื่อไร</li><li>ให้เจ้าของ workflow จริงเป็นคนถือ skill ไม่ใช่ power user ที่ใช้บ่อยที่สุด และอย่า hardcode ค่าเฉพาะบุคคล เช่น cost center</li><li>รวม skills ไว้ใน marketplace กลางที่ tag ค้นหาได้ ติดตามการใช้ และมี eval</li><li>เริ่มจากการเปิดเผยข้อมูลและ workflow ที่องค์กรมีอยู่ให้ Claude เข้าถึง แทนการเทรนโมเดล</li><li>วางแผนด้าน training และ engagement เพราะการรับไปใช้เป็นเรื่องของคน</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ชื่อผู้พูดไม่ชัด: caption เขียน &#x27;Sharan Fernando&#x27; แต่คำอธิบายคลิปเขียน &#x27;Tushara Fernando&#x27; ควรตรวจกับแหล่งทางการ</li><li>ผู้พูดไม่เปิดเผยตัวสัญญาณหรือผลตอบแทนจริง ข้ออ้างว่ามี signal รันเงินจริงจึงตรวจสอบไม่ได้จากคลิป</li><li>ตัวเลขพนักงาน (17,800 กับ 1,700) ฟังจาก ASR ไม่ชัด และตัวเลข $2,500 มาจากเดโมแบบง่าย ผู้พูดบอกเองว่าจริงซับซ้อนกว่า</li><li>ชื่อแพลตฟอร์มภายใน &#x27;Man a knowledge&#x27; ตาม caption อาจสะกดเพี้ยน</li><li>ไม่ใช่คำแนะนำการลงทุน เป็นกรณีศึกษาเรื่อง governance ของ skills</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=EOg4gY0Yln0" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: YouTube auto-caption · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/08-building-with-claude-on-google-cloud.html" class="hover:underline">← #08 สร้างและ deploy แอปบน Google Cloud ด้วย Claude Code ตั้งแต่ศูนย์</a><a href="../talks/10-picking-the-right-model.html" class="hover:underline ml-auto text-right">#10 เลือกโมเดลให้ถูกด้วย eval ของตัวเอง แล้วขยับ effort, thinking, caching ให้ได้จุดคุ้มที่สุด →</a></nav>
+</main></body></html>

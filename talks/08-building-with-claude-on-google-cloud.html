@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สร้างและ deploy แอปบน Google Cloud ด้วย Claude Code… | CwC London #08</title>
+<meta name="description" content="Ivan Nardini สาธิตสดการสร้างแอปเก็บ feedback ตั้งแต่ wireframe จนถึง production บน Google Cloud โดยสวมห้าบทบาทของทีม (PM, UI/UX, software engineer…">
+<link rel="canonical" href="https://chalermporn.github.io/cwc-london-2026/talks/08-building-with-claude-on-google-cloud.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#D97757">
+<meta property="og:site_name" content="Code with Claude London 2026 — สรุปทุก session">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="สร้างและ deploy แอปบน Google Cloud ด้วย Claude Code… | CwC London #08">
+<meta property="og:description" content="Ivan Nardini สาธิตสดการสร้างแอปเก็บ feedback ตั้งแต่ wireframe จนถึง production บน Google Cloud โดยสวมห้าบทบาทของทีม (PM, UI/UX, software engineer…">
+<meta property="og:url" content="https://chalermporn.github.io/cwc-london-2026/talks/08-building-with-claude-on-google-cloud.html">
+<meta property="og:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="สร้างและ deploy แอปบน Google Cloud ด้วย Claude Code… | CwC London #08">
+<meta name="twitter:description" content="Ivan Nardini สาธิตสดการสร้างแอปเก็บ feedback ตั้งแต่ wireframe จนถึง production บน Google Cloud โดยสวมห้าบทบาทของทีม (PM, UI/UX, software engineer…">
+<meta name="twitter:image" content="https://chalermporn.github.io/cwc-london-2026/og-image.png">
+<link rel="sitemap" type="application/xml" href="https://chalermporn.github.io/cwc-london-2026/sitemap.xml">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "สร้างและ deploy แอปบน Google Cloud ด้วย Claude Code ตั้งแต่ศูนย์ — Code with Claude London 2026 #08", "description": "Ivan Nardini สาธิตสดการสร้างแอปเก็บ feedback ตั้งแต่ wireframe จนถึง production บน Google Cloud โดยสวมห้าบทบาทของทีม (PM, UI/UX, software engineer…", "inLanguage": "th", "url": "https://chalermporn.github.io/cwc-london-2026/talks/08-building-with-claude-on-google-cloud.html", "mainEntityOfPage": "https://chalermporn.github.io/cwc-london-2026/talks/08-building-with-claude-on-google-cloud.html", "image": "https://chalermporn.github.io/cwc-london-2026/og-image.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@type": "Person", "name": "chalermporn", "url": "https://github.com/chalermporn"}, "isBasedOn": {"@type": "VideoObject", "name": "Building with Claude on Google Cloud", "url": "https://www.youtube.com/watch?v=l8fxVYIP4HQ", "duration": "PT24M38S"}, "about": ["claude-code", "cloud-platforms", "subagents", "mcp-tools-skills", "devex"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Code with Claude London 2026", "item": "https://chalermporn.github.io/cwc-london-2026/"}, {"@type": "ListItem", "position": 2, "name": "#08 สร้างและ deploy แอปบน Google Cloud ด้วย Claude Code ตั้งแต่ศูนย์", "item": "https://chalermporn.github.io/cwc-london-2026/talks/08-building-with-claude-on-google-cloud.html"}]}]</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D97757'/%3E%3Cpath d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+<script>try{var _th=localStorage.getItem('theme');if(_th==='dark'||(!_th&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<style type="text/tailwindcss">
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-clay-50:#fdf4ef; --color-clay-100:#fbe5d9; --color-clay-200:#f6c8b1; --color-clay-300:#efa585;
+  --color-clay-400:#e68360; --color-clay-500:#d97757; --color-clay-600:#c25f3f; --color-clay-700:#a24a31;
+  --color-clay-800:#843f2d; --color-clay-900:#6c3727;
+}
+body{font-family:var(--font-sans)}
+.mono{font-family:var(--font-mono)}
+dialog::backdrop{background:rgba(10,10,12,.6);backdrop-filter:blur(3px)}
+@media print{
+  header,.noprint,footer .noprint{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .card{break-inside:avoid}
+  dialog{display:none!important}
+}
+</style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+<header class="border-b border-zinc-200 dark:border-zinc-800"><div class="mx-auto max-w-3xl px-4 h-14 flex items-center gap-4 text-sm">
+<a href="../index.html" class="font-semibold">Code with Claude <span class="mono text-xs text-zinc-500">London 2026</span></a>
+<a href="../index.html" class="ml-2 hover:underline">ทุกคลิป</a><a href="../summary.html" class="hover:underline">สรุปรวม</a>
+<button onclick="var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}" class="ml-auto px-2.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-xs" aria-label="สลับธีม">ธีม</button></div></header>
+<main class="mx-auto max-w-3xl px-4 py-10 leading-relaxed">
+<p class="mono text-xs text-clay-700 dark:text-clay-300">#08 · เวิร์กชอป · 24:38</p>
+<h1 class="mt-2 text-3xl font-bold leading-snug">สร้างและ deploy แอปบน Google Cloud ด้วย Claude Code ตั้งแต่ศูนย์</h1>
+<p class="mono text-xs text-zinc-500 mt-1">Building with Claude on Google Cloud</p>
+<p class="mt-4 text-sm"><b>ผู้พูด:</b> Ivan Nardini (Developer Advocate ที่ Google Cloud (แนะนำตัวเองใน transcript))</p>
+<p class="text-sm mt-1 text-zinc-600 dark:text-zinc-400"><b>เหมาะกับ:</b> developer ที่เคยใช้ Claude Code อยู่แล้วและอยากรู้ว่าจะต่อกับ Google Cloud เพื่อ build, deploy, ตรวจความปลอดภัย และทำ analytics อย่างไร</p>
+<p class="mt-5 rounded-xl bg-clay-50 dark:bg-clay-900/25 border border-clay-200 dark:border-clay-800 p-4">Ivan Nardini สาธิตสดการสร้างแอปเก็บ feedback ตั้งแต่ wireframe จนถึง production บน Google Cloud โดยสวมห้าบทบาทของทีม (PM, UI/UX, software engineer, security, analytics) ใช้ Claude Code ร่วมกับ plan mode, subagents, MCP server ของ Google Cloud, skills และ plugin ข้อสรุปคือคนไม่ต้องรู้ Google Cloud ลึกก็ ship ได้ถ้าให้ Claude อ่านเอกสารผ่าน MCP</p>
+<p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400" lang="en">A live demo takes a feedback app from wireframe to production on Google Cloud across five team roles, using Claude Code plan mode, subagents, Google Cloud MCP servers, skills and a plugin.</p>
+<h2 class="mt-8 text-lg font-semibold">ประเด็นสำคัญ</h2><ol class="list-decimal pl-6 mt-2 space-y-2"><li>ตั้งสถานการณ์ว่าทีม enterprise ปกติมี PM, UI/UX, software engineer, security engineer และคนดู analytics ผู้พูดสวมแต่ละบทบาททีละหมวก แล้วให้ Claude Code เสริมตลอด software life cycle</li><li>การใช้ Claude models บน Google Cloud: ตั้งค่า Claude Code ผ่าน application default credentials มี wizard ตรวจ project/region และ pin โมเดล จ่ายตาม token ไม่มี message cap มี provisioned throughput ข้อมูลอยู่ใน project ของตัวเอง ไม่ต้องจัดการ API key และรองรับ multi-region endpoint</li><li>บทบาท PM: เขียน CLAUDE.md กำหนดบทบาท แล้วให้ Claude เปลี่ยนภาพร่างเป็น wireframe ภายในไม่กี่นาที</li><li>บทบาท UI/UX: ใช้ plan mode ให้ Claude คิดและเสนอสเปกก่อนเขียนโค้ด แล้วแปลง wireframe เป็นสี่หน้าสำหรับ production (รวม dashboard) ผู้พูดบอกว่าในงานจริงอาจเชื่อมกับ Figma</li><li>บทบาท software engineer: ใช้ Developer Knowledge API กับ MCP server ที่ให้เอกสารและ implementation guide ที่รีเฟรชทุก 24 ชั่วโมง ออกแบบสถาปัตยกรรมเป็น Cloud Run, Firestore และข้อมูลดิบเข้า BigQuery พร้อม Looker แล้วใช้ official Google Cloud skills ลงมือ deploy</li><li>ใช้ subagents ขนานกันหนึ่งตัวต่อ API, data pipeline ใน BigQuery และ dashboard เหมือน sprint ของทีม ใช้โมเดลต่างกันได้ จากนั้นรันเทสต์ สร้าง CI/CD ด้วย Cloud Build กับ Cloud Deploy เปิด PR แล้ว merge ทริกเกอร์ pipeline ไป dev environment</li><li>บทบาท security: สร้าง custom plugin ตรวจ input validation และลดสิทธิ์ service account ซึ่ง Claude แก้โค้ด รันเทสต์ซ้ำ เปิด PR ใหม่ และหลังรีวิวใน dev ก็ promote ไป production ผ่าน Cloud Deploy</li><li>บทบาท analytics: ใช้ BigQuery MCP server วิเคราะห์ข้อมูล feedback เช่นเวลาที่ผู้ใช้ใช้กรอก แล้วใช้ MCP server อีกตัวสร้าง dashboard ใน Looker ได้เป็นลิงก์เดียวโดยไม่ต้องรู้เครื่องมือเหล่านี้ล่วงหน้า</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ลำดับขั้นที่ทำในคลิป</h2><ol class="list-decimal pl-6 mt-2 space-y-1.5"><li>ตั้งค่า Claude Code ให้ใช้โมเดลที่โฮสต์บน Google Cloud ผ่าน application default credentials แล้วใช้ wizard ตรวจ project/region และ pin โมเดล</li><li>PM: เขียน CLAUDE.md ระบุบทบาท แล้วให้ Claude เปลี่ยนภาพร่างเป็น wireframe</li><li>UI/UX: เข้า plan mode ให้ Claude ร่างสเปก ตรวจ แล้วสั่งสร้างสี่หน้า (landing ถึงหน้าสุดท้าย บวก dashboard) และ push PR</li><li>Engineer: ต่อ MCP server ของ Developer Knowledge API กับ Google Cloud skills แล้วให้ Claude ออกแบบสถาปัตยกรรมและสเปก API</li><li>สั่ง subagents ขนาน: API, data pipeline ใน BigQuery, dashboard พร้อมเทสต์ แล้วใช้ skill สร้าง CI/CD ด้วย Cloud Build และ Cloud Deploy</li><li>Merge PR เพื่อทริกเกอร์ pipeline ไป dev environment</li><li>Security: ใช้ custom plugin ตรวจ input validation และลดสิทธิ์ service account แล้วเปิด PR ใหม่ รีวิวใน dev และ promote ไป production ผ่าน Cloud Deploy</li><li>Analytics: ใช้ BigQuery MCP วิเคราะห์ข้อมูล feedback แล้วสร้าง dashboard ใน Looker ผ่าน MCP server อีกตัว</li></ol>
+<h2 class="mt-8 text-lg font-semibold">ตัวเลข / ข้อเท็จจริงที่ผู้พูดบอก</h2><p class="text-xs text-zinc-500">ตามที่ผู้พูดอ้างในคลิป ไม่ได้ยืนยันกับแหล่งอื่น</p><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>เอกสารจาก Developer Knowledge API รีเฟรชทุก 24 ชั่วโมงตามที่ผู้พูดบอก</li><li>ห้าบทบาทในเดโม: PM, UI/UX, software engineer, security engineer, analytics</li><li>ผู้พูดบอกว่าบน Google Cloud จ่ายตาม token ไม่มี message cap และมี provisioned throughput สำหรับ production</li><li>คำอธิบายคลิประบุเป้า &#x27;zero to deployed ใน 30 นาที&#x27; ส่วนเนื้อหาจริงยาวประมาณ 25 นาที</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ประโยคเด่น (ต้นฉบับ)</h2><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“You get access to models directly from your dedicated project where you can set your own policy.”</p><p class='text-zinc-500'>เข้าถึงโมเดลได้ตรงจาก project เฉพาะของตัวเอง และตั้ง policy เองได้</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“this mode puts Cloud in a mode where it thinks and it proposes before it starts coding.”</p><p class='text-zinc-500'>plan mode ทำให้ Claude คิดและเสนอแผนก่อนเริ่มเขียนโค้ด (Cloud ใน transcript = Claude)</p></blockquote><blockquote class='border-l-4 border-clay-400 pl-4 my-3'><p class='italic'>“I can parallelize tasks simulating like a team sprint”</p><p class='text-zinc-500'>แตกงานขนานกันเหมือนทีมทำ sprint ด้วย subagents</p></blockquote>
+<h2 class="mt-8 text-lg font-semibold">สิ่งที่นำไปทำต่อ</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>ถ้าไม่ชำนาญ Google Cloud ให้ต่อ Developer Knowledge API MCP server และ Google Cloud skills แล้วให้ Claude อ่านเอกสารสดแทนการเดา</li><li>ใช้ plan mode กับงานที่ต้องการให้ตัดสินใจก่อนลงมือ เช่นเปลี่ยน wireframe เป็นหน้า production</li><li>แตก subagent ต่อส่วน (API, pipeline, dashboard) เพื่อทำงานขนาน แล้วให้เทสต์รันก่อนสร้าง CI/CD</li><li>สร้าง plugin ตรวจ security ที่ตรงกับข้อกำหนดขององค์กร (เช่น input validation, สิทธิ์ service account) แล้วใช้ก่อน promote</li><li>ถ้าต้องการ analytics ให้ใช้ BigQuery MCP กับ Looker MCP ทำ dashboard ที่ PM นำไปคุยต่อได้</li></ul>
+<h2 class="mt-8 text-lg font-semibold">ข้อควรระวังในสรุปนี้</h2><ul class="list-disc pl-6 mt-2 space-y-1.5"><li>transcript ถอดด้วย Whisper large-v3 ในเครื่อง ไม่ใช่ข้อความต้นฉบับของผู้พูด ชื่อเฉพาะอาจเพี้ยน (Cloud = Claude, &#x27;Anthropix&#x27; = Anthropic) และมีประโยค &#x27;I&#x27;m Ivan Nardini. I&#x27;m the founder of Anthropix&#x27; ซึ่งน่าจะเป็นการถอดวนผิด จึงใช้เฉพาะบรรทัดที่แนะนำตัวเป็น developer advocate ที่ Google Cloud</li><li>ช่วงต้นเดโม PM (ราวนาทีที่ 3-6) transcript วนซ้ำประโยค &#x27;I&#x27;m going to use a very simple code&#x27; หลายครั้ง เป็นอาการ Whisper hallucination จึงไม่มีรายละเอียดของขั้นตอนนั้น</li><li>ชื่อผลิตภัณฑ์ Google Cloud (Firestore, Cloud Run, Cloud Build, Cloud Deploy, BigQuery, Looker) บางตัวผู้พูดเรียกกว้างๆ เช่น &#x27;file stores&#x27; ที่ผู้สรุปตีความเป็น Firestore จากบริบท</li><li>ผู้พูดพูดถึงการ merge PR และ plugin แบบรวบรัด ไม่ได้ระบุชื่อ skills หรือ plugin ที่ใช้ ลิงก์ repo/quickstart ที่ว่าจะแชร์ท้าย session ไม่มีใน transcript</li><li>เดโมเป็นการรันที่เตรียมไว้ล่วงหน้า (ตัดให้เร็ว) ผู้พูดอ้างว่าได้ผลตามที่เห็น ไม่ได้มีการยืนยันอิสระ</li></ul>
+<p class="mt-8"><a href="https://www.youtube.com/watch?v=l8fxVYIP4HQ" rel="noopener" class="inline-flex px-4 py-2 rounded-lg bg-clay-700 text-white font-medium hover:bg-clay-800">ดูคลิปต้นฉบับบน YouTube</a></p>
+<p class="mt-3 text-xs text-zinc-500">ที่มา transcript: Whisper large-v3 (ถอดเสียงในเครื่อง) · สรุปโดย AI ชื่อเฉพาะ/ตัวเลขอาจเพี้ยน ตรวจกับวิดีโอก่อนอ้างอิง · ไม่ใช่เนื้อหาทางการของ Anthropic</p>
+<nav class="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex gap-4 text-sm" aria-label="คลิปก่อนหน้า/ถัดไป"><a href="../talks/07-designing-with-claude-from-prompt-to-producti.html" class="hover:underline">← #07 เบื้องหลังสร้าง Claude Design ใน 10 สัปดาห์ด้วยทีมสามคน</a><a href="../talks/09-building-signals-that-trade-themselves.html" class="hover:underline ml-auto text-right">#09 Man Group: governed skills ทำให้ AI สร้างสัญญาณเทรดที่ใช้เงินจริงได้ →</a></nav>
+</main></body></html>
